@@ -1,0 +1,30 @@
+{
+  "name": "cl-twilio-webhooks-demo",
+  "version": "1.0.0",
+  "description": "A minimal demo for sending an SMS notification to customers when an SKU that had finished is back in stock using Commerce Layer Webhooks and Twilio SMS.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BolajiAyodeji/cl-twilio-webhooks-demo.git"
+  },
+  "keywords": [
+    "commercelayer",
+    "twilio-sms-api"
+  ],
+  "author": "Bolaji Ayodeji",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BolajiAyodeji/cl-twilio-webhooks-demo/issues"
+  },
+  "homepage": "https://github.com/BolajiAyodeji/cl-twilio-webhooks-demo#readme",
+  "dependencies": {
+    "twilio": "^3.77.1",
+    "crypto-js": "^4.1.1",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1"
+  }
+}

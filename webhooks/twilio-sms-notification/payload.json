@@ -1,0 +1,106 @@
+{
+  "data": {
+    "id": "pVabIWaezQ",
+    "meta": { "mode": "test", "organization_id": "enoZOFLqNX" },
+    "type": "in_stock_subscriptions",
+    "links": { "self": "/api/in_stock_subscriptions/pVabIWaezQ" },
+    "attributes": {
+      "status": "notified",
+      "metadata": {
+        "customer_name": "Bolaji Ayodeji",
+        "customer_telephone": 2341234567890
+      },
+      "sku_code": "TOTEXXAUFFFFFF000000XXXX",
+      "reference": null,
+      "created_at": "2022-06-01T12:20:47.111Z",
+      "updated_at": "2022-06-01T12:20:53.120Z",
+      "customer_email": "bolaji@commercelayer.io",
+      "stock_threshold": 1,
+      "reference_origin": null
+    },
+    "relationships": {
+      "sku": {
+        "data": { "id": "ZrxeSKVNRB", "type": "skus" },
+        "links": {
+          "self": "/api/in_stock_subscriptions/pVabIWaezQ/relationships/sku",
+          "related": "/api/in_stock_subscriptions/pVabIWaezQ/sku"
+        }
+      },
+      "market": {
+        "links": {
+          "self": "/api/in_stock_subscriptions/pVabIWaezQ/relationships/market",
+          "related": "/api/in_stock_subscriptions/pVabIWaezQ/market"
+        }
+      },
+      "customer": {
+        "links": {
+          "self": "/api/in_stock_subscriptions/pVabIWaezQ/relationships/customer",
+          "related": "/api/in_stock_subscriptions/pVabIWaezQ/customer"
+        }
+      }
+    }
+  },
+  "included": [
+    {
+      "id": "ZrxeSKVNRB",
+      "meta": { "mode": "test", "organization_id": "enoZOFLqNX" },
+      "type": "skus",
+      "links": { "self": "/api/skus/ZrxeSKVNRB" },
+      "attributes": {
+        "code": "TOTEXXAUFFFFFF000000XXXX",
+        "name": "Bull Denim Woven Cotton Tote with Black Logo",
+        "weight": null,
+        "metadata": {},
+        "image_url": "https://img.commercelayer.io/skus/TOTEXXAUFFFFFF000000.png?fm=jpg\u0026q=90",
+        "reference": "TOTEXXAUFFFFFF000000",
+        "created_at": "2021-09-09T10:49:14.657Z",
+        "updated_at": "2021-09-09T10:49:14.657Z",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pellentesque in neque vitae tincidunt. In gravida eu ipsum non condimentum. Curabitur libero leo, gravida a dictum vestibulum, sollicitudin vel quam.",
+        "do_not_ship": false,
+        "do_not_track": false,
+        "unit_of_weight": null,
+        "pieces_per_pack": null,
+        "hs_tariff_number": null,
+        "reference_origin": null
+      },
+      "relationships": {
+        "prices": {
+          "links": {
+            "self": "/api/skus/ZrxeSKVNRB/relationships/prices",
+            "related": "/api/skus/ZrxeSKVNRB/prices"
+          }
+        },
+        "attachments": {
+          "links": {
+            "self": "/api/skus/ZrxeSKVNRB/relationships/attachments",
+            "related": "/api/skus/ZrxeSKVNRB/attachments"
+          }
+        },
+        "sku_options": {
+          "links": {
+            "self": "/api/skus/ZrxeSKVNRB/relationships/sku_options",
+            "related": "/api/skus/ZrxeSKVNRB/sku_options"
+          }
+        },
+        "stock_items": {
+          "links": {
+            "self": "/api/skus/ZrxeSKVNRB/relationships/stock_items",
+            "related": "/api/skus/ZrxeSKVNRB/stock_items"
+          }
+        },
+        "shipping_category": {
+          "links": {
+            "self": "/api/skus/ZrxeSKVNRB/relationships/shipping_category",
+            "related": "/api/skus/ZrxeSKVNRB/shipping_category"
+          }
+        },
+        "delivery_lead_times": {
+          "links": {
+            "self": "/api/skus/ZrxeSKVNRB/relationships/delivery_lead_times",
+            "related": "/api/skus/ZrxeSKVNRB/delivery_lead_times"
+          }
+        }
+      }
+    }
+  ]
+}
