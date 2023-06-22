@@ -4,6 +4,8 @@ This example shows a code implementation and email templates for sending order c
 
 ![](https://www.datocms-assets.com/35053/1665661860-order-email-full-demo.png)
 
+---
+
 ## Quick start guide
 
 1. Rename the .env.example file to .env.local and add your valid credentials, like so:
