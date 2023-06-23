@@ -1,0 +1,5 @@
+{% if request.path == "/" %}
+  {% render "country-selector" %}
+{% else %}
+  {% render "product-listing" %}
+{% endif %}

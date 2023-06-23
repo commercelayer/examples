@@ -1,0 +1,7 @@
+<div class="grid grid-cols-2 gap-8 lg:grid-cols-3">
+  {% assign collection = collections | first %}
+  {% assign products = collection.products %}
+  {% for product in products %}
+    {% render "product", product: product %}
+  {% endfor %}
+</div>

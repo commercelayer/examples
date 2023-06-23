@@ -1,0 +1,62 @@
+<div id="cart-summary" class="hidden text-sm lg:text-base lg:p-6">
+  <div id="clayer-shopping-bag-container">
+    <div id="clayer-shopping-bag-items-container">
+    </div>
+    <template id="clayer-shopping-bag-item-template">
+      <div class="flex mb-4 lg:mb-6">
+        <div class="w-1/4 pr-4">
+          <img class="clayer-shopping-bag-item-image"></img>
+        </div>
+        <div class="w-2/4">
+          <div class="clayer-shopping-bag-item-name font-semibold"></div>
+          <div>
+            Quantity:
+            <span class="clayer-shopping-bag-item-qty-container text-red-600">
+              <!-- The unavailable message template is appended to the element
+                    below if customer selects a quantity that is not available  -->
+              <span class="clayer-shopping-bag-item-availability-message-container"></span>
+            </span>          
+          </div>
+          <a href="#" class="clayer-shopping-bag-item-remove w-1/6 text-right text-red-600">remove</a>
+        </div>
+        <div class="w-1/4">
+          <div class="clayer-shopping-bag-item-total-amount text-right text-red-600"></div>
+        </div>
+      </div>
+    </template>
+
+    <div class="border-t mt-4 pt-4 text-right">
+      <div class="flex">
+        <div class="w-1/2">Subtotal</div>
+        <div class="w-1/2 clayer-shopping-bag-subtotal text-red-600"></div>
+      </div>
+      <div class="flex">
+        <div class="w-1/2">Shipping</div>
+        <div class="w-1/2 clayer-shopping-bag-shipping text-red-600"></div>
+      </div>
+      <div class="flex">
+        <div class="w-1/2">Discount</div>
+        <div class="w-1/2 clayer-shopping-bag-discount text-red-600"></div>
+      </div>
+      <div class="flex">
+        <div class="w-1/2">Taxes</div>
+        <div class="w-1/2 clayer-shopping-bag-taxes text-red-600"></div>
+      </div>
+      <div class="flex border-t mt-4 pt-4 text-lg font-semibold">
+        <div class="w-1/2">Total</div>
+        <div class="w-1/2 clayer-shopping-bag-total text-red-600"></div>
+      </div>
+    </div>
+  </div>
+  <a href="#" class="clayer-shopping-bag-checkout text-center text-sm bg-red-600 text-white px-4 py-3 rounded hover:opacity-75 w-full block mt-8">
+    PROCEED TO CHECKOUT
+  </a>
+  <div class="mt-4">
+    or
+    {% assign locale = request.path | slice: 1, 5 %}
+    <a href="/{{locale}}" class="underline hover:opacity-75">
+      continue shopping
+    </a>  
+  </div>
+  
+</div>

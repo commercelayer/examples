@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    {{ content_for_header }}
+  </head>
+
+  <body>
+    <div class="container mx-auto max-w-screen-xl">
+      {% render "announcement" %}
+      {% render "header" %}
+      <div class="flex flex-col md:flex-row">
+        {% render "hint" %}
+        <div class="basis-1/2 p-6 md:p-10">
+          {{ content_for_layout }}
+        </div>
+      </div>      
+      {% render "footer" %}
+    </div>
+  </body>
+ </html>

@@ -1,0 +1,26 @@
+<div class="basis-1/2 bg-gray-100 p-6 md:p-10 xl:rounded-lg">
+  <h1 class="text-2xl font-bold mb-4 lg:text-3xl">
+    {% if request.path == "/" %}
+      {{ 'titles.countries' | t }}
+    {% else %}
+      {{ template.name | prepend: 'titles.' | t }}
+    {% endif %}
+  </h1>
+  <p class="leading-relaxed text-gray-700">
+    {% if request.path == "/" %}
+      {{ 'hints.countries' | t }}
+    {% else %}
+      {{ template.name | prepend: 'hints.' | t }}
+    {% endif %}  
+  </p>
+  {% if request.path == "/" %}
+    {% assign menu-handle = "country-selector-menu" %}
+  {% else %}
+    {% assign menu-handle = template.name | append: "-menu" %}
+  {% endif %}
+  <div class="flex flex-col space-y-2 mt-6">
+    {% for link in linklists[menu-handle].links %}
+      <div>&gt; {{ link.title | link_to: link.url, class: "underline hover:opacity-75" }}</div>
+    {% endfor %}
+  </div>
+</div>
