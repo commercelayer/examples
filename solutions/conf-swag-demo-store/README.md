@@ -4,4 +4,6 @@ This example shows a code implementation of an ecommerce website built using the
 
 You can explore the complete code in this generated [GitHub repository](https://github.com/BolajiAyodeji/conf-swag-demo-store).
 
-![](https://github.com/BolajiAyodeji/cl-composable-commerce-workshop/blob/main/assets/demo-stores.gif?raw=true)
+![](https://www.datocms-assets.com/35053/1672937067-demo-store-sample.png)
+
+![](https://www.datocms-assets.com/35053/1672937606-demo-store-product-page.png)
