@@ -1,0 +1,27 @@
+{
+  "name": "pay-with-tweet",
+  "version": "1.0.0",
+  "description": "Commerce Layer Pay With Tweet demo external payment gateway.",
+  "main": "app.js",
+  "scripts": {
+    "build": "npx tsc",
+    "start": "node public/app.js",
+    "dev": "npm run build:watch & npm run start:watch",
+    "build:watch": "npx tsc-watch",
+    "start:watch": "nodemon public/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bolaji Ayodeji <bolaji@commercelayer.io>",
+  "license": "MIT",
+  "dependencies": {
+    "crypto-js": "^4.1.1",
+    "dotenv": "^16.0.1",
+    "nodemon": "^2.0.19",
+    "tsc-watch": "^5.0.3",
+    "twitter-api-sdk": "^1.0.9"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^18.0.3"
+  }
+}
