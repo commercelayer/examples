@@ -1,6 +1,6 @@
-# sendgrid-zapier-emails
+# sendgrid-templated-emails
 
-This example shows a code implementation and email templates for sending order confirmation (or any type of) emails to customers using Commerce Layer Webhooks, SendGrid API, Zapier Code Runner, and Nodejs. To get started, kindly read [this comprehensive tutorial](https://commercelayer.io/blog/how-to-send-templated-emails-with-commerce-layer-and-sendgrid) on our blog.
+This example shows a code implementation and email templates for sending templated order confirmation (or any type of) emails to customers using Commerce Layer Webhooks, SendGrid API, Zapier Code Runner, and Nodejs. To get started, kindly read [this comprehensive tutorial](https://commercelayer.io/blog/how-to-send-templated-emails-with-commerce-layer-and-sendgrid) on our blog.
 
 ![](https://www.datocms-assets.com/35053/1665661860-order-email-full-demo.png)
 
