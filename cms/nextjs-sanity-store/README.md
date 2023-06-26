@@ -1,4 +1,4 @@
-# nextjs-sanity-ecommerce-store
+# nextjs-sanity-store
 
 This example shows a code implementation of a multi-country ecommerce store built with Commerce Layer, Next.js, Sanity studio, and deployed to Netlify. To get started, kindly read [this comprehensive tutorial](https://commercelayer.io/blog/how-to-build-an-international-ecommerce-website-with-sanity-and-commerce-layer) on our blog.
 
