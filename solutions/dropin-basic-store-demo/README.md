@@ -12,7 +12,7 @@ This example shows a code implementation for transforming a plain HTML page into
 
 1. Update the configuration script tag and add your valid credentials, like so:
 
-```js
+```html
 <script>
   (function() {
     window.commercelayerConfig = {
