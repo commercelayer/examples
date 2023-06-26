@@ -156,7 +156,3 @@ npm run build
 ### Docker build
 
 To build and run the Docker image, run `exec.sh`, or `exec.ps1` on Windows.
-
-## License
-
-This project is licensed under the MIT license. See the [LICENSE](./LICENSE) file for more info.
