@@ -3,21 +3,21 @@
     <img src="https://data.commercelayer.app/assets/logos/glyph/black/commercelayer_glyph_black.svg" height="80" alt="Commerce Layer Logo">
   </a>
   <h3>Commerce Layer Examples</h3>
-  <p>A curated collection of examples and code demos that showcases the power of Commerce Layer API and developer tools.</p>
+  <p>A curated collection of examples, use cases, and code demos that showcases the power of Commerce Layer API and developer tools.</p>
 </div>
 
 ---
 
-This repository contains example code demos that are not production-ready in most cases. We do not encourage you to use the code directly for production development but you can build on them to develop your own ecommerce applications or integrations. Our goal here is to provide you with different reference code (accompanied by tutorials) that will show you different ways you can build with Commerce Layer. We will constantly add new examples and accept more from our amazing community members, so check back often.
+This repository contains example code demos that are not production-ready in most cases. We do not encourage you to use the code directly for production development but you can build on them to develop your own ecommerce applications or integrations. Our goal here is to provide you with different reference code (accompanied by tutorials) that will show you different ways you can build with Commerce Layer. We will constantly add new examples and accept more from our amazing community members, so check back often :).
 
-Examples Categories:
+Here are the parent categories of the examples in this repository:
 
-- [Authentication](/authentication) — Demos and use cases of different ways to implement multi-factor authentication (MFA) or single sign-on authentication (SSO) with Commerce Layer.
-- [CMS](/cms) — Demos and use cases of implementing multi-market ecommerce web stores with top content management systems.
-- [Lambda functions](/lambda-functions) — Demos and use cases of several lambda functions you can use to do fun stuff with Commerce Layer.
-- [Search](/search) — Demos and use cases of different ways to implement product search with Commerce Layer, and a CMS.
+- [Authentication](/authentication) — Different ways to implement multi-factor authentication (MFA) or single sign-on authentication (SSO) with Commerce Layer.
+- [CMS](/cms) — Implementation of multi-market ecommerce web stores with top content management systems.
+- [Lambda functions](/lambda-functions) — Several lambda functions you can use to do fun stuff with Commerce Layer.
+- [Search](/search) — Implementation of product search with Commerce Layer and a CMS.
 - [Solutions](/solutions) — Demos and use cases of several parts of our API and developer tools.
-- [Webhooks](/webhooks) — Demos and use cases of several ways you can use `Commerce Layer webhooks.
+- [Webhooks](/webhooks) — Several ways you can use Commerce Layer webhooks.
 
 ---
 
