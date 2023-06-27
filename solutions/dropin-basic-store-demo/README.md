@@ -26,4 +26,8 @@ This example shows a code implementation for transforming a plain HTML page into
 </script>
 ```
 
-2. Open the `index.html` file in a web browser.
+2. Run the `index.html` file with an HTTP server using `npx serve` or [VSCode Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer).
+
+> **Note**
+>
+> Opening the `index.html` file directly in Chrome browser will not work since cookies are disabled when the protocol is `file://` for security reasons. Always ensure to run the file with an HTTP server.
