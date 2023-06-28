@@ -1,6 +1,6 @@
-# SSO with Next.js, Auth0, and Commerce Layer
+# SSO with Nextjs, Auth0, and Commerce Layer
 
-This example shows you how to integrate [Auth0 Next.js SDK](https://github.com/auth0/nextjs-auth0) into a Next.js application created using [create-next-app](https://nextjs.org/docs/api-reference/create-next-app). You can use it as a reference to build an SSO flow with Commerce Layer. The sample is a companion to the [Auth0 Next.js SDK Quickstart](https://auth0.com/docs/quickstart/webapp/nextjs). To get started, kindly read [this comprehensive tutorial](https://commercelayer.io/blog/how-to-single-sign-on-with-nextjs-auth0-and-commerce-layer) on our blog.
+This example shows you how to integrate [Auth0 Nextjs SDK](https://github.com/auth0/nextjs-auth0) into a Nextjs application created using [create-next-app](https://nextjs.org/docs/api-reference/create-next-app). You can use it as a reference to build an SSO flow with Commerce Layer. The sample is a companion to the [Auth0 Nextjs SDK Quickstart](https://auth0.com/docs/quickstart/webapp/nextjs). To get started, kindly read [this comprehensive tutorial](https://commercelayer.io/blog/how-to-single-sign-on-with-nextjs-auth0-and-commerce-layer) on our blog.
 
 ---
 
@@ -18,27 +18,27 @@ This sample covers the following use cases:
 ```mermaid
 sequenceDiagram
     autonumber
-    Browser-->>Next.js API endpoints: User clicks on login button (/api/auth/login)
+    Browser-->>Nextjs API endpoints: User clicks on login button (/api/auth/login)
     Browser-->>Auth0: User is redirected to Auth0 login dialog
-    Auth0-->>Next.js API endpoints: /api/auth/callback
-    Next.js API endpoints->>Auth0: Code exchange
-    Auth0->>Next.js API endpoints: Receive session
-    Next.js API endpoints-->>Commerce Layer: Get or create customer
-    Commerce Layer-->>Next.js API endpoints: Receive Commerce Layer customer ID
-    Next.js API endpoints->>Auth0: Update user metadata with Commerce Layer customer ID
-    Next.js API endpoints->>Browser: Session cookie
-    Browser->>Next.js API endpoints: call to /api/token
-    Next.js API endpoints->>Next.js API endpoints: Generate customer token
-    Note right of Next.js API endpoints: The endpoint generates the customer <br>token building a payload and signing it with<br>the organization secret.
-    Next.js API endpoints->>Browser: receives Commerce Layer customer token
+    Auth0-->>Nextjs API endpoints: /api/auth/callback
+    Nextjs API endpoints->>Auth0: Code exchange
+    Auth0->>Nextjs API endpoints: Receive session
+    Nextjs API endpoints-->>Commerce Layer: Get or create customer
+    Commerce Layer-->>Nextjs API endpoints: Receive Commerce Layer customer ID
+    Nextjs API endpoints->>Auth0: Update user metadata with Commerce Layer customer ID
+    Nextjs API endpoints->>Browser: Session cookie
+    Browser->>Nextjs API endpoints: call to /api/token
+    Nextjs API endpoints->>Nextjs API endpoints: Generate customer token
+    Note right of Nextjs API endpoints: The endpoint generates the customer <br>token building a payload and signing it with<br>the organization secret.
+    Nextjs API endpoints->>Browser: receives Commerce Layer customer token
 ```
 
 The diagram above outlines the steps involved in the customer *sign-up/sign-in* process and the acquisition of a customer token, which grants access to Commerce Layer functionality.
 
 1. The user clicks on the login button.
-2. The Next.js endpoint (`/api/auth/login`) redirects to the Auth0 Login Dialog.
+2. The Nextjs endpoint (`/api/auth/login`) redirects to the Auth0 Login Dialog.
 3. After successful authentication, Auth0 calls the `/api/auth/callback` endpoint with a code.
-4. The Next.js endpoint exchanges the code with Auth0.
+4. The Nextjs endpoint exchanges the code with Auth0.
 5. Auth0 replies with an access token and an ID token.
 6. Using a Commerce Layer integration application, the customer is retrieved or created on Commerce Layer based on their email.
 7. The customer ID is received from Commerce Layer.
@@ -83,7 +83,7 @@ Also, create a free Auth0 account like so:
 
 The project needs to be configured with your Auth0 domain, client ID, and client secret for the authentication flow to work.
 
-To do that, first copy `.env.local.example` into a new file in the same folder called `.env.local`, and replace the values with your own Auth0 application credentials (more info about loading environmental variables in Next.js [here](https://nextjs.org/docs/basic-features/environment-variables)):
+To do that, first copy `.env.local.example` into a new file in the same folder called `.env.local`, and replace the values with your own Auth0 application credentials (more info about loading environmental variables in Nextjs [here](https://nextjs.org/docs/basic-features/environment-variables)):
 
 ```sh
 # A long secret value used to encrypt the session cookie
@@ -139,7 +139,7 @@ You can find a few of them running the project and taking a look at the browser 
 
 ### Development
 
-Run the following command to compile and serve the Next.js app, starting the API server on port `3001` with hot-reload:
+Run the following command to compile and serve the Nextjs app, starting the API server on port `3001` with hot-reload:
 
 ```bash
 pnpm run dev
@@ -147,7 +147,7 @@ pnpm run dev
 
 ### Production
 
-Run the following command to compile and minify the Next.js app, ready for production:
+Run the following command to compile and minify the Nextjs app, ready for production:
 
 ```bash
 npm run build

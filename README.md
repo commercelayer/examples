@@ -12,18 +12,14 @@ This repository contains example code demos that are not production-ready in mos
 
 Here are the parent categories of the examples in this repository:
 
-- [Authentication](/authentication) — Different ways to implement multi-factor authentication (MFA) or single sign-on authentication (SSO) with Commerce Layer.
-- [CMS](/cms) — Implementation of multi-market ecommerce web stores with top content management systems.
-- [Lambda functions](/lambda-functions) — Several lambda functions you can use to do fun stuff with Commerce Layer.
-- [Search](/search) — Implementation of product search with Commerce Layer and a CMS.
-- [Solutions](/solutions) — Demos and use cases of several parts of our API and developer tools.
-- [Webhooks](/webhooks) — Several ways you can use Commerce Layer webhooks.
+- [Authentication](./authentication) — Different ways to implement multi-factor authentication (MFA) or single sign-on authentication (SSO) with Commerce Layer.
+- [CMS](./cms) — Implementation of multi-market ecommerce web stores with top content management systems.
+- [Lambda functions](./lambda-functions) — Several lambda functions you can use to do fun stuff with Commerce Layer.
+- [Search](./search) — Implementation of product search and personalization with Commerce Layer and a CMS.
+- [Solutions](./solutions) — Demos and use cases of several parts of our API and developer tools.
+- [Webhooks](./webhooks) — Several ways you can use Commerce Layer webhooks.
 
 ---
-
-## What is Commerce Layer?
-
-[Commerce Layer](https://commercelayer.io) is a multi-market commerce API and order management system that lets you add global shopping capabilities to any website, mobile app, chatbot, wearable, voice, or IoT device, with ease. Compose your stack with the best-of-breed tools you already mastered and love. Make any experience shoppable, anywhere, through a blazing-fast, enterprise-grade, and secure API.
 
 ## Get Started with Commerce Layer
 
@@ -64,3 +60,12 @@ git clone https://github.com/<your username>/examples.git && cd examples
 ## License
 
 This repository is published under the [MIT](LICENSE) license.
+
+---
+
+<div align="center">
+  <a href="https://commercelayer.io">
+    <img src="https://data.commercelayer.app/assets/logos/glyph/black/commercelayer_glyph_black.svg" height="50" alt="Commerce Layer Logo">
+  </a>
+  <p><a href="https://commercelayer.io/why" target="_blank" rel="noopener noreferrer">Commerce Layer</a> is a multi-market commerce API and order management system that lets you add global shopping capabilities to any website, mobile app, chatbot, wearable, voice, or IoT device, with ease. Compose your stack with the best-of-breed tools you already mastered and love. Make any experience shoppable, anywhere, through a blazing-fast, enterprise-grade, and <a href="https://docs.commercelayer.io/core/" target="_blank" rel="noopener noreferrer">secure API</a>.</p>
+</div>

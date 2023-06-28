@@ -1,6 +1,6 @@
 # commercelayer-shopify-demo
 
-This example and shopify theme shows a code implementation for building a multi-language, multi-country website on a single Shopify store and integrating Commerce Layer to localize prices, inventory, shopping cart, and checkout for each country. The goal is to show the limitations of Shopify Markets and how you can use Commerce Layer as an alternative engine to enable international scalability. To get started, kindly read [this comprehensive tutorial](https://commercelayer.io/blog/how-to-sell-internationally-with-a-single-shopify-store-and-commerce-layer) on our blog.
+This example and Shopify theme show a code implementation for building a multi-language, multi-country website on a single Shopify store and integrating Commerce Layer to localize prices, inventory, shopping cart, and checkout for each country. The goal is to show the limitations of Shopify Markets and how you can use Commerce Layer as an alternative engine to enable international scalability. To get started, kindly read [this comprehensive tutorial](https://commercelayer.io/blog/how-to-sell-internationally-with-a-single-shopify-store-and-commerce-layer) on our blog.
 
 ![](https://www.datocms-assets.com/35053/1645522683-shopify-commerce-layer_option-3_no-padding.svg)
 
