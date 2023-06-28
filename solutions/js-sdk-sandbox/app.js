@@ -1,5 +1,4 @@
 import Cookies from "js-cookie";
-import "./tokenCookies/getSalesChannelToken";
 import CommerceLayer from "@commercelayer/sdk";
 
 const cl = CommerceLayer({
