@@ -122,28 +122,28 @@ If for any reason you want to set up your own server (most likely because you wa
 >
 > For all Supabase credentials, see: <https://supabase.com/docs/guides/database>.
 
-6. Run the command below to install the required dependencies:
+6. This project uses `pnpm`; [install pnpm](https://pnpm.io/installation) first, and run the command below to install the required dependencies:
 
 ```bash
-npm install
+pnpm install
 ```
 
 7. Run the command below to automatically compile all TypeScript files into the `/build` folder with the same file structure:
 
 ```bash
-npm run build
+pnpm run build
 ```
 
 8. Run the command below to start the Nodejs server:
 
 ```bash
-npm run start
+pnpm run start
 ```
 
 9. Run the command below to start a [Ngrok](https://ngrok.com/download) server on port 3000; this will generate a URL (like `https://f09d-2a09-bac5.eu.ngrok.io`) proxied to `http://localhost:3000`.
 
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 10. Update your Slack app accordingly with the generated URL above or use these [manifest (JSON or YAML)](./manifests/) files as a template to easily [configure your Slack app](https://api.slack.com/reference/manifests).
