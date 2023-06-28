@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/commercelayer/commercelayer-slackbot.git"
+    "url": "git+https://github.com/commercelayer/examples.git"
   },
   "keywords": [
     "commercelayer",
@@ -27,9 +27,9 @@
   "author": "Bolaji Ayodeji <bolaji@commercelayer.io>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/commercelayer/commercelayer-slackbot/issues"
+    "url": "https://github.com/commercelayer/examples/issues"
   },
-  "homepage": "https://github.com/commercelayer/commercelayer-slackbot#readme",
+  "homepage": "https://github.com/commercelayer/examples/solutions/commercelayer-slackbot#readme",
   "dependencies": {
     "@commercelayer/js-auth": "^4.1.1",
     "@commercelayer/sdk": "^4.25.0",
