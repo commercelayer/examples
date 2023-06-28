@@ -16,7 +16,7 @@ Here are the parent categories of the examples in this repository:
 - [CMS](./cms) — Implementation of multi-market ecommerce web stores with top content management systems.
 - [Lambda functions](./lambda-functions) — Several lambda functions you can use to do fun stuff with Commerce Layer.
 - [Search](./search) — Implementation of product search and personalization with Commerce Layer and a CMS.
-- [Solutions](./solutions) — Demos, use cases, and code sandboxs of several parts of our API and developer tools.
+- [Solutions](./solutions) — Demos, use cases, and code sandboxes of several parts of our API and developer tools.
 - [Webhooks](./webhooks) — Several ways you can use Commerce Layer webhooks.
 
 ---
@@ -33,9 +33,7 @@ Here are the parent categories of the examples in this repository:
 
 ## Adding a New Example
 
-Guidelines TBA.
-
-## Contributors Guide
+Kindly follow the following steps to add a new example to this repository:
 
 1. Fork [this repository](https://github.com/commercelayer/examples) (learn how to do this [here](https://help.github.com/articles/fork-a-repo)).
 
@@ -45,9 +43,17 @@ Guidelines TBA.
 git clone https://github.com/<your username>/examples.git && cd examples
 ```
 
-3. Make your changes and create a pull request ([learn how to do this](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request)).
+3. Choose the right category for your example (refer to the introduction above) and create a new sub-folder for it inside the category folder (use the kebab-case naming convention in lower-case to name the sub-folder).
 
-4. Someone will attend to your pull request and provide some feedback.
+4. Add your example code and all associated files to the new sub-folder you created.
+
+5. Create a `README.md` file in the new sub-folder and add a description of your example. You can use this [template](./TEMPLATE.md) as a guide (feel free to add more sections and document the example more, as required).
+
+6. Add your example to the list in the category's `README.md` file following the same format as the other examples (follow the sequential alphabetical order by name as seen in your local computer).
+
+7. Make your changes and create a pull request ([learn how to do this](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request)).
+
+8. Someone will attend to your pull request, provide some feedback, and eventually merge the PR!
 
 ## Need Help?
 
