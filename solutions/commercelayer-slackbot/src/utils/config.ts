@@ -6,7 +6,7 @@ import { database } from "../database/supabaseClient";
 import { getToken } from "./getToken";
 import { getSlug } from "./parseText";
 
-const appMode = process.env.APPLICATION_MODE;
+const appMode = process.env.APP_MODE;
 const isProd = appMode === "production";
 
 export const initConfig = async (slackId: string) => {

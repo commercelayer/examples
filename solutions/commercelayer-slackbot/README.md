@@ -97,22 +97,22 @@ If for any reason you want to set up your own server (most likely because you wa
 
 5. Rename the `/.env.example` file to `.env` and add the following credentials:
 
-| **Variable**                      | **Description**                        |
-| --------------------------------- | -------------------------------------  |
-| `APPLICATION_MODE`                | This indicates if the instance of the project is in `development` or `production`. In production the credentials used are unique for all users sourced from a database while development using the local `.env` file.                                                       |
-| `SLACK_BOT_TOKEN`                 | This is a [Slack bot token](https://api.slack.com/authentication/token-types#bot) that represents a bot associated with the app installed in a workspace.                                       |
-| `SLACK_SIGNING_SECRET`            | This is the unique string key Slack generates for an app and is used to [verify requests](https://api.slack.com/authentication/verifying-requests-from-slack#about) from Slack with confidence by verifying signatures using the signing secret.                            |
-| `SLACK_CLIENT_ID`                 | This is required along with the client secret to make Slack `oauth.v2.access` requests.                             |
-| `SLACK_CLIENT_SECRET`             | This is required along with the client ID to make Slack `oauth.v2.access` requests.                                 |
-| `SLACK_STATE_SECRET`              | This is used to avoid forgery attacks by passing in a unique value to the user being authenticated and checking it when a Slack `oauth.v2.access` requests completes.                                |
-| `SLACK_APP_TOKEN`                 | This is a [Slack app-level token](https://api.slack.com/authentication/token-types#app) that represents an app across organizations, including installations by all individual users on all workspaces in a given organization.                                          |
-| `CL_ORGANIZATION_SLUG`            | Your Commerce Layer organization slug. |
-| `CL_ORGANIZATION_MODE`            | A string value that indicates the mode of your Commerce Layer account (the Developer plan is `test` and the [Growth and Enterprise plan](https://commercelayer.io/pricing) is `live`). This is used for external link routing to the dashboard.                             |
-| `CL_CLIENT_ID`                    | Your Commerce Layer integration application client ID.                                                       |
-| `CL_CLIENT_ID_CHECKOUT`           | Your Commerce Layer sales channel application client ID.                                                       |
-| `CL_CLIENT_SECRET`                | Your Commerce Layer integration application client secret.                                                   |
-| `SUPABASE_URL`                    | The API URL for your Supabase project (`https://your-project-id.supabase.co`).                                     |
-| `SUPABASE_ANON_KEY`               | The anon key used when a user is not logged in for "anonymous access" during Supabase PostgREST API requests.                                                                    |
+| **Variable**              | **Description**                        |
+| ------------------------- | -------------------------------------  |
+| `APP_MODE`                | This indicates if the instance of the project is in `development` or `production`. In production the credentials used are unique for all users sourced from a database while development using the local `.env` file.                       |
+| `SLACK_BOT_TOKEN`         | This is a [Slack bot token](https://api.slack.com/authentication/token-types#bot) that represents a bot associated with the app installed in a workspace.                    |
+| `SLACK_SIGNING_SECRET`    | This is the unique string key Slack generates for an app and is used to [verify requests](https://api.slack.com/authentication/verifying-requests-from-slack#about) from Slack with confidence by verifying signatures using the signing secret.                                                              |
+| `SLACK_CLIENT_ID`         | This is required along with the client secret to make Slack `oauth.v2.access` requests.                     |
+| `SLACK_CLIENT_SECRET`     | This is required along with the client ID to make Slack `oauth.v2.access` requests.                         |
+| `SLACK_STATE_SECRET`      | This is used to avoid forgery attacks by passing in a unique value to encode and decode the state when a Slack `oauth.v2.access` request is made.                                   |
+| `SLACK_APP_TOKEN`         | This is a [Slack app-level token](https://api.slack.com/authentication/token-types#app) that represents an app across organizations, including installations by all individual users on all workspaces in a given organization.                     |
+| `CL_ORGANIZATION_ENDPOINT` | Your Commerce Layer organization endpoint.                                                            |
+| `CL_ORGANIZATION_MODE`     | A string value that indicates the mode of your Commerce Layer account (the Developer plan is `test` and the [Growth and Enterprise plan](https://commercelayer.io/pricing) is `live`). This is used for external link routing to the dashboard.    |
+| `CL_CLIENT_ID`             | Your Commerce Layer integration application client ID.                                               |
+| `CL_CLIENT_SECRET`         | Your Commerce Layer integration application client secret.                                           |
+| `CL_CLIENT_ID_CHECKOUT`    | Your Commerce Layer sales channel application client ID.                                               |
+| `SUPABASE_URL`             | The API URL for your Supabase project (`https://your-project-id.supabase.co`).                             |
+| `SUPABASE_ANON_KEY`        | The anon key used when a user is not logged in for "anonymous access" during Supabase PostgREST API requests.                                                            |
 
 > **Note**
 >
