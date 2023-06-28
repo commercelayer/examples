@@ -1,7 +1,7 @@
 {
   "name": "commercelayer-slackbot",
   "version": "1.0.0",
-  "description": "The official Commerce Layer slackbot for orders and returns summaries.",
+  "description": "A Slackbot for fetching Commerce Layer orders and returns summaries.",
   "main": "app.ts",
   "scripts": {
     "dev": "ngrok http 3000",

@@ -1,23 +1,8 @@
 # Commerce Layer Slackbot
 
-A Slackbot for fetching Commerce Layer orders and returns summaries.
+This example shows a code implementation of a Slackbot that responds with orders/returns summaries upon request and allows users to checkout pending orders directly from a Slack channel. This application was built with Commerce Layer, Slack Boltjs library, and Supabase. To get started, kindly read [this comprehensive tutorial](https://commercelayer.io/blog/how-we-built-the-commerce-layer-slackbot-with-node-js-and-slack-api) and [this one](#) on our blog.
 
 ![A preview of the Commerce Layer Slackbot about page.](./static/app-details.png)
-
-## What is Commerce Layer?
-
-[Commerce Layer](https://commercelayer.io) is a multi-market commerce API and order management system that lets you add global shopping capabilities to any website, mobile app, chatbot, wearable, voice, or IoT device, with ease. Compose your stack with the best-of-breed tools you already mastered and love. Make any experience shoppable, anywhere, through a blazing-fast, enterprise-grade, and secure API.
-
-## Table of Contents
-
-- [Bot Features](#bot-features)
-- [Getting Started](#getting-started)
-- [Configuration Guide](#configuration-guide)
-- [Commands Available](#commands-available)
-- [Installation Guide](#installation-guide)
-- [Contributors Guide](#contributors-guide)
-- [Need Help?](#need-help)
-- [License](#license)
 
 ---
 
@@ -30,8 +15,8 @@ A Slackbot for fetching Commerce Layer orders and returns summaries.
 - [ ] Automatic alerts for the total revenue of orders at the end of the day/week/month.
 - [ ] Automatic alerts for the total number of returns at the end of the day/week/month.
 
-|                                           |                                |
-| ----------------------------------------- | ------------------------------ |
+|                      |                          |
+| -------------------- | ------------------------ |
 | ![A preview of the Commerce Layer Slackbot.](./static/fetch-order-w.png)   | ![A preview of the Commerce Layer Slackbot.](./static/fetch-return-b.png)    |
 
 ## Getting Started
@@ -48,9 +33,9 @@ The quickest way to get up and running is to use the "Add to Slack" button below
 
 Before you start using the Commerce Layer Slackbot, you need to provide some Commerce Layer [application credentials](https://docs.commercelayer.io/core/applications). Kindly follow the steps below to configure the app:
 
-1. Find the app (Commerce Layer Bot) in the "Apps" section of your Slack workspace (most often at the bottom section).
+1. Find the app (Commerce Layer Demo Bot) in the "Apps" section of your Slack workspace (most often at the bottom section).
 
-2. You will see the home tab with some welcome information and a "Connect organization" button.
+2. You will see the home tab with some welcome information and a "Configure App Credentials" button.
 
 3. Click on that button and provide all the required credentials as seen in the image below.
 
@@ -58,7 +43,7 @@ Before you start using the Commerce Layer Slackbot, you need to provide some Com
 
 ## Commands Available
 
-The Commerce Layer Slackbot allows you to request certain resources by ID and other conditions (more to come). The returned response would be a summary of the requested resource with a link to view the resource(s) and checkout `pending` orders (for the `order` resource). The section below explains the available command and what they do.
+The Commerce Layer Demo Slackbot allows you to request certain resources by ID and other conditions. The returned response would be a summary of the requested resource with a link to view the resource(s) and checkout `pending` orders (for the `order` resource). The section below explains the available command and what they do.
 
 ### Fetch an order resource
 
@@ -166,33 +151,3 @@ npm run dev
 <br />
 
 Now you can proceed to do your thing!
-
-## Contributors Guide
-
-1. Fork [this repository](https://github.com/commercelayer/commercelayer-slackbot) (learn how to do this [here](https://help.github.com/articles/fork-a-repo)).
-
-2. Clone the forked repository like so:
-
-```bash
-git clone https://github.com/<your username>/commercelayer-slackbot.git && cd commercelayer-slackbot
-```
-
-3. Make your changes and create a pull request ([learn how to do this](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request)).
-
-4. Someone will attend to your pull request and provide some feedback.
-
-## Need Help?
-
-1. Join [Commerce Layer's Slack community](https://slack.commercelayer.app).
-
-2. Create an [issue](https://github.com/commercelayer/sanity-template-commercelayer/issues) in this repository.
-
-3. Ping us [on Twitter](https://twitter.com/commercelayer).
-
-## License
-
-This repository is published under the [MIT](LICENSE) license.
-
----
-
-Want to learn more about how we built this project and how you can build yours? Then you should read [this article first](https://commercelayer.io/blog/how-we-built-the-commerce-layer-slackbot-with-node-js-and-slack-api) and [this next](#) on our blog.

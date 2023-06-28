@@ -9,7 +9,7 @@ import { getReturnById, getLastReturn, getTodaysReturn } from "./src/returns/get
 import { serveHtml } from "./src/utils/serveHtml";
 import { getTokenInfo } from "./src/utils/getToken";
 import { renderError, notFoundError, expiredTokenError } from "./src/utils/customError";
-import { toTitleCase, getSlug } from "./src/utils/parseText";
+import { getSlug } from "./src/utils/parseText";
 import { formatTimestamp } from "./src/utils/parseDate";
 import { initConfig } from "./src/utils/config";
 
@@ -104,12 +104,13 @@ const app = new App({
           res.writeHead(400, { "Content-Type": "text/html; charset=utf-8" });
           const pageBody = `
           <div>
+            <img alt="Commerce Layer Logo" height="50" width="50" src="https://data.commercelayer.app/assets/logos/glyph/black/commercelayer_glyph_black.svg" />
+            <br /><br />
             <h2>Oops, Something Went Wrong!</h2>
             <p>Commerce Layer Bot 🤖 is already installed in this Slack workspace.</p>
             <p>You can go ahead and start using the existing installation.</p>
             <br />
             <hr />
-            <br />
             <p>Please try again or contact the app owner (reason: ${error.code}).</p>
           </div>
           `;
@@ -135,7 +136,7 @@ const app = new App({
           <hr />
           <br />
           <p>Kindly click the button below to install the app and read 
-            <a href="https://github.com/commercelayer/commercelayer-slackbot/blob/main/README.md" target="_blank" rel="noopener noreferrer">
+            <a href="https://bit.ly/cl-slackbot-docs" target="_blank" rel="noopener noreferrer">
               the documentation</a>.
           </p>
           <a href="/slack/install" target="_blank" rel="noopener noreferrer">
