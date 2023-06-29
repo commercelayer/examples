@@ -136,7 +136,7 @@ const app = new App({
           <hr />
           <br />
           <p>Kindly click the button below to install the app and read 
-            <a href="https://bit.ly/cl-slackbot-docs" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/commercelayer/examples/tree/main/solutions/commercelayer-slackbot#readme" target="_blank" rel="noopener noreferrer">
               the documentation</a>.
           </p>
           <a href="/slack/install" target="_blank" rel="noopener noreferrer">

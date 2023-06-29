@@ -21,10 +21,10 @@ This example shows a code implementation of a Slackbot that responds with orders
 
 ## Getting Started
 
-The quickest way to get up and running is to use the "Add to Slack" button below to install the Slack bot into your Slack workspace. Alternatively, you can [install from the Slack app directory](#). After a successful installation, you will configure the bot by providing some required Commerce Layer application credentials.
+The quickest way to get up and running is to use the "Add to Slack" button below to install the demo Slack bot into your Slack workspace (for demo testing). Alternatively, you can [install from Slack](https://slack.com/apps/A04NTNAPX2B-commerce-layer-demo-bot). After a successful installation, you will configure the bot by providing some required Commerce Layer application credentials.
 
 <div align="center">
-    <a href="#" target="_blank" rel="noopener noreferrer">
+    <a href="https://commercelayer-slackbot.fly.dev/slack/install" target="_blank" rel="noopener noreferrer">
         <img alt="Add to Slack" height="40" width="139" src="https://platform.slack-edge.com/img/add_to_slack.png" srcSet="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x" />
     </a>
 </div>
