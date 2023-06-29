@@ -3,7 +3,7 @@
     <img src="https://data.commercelayer.app/assets/logos/glyph/black/commercelayer_glyph_black.svg" height="80" alt="Commerce Layer Logo">
   </a>
   <h3>Commerce Layer Examples</h3>
-  <p>A curated collection of examples, use cases, code demos, and experiments that showcases the power of Commerce Layer API and developer tools.</p>
+  <p>A curated collection of examples, use cases, code demos, and experiments that showcase the power of Commerce Layer API and developer tools.</p>
 </div>
 
 ---
