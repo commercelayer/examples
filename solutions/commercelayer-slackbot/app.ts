@@ -132,7 +132,7 @@ const app = new App({
           <img alt="Commerce Layer Logo" height="50" width="50" src="https://data.commercelayer.app/assets/logos/glyph/black/commercelayer_glyph_black.svg" />
           <br /><br />
           <h2>Commerce Layer Slackbot 🤖</h2>
-          <p>The official Commerce Layer slackbot for orders and returns summaries.</p>
+          <p>The Commerce Layer slackbot for orders and returns summaries.</p>
           <hr />
           <br />
           <p>Kindly click the button below to install the app and read 
