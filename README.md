@@ -3,7 +3,7 @@
     <img src="https://data.commercelayer.app/assets/logos/glyph/black/commercelayer_glyph_black.svg" height="80" alt="Commerce Layer Logo">
   </a>
   <h3>Commerce Layer Examples</h3>
-  <p>A curated collection of examples, use cases, code demos, and experiments that showcases the power of Commerce Layer API and developer tools.</p>
+  <p>A curated collection of examples, use cases, code demos, and experiments that showcase the power of Commerce Layer API and developer tools.</p>
 </div>
 
 ---
@@ -59,7 +59,7 @@ git clone https://github.com/<your username>/examples.git && cd examples
 
 1. Join [Commerce Layer's Slack community](https://slack.commercelayer.app).
 
-2. Create an [issue](https://github.com/commercelayer/examples/issues) in this repository.
+2. Create a `Bug report` or `Feature request` [issue](https://github.com/commercelayer/examples/issues) in this repository.
 
 3. Ping us [on Twitter](https://twitter.com/commercelayer).
 
