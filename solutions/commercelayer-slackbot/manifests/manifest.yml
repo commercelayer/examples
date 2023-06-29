@@ -1,0 +1,52 @@
+display_information:
+  name: Commerce Layer Demo Bot
+  description: A Slackbot for fetching Commerce Layer orders and returns summaries.
+  background_color: "#000000"
+  long_description: "Lorem Ipsum..."
+features:
+  app_home:
+    home_tab_enabled: true
+    messages_tab_enabled: true
+    messages_tab_read_only_enabled: false
+  bot_user:
+    display_name: Commerce Layer Demo Bot
+    always_online: true
+  slash_commands:
+    - command: /cl
+      url: https://xxx-yyy-zzz.ngrok-free.app/slack/events
+      description: CL App - Fetch an order or return resource from your Commerce Layer organization.
+      usage_hint: order [orderID], return [return ID], orders:last, orders:a last, returns:last, returns:a last, orders:today, returns:today
+      should_escape: false
+oauth_config:
+  redirect_urls:
+    - https://xxx-yyy-zzz.ngrok-free.app/slack/oauth_redirect
+  scopes:
+    bot:
+      - channels:history
+      - chat:write
+      - chat:write.public
+      - commands
+      - groups:history
+      - im:history
+      - im:write
+      - incoming-webhook
+      - mpim:history
+      - mpim:write
+      - users:read
+settings:
+  event_subscriptions:
+    request_url: https://xxx-yyy-zzz.ngrok-free.app/slack/events
+    bot_events:
+      - app_home_opened
+      - app_uninstalled
+      - message.channels
+      - message.groups
+      - message.im
+      - message.mpim
+      - tokens_revoked
+  interactivity:
+    is_enabled: true
+    request_url: https://xxx-yyy-zzz.ngrok-free.app/slack/events
+  org_deploy_enabled: false
+  socket_mode_enabled: false
+  token_rotation_enabled: false

@@ -1,0 +1,14 @@
+<div class="grid grid-cols-2 gap-4 md:gap-6 lg:grid-cols-3">
+  {% for country in shop.metafields.global.countries.value %}
+    <a href="/{{ country.default_language }}-{{ country.code }}" class="hover:opacity-75">
+      <div class="flex items-center">
+        <div class="w-1/4 mr-2">
+          {% render "country-flag", country_code: country.code %}
+        </div>
+        <div class="w-3/4 text-xs">
+          {{ country.name | upcase }}
+        </div>
+      </div>
+    </a>
+  {% endfor %}
+</div>

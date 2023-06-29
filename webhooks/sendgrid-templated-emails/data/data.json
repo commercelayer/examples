@@ -1,0 +1,60 @@
+{
+  "customerName": "Bolaji",
+  "orderTimeStamp": "2022-09-25T23:00:00.000Z",
+  "dateFormat": "DD MMMM, YYYY h:mm:ss A",
+  "timezoneOffset": "-0800",
+  "shipmentNumber": "#21527675/S/001",
+  "orderNumber": "21527675",
+  "customerEmail": "bolaji@commercelayer.io",
+  "marketName": "USA",
+  "paymentMethod": "Wire Transfer",
+  "shippingAddress": "Bolaji Ayodeji, 333 Fremont Street, 94016 San Francisco CA (US) +14845219712",
+  "shippingMethod": "Express Delivery",
+  "lineItems": [
+    {
+      "skuCode": "TOTEBAGXE7DDC7000000XXXX",
+      "skuName": "Eco Tote Bag with Black Logo",
+      "skuImage": "https://data.commercelayer.app/seed/images/skus/TOTEBAGXE7DDC7000000XXXX_FLAT.png",
+      "skuQuantity": "1",
+      "skuFormattedAmount": "$28.00"
+    },
+    {
+      "skuCode": "GLCS21PXXXXXXXFFFFFFXXXX",
+      "skuName": "Samsung Galaxy S21 Plus Case with White Logo",
+      "skuImage": "https://data.commercelayer.app/seed/images/skus/GLCS21PXXXXXXXFFFFFFXXXX_FLAT.png",
+      "skuQuantity": "1",
+      "skuFormattedAmount": "$19.00"
+    },
+    {
+      "skuCode": "EMUG12OZFFFFFF000000XXXX",
+      "skuName": "Enamel Mug with Black Logo (12oz)",
+      "skuImage": "https://data.commercelayer.app/seed/images/skus/EMUG12OZFFFFFF000000XXXX_FLAT.png",
+      "skuQuantity": "1",
+      "skuFormattedAmount": "$15.00"
+    },
+    {
+      "skuCode": "SHIRT34S000000FFFFFFLXXX",
+      "skuName": "Black Unisex 3/4 Sleeve Shirt with White Logo (L)",
+      "skuImage": "https://data.commercelayer.app/seed/images/skus/SHIRT34S000000FFFFFFLXXX_FLAT.png",
+      "skuQuantity": "1",
+      "skuFormattedAmount": "$96.00"
+    },
+    {
+      "skuCode": "DRAWSBAG000000FFFFFFXXXX",
+      "skuName": "Black Drawstring Bag with White Logo",
+      "skuImage": "https://data.commercelayer.app/seed/images/skus/DRAWSBAG000000FFFFFFXXXX_FLAT.png",
+      "skuQuantity": "1",
+      "skuFormattedAmount": "$22.00"
+    },
+    {
+      "skuCode": "APRONXXXFFFFFF000000XXXX",
+      "skuName": "White Apron with Black Logo",
+      "skuImage": "https://data.commercelayer.app/seed/images/skus/APRONXXXFFFFFF000000XXXX_FLAT.png",
+      "skuQuantity": "1",
+      "skuFormattedAmount": "$20.00"
+    }
+  ],
+  "totalAmount": "$220",
+  "shippingAmount": "$7",
+  "grandTotalAmount": "$227"
+}

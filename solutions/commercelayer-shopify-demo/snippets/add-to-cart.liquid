@@ -1,0 +1,25 @@
+{% assign locale = request.path | slice: 1, 5 %}
+
+<div class="mt-4">
+  <a
+    href="#"
+    class="clayer-add-to-bag block text-center text-sm bg-red-600 text-white px-4 py-3 rounded hover:opacity-75"
+    id="add-to-bag"
+    data-availability-message-container-id="availability-message"
+    >ADD TO CART</a
+  >
+</div>
+
+<script>
+  document.addEventListener('clayer-line-item-created', function (e) {
+    window.location.href = "/{{locale}}/cart";
+  }, false);
+</script>
+
+<style>
+  a[disabled="disabled"],
+  a[disabled="disabled"]:hover {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+</style>

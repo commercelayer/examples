@@ -1,0 +1,9 @@
+{% render "cart-empty" %}
+{% render "cart-summary" %}
+
+<script>
+  document.addEventListener('clayer-order-ready', function (e) {
+    document.getElementById('cart-empty').classList.add("hidden");
+    document.getElementById('cart-summary').classList.remove("hidden");
+  }, false);
+</script>

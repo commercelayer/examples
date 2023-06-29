@@ -1,0 +1,8 @@
+{
+  "titles": {
+    "index": "Choose your country"
+  },
+  "hints": {
+    "index": "Select a shipping country and access a country-specific homepage. The list of available countries is stored in a Shopify metafield. The metafield object contains a reference to a Commerce Layer market for each country. More countries can be connected to the same market."
+  }
+}

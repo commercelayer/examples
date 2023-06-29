@@ -1,0 +1,14 @@
+<div class="flex flex-col lg:flex-row">
+  <div class="w-full p-6 lg:p-0 lg:w-1/2">
+    {% assign image = product.images | first %}
+    <img src="{{ image.src | product_img_url: 'large' }}">
+  </div>
+  <div class="w-full lg:w-1/2 lg:pl-8">
+    <div class="font-semibold">{{ product.title | upcase }}</div>
+    {% assign id = "price-" | append: product.id %}
+    {% render "variant-selector", product: product %}
+    {% render "price", id: id %}
+    {% render "availability-message" %}
+    {% render "add-to-cart" %}
+  </div>
+</div>

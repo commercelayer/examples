@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ES2015",
+    "module": "commonjs",
+    "strict": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "public",
+    "typeRoots" : ["typings", "./node_modules/@types"]
+  },
+  "include": [
+    "api/*",
+    "typings/*"
+  ]
+}

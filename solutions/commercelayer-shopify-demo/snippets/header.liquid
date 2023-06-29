@@ -1,0 +1,19 @@
+{% assign locale = request.path | slice: 1, 5 %}
+
+<header class="p-6 md:border-b lg:px-10 xl:mb-16 xl:px-0">
+  <div class="flex items-center">
+    <a href="/" class="grow flex items-center hover:opacity-75">
+      <h1 class="text-xl font-semibold mr-2">MY GLOBAL BRAND</h1>
+      {% unless request.path == '/' %}
+        {% assign country_code = locale | split: '-' | last %}
+        {% render "country-flag", country_code: country_code %}
+      {% endunless %}
+    </a>
+    {% unless request.path == '/' %}
+      <a href="/{{locale}}/cart" class="hover:opacity-75">
+        <span class="font-semibold mr-2 hidden md:inline">Shopping cart</span>
+        <span class="clayer-shopping-bag-items-count bg-red-600 text-white px-2 py-1 rounded">0</span>
+      </a>
+    {% endunless %}
+  </div>
+</header>

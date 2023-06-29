@@ -1,0 +1,28 @@
+{% assign locale = request.path | slice: 1, 5 %}
+
+{% assign language_code = locale | split: '-' | first %}
+{% assign country_code = locale | split: '-' | last %}
+{% assign country = shop.metafields.global.countries.value | where: "code", country_code | first %}
+
+<div class="text-xs text-gray-400">
+  MARKET # {{ country.market }}
+</div>
+
+<!-- Config -->
+<div
+  id="clayer-config"
+  data-base-url="https://shopify-demo.commercelayer.io"
+  data-client-id="ic8ClJsjN3DrPTlMuLjPDOEIubPeQrfOlnTsMNImKak"
+  data-country-code="{{ country_code }}"
+  data-language-code="{{ language_code }}"
+  data-market-id="{{ country.market }}"
+  data-dev-settings-debug="true"
+  data-dev-settings-console="true"
+  data-dev-settings-trace="true"  
+></div>
+
+<!-- JS Library -->
+<script
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@commercelayer/js-dropin@1.5.13/lib/index.js"
+></script>
