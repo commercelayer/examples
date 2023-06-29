@@ -12,8 +12,8 @@ export const serveHtml = (pageBody: string) => {
     <html>
         <head>
           <meta charSet="UTF-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1">
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-          <meta content="width=device-width, initial-scale=1.0" name="viewport">
           <title>${title}</title>
           <meta name="description" content="${description}" />
           <meta name="keywords" content="${keywords}" />
@@ -34,14 +34,12 @@ export const serveHtml = (pageBody: string) => {
           <link rel="preload" href="https://data.commercelayer.app/assets/logos/glyph/black/commercelayer_glyph_black.svg" as="image" type="image/svg+xml">
           <style>
           @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap');
-          @media only screen and (max-width: 768px) {
-            body {
-              height: 350px;
-            }
-          }
           body {
-            width: 600px;
-            height: 300px;
+            font-family: 'Manrope', sans-serif;
+            overflow: auto;
+            width: 25%;
+            height: 30%;
+            padding: 4em;
             position: absolute;
             left: 0;
             right: 0;
@@ -50,14 +48,18 @@ export const serveHtml = (pageBody: string) => {
             margin: auto;
             max-width: 100%;
             max-height: 100%;
-            overflow: auto;
-            padding: 30px;
             border: 3px solid #666EFF;
             text-align: center;
-            font-family: 'Manrope', sans-serif;
           }
           a {
             color: #000;
+          }
+          @media (max-width: 768px) {
+            body {
+              padding: 10em 1em;
+              width: 80%;
+              height: 45%;
+            }
           }
           </style>
         </head>
