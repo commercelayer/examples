@@ -1,12 +1,12 @@
 export const serveHtml = (pageBody: string) => {
-  const title = "Commerce Layer Slackbot";
+  const title = "Commerce Layer Demo Slackbot";
   const description = "A slackbot for Commerce Layer orders and returns summaries.";
   const url = process.env.APP_URL;
   const keywords =
     "Commerce Layer, Commerce Layer API, Commerce Layer Slackbot, Slackbot, Slack API, Slack Bolt, Ecommerce Slackbot, Ecommerce API";
   const twitterHandle = "@commercelayer";
   const ogImage =
-    "https://raw.githubusercontent.com/commercelayer/commercelayer-slackbot/main/static/app-details.png";
+    "https://raw.githubusercontent.com/commercelayer/examples/main/solutions/commercelayer-slackbot/static/app-details.png";
 
   return `
     <html>

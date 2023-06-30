@@ -131,14 +131,15 @@ const app = new App({
         <div>
           <img alt="Commerce Layer Logo" height="50" width="50" src="https://data.commercelayer.app/assets/logos/glyph/black/commercelayer_glyph_black.svg" />
           <br /><br />
-          <h2>Commerce Layer Slackbot 🤖</h2>
-          <p>The Commerce Layer slackbot for orders and returns summaries.</p>
+          <h2>Commerce Layer Demo Slackbot 🤖</h2>
+          <p>A slackbot for Commerce Layer orders and returns summaries.</p>
           <hr />
           <br />
           <p>Kindly click the button below to install the app and read 
             <a href="https://github.com/commercelayer/examples/tree/main/solutions/commercelayer-slackbot#readme" target="_blank" rel="noopener noreferrer">
               the documentation</a>.
           </p>
+          <br />
           <a href="/slack/install" target="_blank" rel="noopener noreferrer">
             <img alt="Add to Slack" height="40" width="139" src="https://platform.slack-edge.com/img/add_to_slack.png" srcSet="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x" />
           </a>
