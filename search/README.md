@@ -7,6 +7,6 @@
 
 ---
 
-This category includes the following projects:
+This category includes the following project(s):
 
-- Your project? Learn how to [add a new example](https://github.com/commercelayer/examples/#adding-a-new-example) and become a contributor 😉.
+- TBA

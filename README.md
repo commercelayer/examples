@@ -1,6 +1,6 @@
 <div align="center">
-  <a href="https://commercelayer.io">
-    <img src="https://data.commercelayer.app/assets/logos/glyph/black/commercelayer_glyph_black.svg" height="80" alt="Commerce Layer Logo">
+  <a href="https://commercelayer.io/developers">
+    <img src="./examples.svg" height="250" alt="Commerce Layer Examples Illustration">
   </a>
   <h3>Commerce Layer Examples</h3>
   <p>A curated collection of examples, use cases, code demos, and experiments that showcase the power of Commerce Layer API and developer tools.</p>
@@ -8,9 +8,9 @@
 
 ---
 
-This repository contains example code demos that are not production-ready in most cases. We do not encourage you to use the code directly for production development but you can build on them to develop your own ecommerce applications or integrations. Our goal here is to provide you with different reference code (accompanied by tutorials) that will show you different ways you can build with Commerce Layer. We will constantly add new examples with different technologies and even accept more from our amazing community members, so check back often :).
+This repository contains example code demos that are not production-ready in most cases. We do not encourage you to use the code directly for production development but you can build on them to develop your own ecommerce applications or integrations. Our goal here is to provide you with different reference code (accompanied by tutorials) that will show you different ways you can build with Commerce Layer. We will constantly add new examples with different composable technologies, so check back often :).
 
-Here are the parent categories of the examples in this repository:
+Here are the parent categories of the examples in this repository for easy navigation:
 
 - [Authentication](./authentication) — Different ways to implement multi-factor authentication (MFA) or single sign-on authentication (SSO) with Commerce Layer.
 - [CMS](./cms) — Implementation of multi-market ecommerce web stores with top content management systems.
@@ -31,9 +31,7 @@ Here are the parent categories of the examples in this repository:
 - [Commerce Layer Blog](https://commercelayer.io/blog)
 - [Commerce Layer Case Studies](https://commercelayer.io/customers)
 
-## Adding a New Example
-
-Kindly follow the following steps to add a new example to this repository:
+## Contributors Guide
 
 1. Fork [this repository](https://github.com/commercelayer/examples) (learn how to do this [here](https://help.github.com/articles/fork-a-repo)).
 
@@ -43,17 +41,21 @@ Kindly follow the following steps to add a new example to this repository:
 git clone https://github.com/<your username>/examples.git && cd examples
 ```
 
-3. Choose the right category for your example (refer to the introduction above) and create a new sub-folder for it inside the category folder (use the kebab-case naming convention in lower-case to name the sub-folder).
+3. If you're adding a new example, choose the right category for an example (refer to the introduction above) and create a new sub-folder for it inside the category folder (use the kebab-case naming convention in lower-case to name the sub-folder).
 
-4. Add your example code and all associated files to the new sub-folder you created.
+4. Add the new example code and all associated files to the new sub-folder you created.
 
-5. Create a `README.md` file in the new sub-folder and add a description of your example. You can use this [template](./TEMPLATE.md) as a guide (feel free to add more sections and document the example more, as required).
+5. Create a `README.md` file in the new sub-folder and add a description of the new example. You can use this [template](./TEMPLATE.md) as a guide (feel free to add more sections and document the example more, as required).
 
-6. Add your example to the list in the category's `README.md` file following the same format as the other examples (follow the sequential alphabetical order by name as seen in your local computer).
+6. Add the new example to the list in the category's `README.md` file following the same format as the other examples (follow the sequential alphabetical order by name as seen in your local computer).
 
 7. Make your changes and create a pull request ([learn how to do this](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request)).
 
 8. Someone will attend to your pull request, provide some feedback, and eventually merge the PR!
+
+> **Note**
+>
+> This repository will include examples that follow all the best practices we are following in all our [other public OSS projects](https://commercelayer.io/developers). If you decide to contribute, someone will review and provide some feedback. Thank you!
 
 ## Need Help?
 

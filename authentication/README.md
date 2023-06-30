@@ -7,7 +7,6 @@
 
 ---
 
-This category includes the following projects:
+This category includes the following project(s):
 
 - [nextjs-auth0-sso](./nextjs-auth0-sso) — An integration of Auth0 Nextjs SDK and Commerce Layer in a Nextjs ecommerce web application.
-- Your project? Learn how to [add a new example](https://github.com/commercelayer/examples/#adding-a-new-example) and become a contributor 😉.
