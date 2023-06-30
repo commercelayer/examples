@@ -1,6 +1,6 @@
 # Commerce Layer Slackbot
 
-This example shows a code implementation of a Slackbot that responds with orders/returns summaries upon request and allows users to checkout pending orders directly from a Slack channel. This application was built with Commerce Layer, Slack Boltjs library, and Supabase. To get started, kindly read [this comprehensive tutorial](https://commercelayer.io/blog/how-we-built-the-commerce-layer-slackbot-with-node-js-and-slack-api) and [this one](#) on our blog.
+This example shows a code implementation of a Slackbot that responds with orders/returns summaries upon request and allows users to checkout pending orders directly from a Slack channel. This application was built with Commerce Layer, Slack Boltjs library, and Supabase. To get started, kindly read [this comprehensive tutorial](https://commercelayer.io/blog/how-we-built-the-commerce-layer-slackbot-with-node-js-and-slack-api), followed by [this one](https://commercelayer.io/blog/handling-slack-apps-distribution-using-supabase-and-fly-io) on our blog.
 
 ![A preview of the Commerce Layer Slackbot about page.](./static/app-details.png)
 
@@ -21,17 +21,17 @@ This example shows a code implementation of a Slackbot that responds with orders
 
 ## Getting Started
 
-The quickest way to get up and running is to use the "Add to Slack" button below to install the Slack bot into your Slack workspace (coming soon!). Alternatively you can [install from the Slack app directory](#) (coming soon!). After a successful installation, you will configure the bot by providing some required Commerce Layer application credentials.
+The quickest way to get up and running is to use the "Add to Slack" button below to install the demo Slack bot into your Slack workspace (for demo testing). Alternatively, you can [install from Slack](https://slack.com/apps/A04NTNAPX2B-commerce-layer-demo-bot). After a successful installation, you will configure the bot by providing some required Commerce Layer application credentials.
 
 <div align="center">
-    <a href="#" target="_blank" rel="noopener noreferrer">
+    <a href="https://commercelayer-slackbot.fly.dev/slack/install" target="_blank" rel="noopener noreferrer">
         <img alt="Add to Slack" height="40" width="139" src="https://platform.slack-edge.com/img/add_to_slack.png" srcSet="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x" />
     </a>
 </div>
 
 ## Configuration Guide
 
-Before you start using the Commerce Layer Slackbot, you need to provide some Commerce Layer [application credentials](https://docs.commercelayer.io/core/applications). Kindly follow the steps below to configure the app:
+Before you start using the Slackbot, you need to provide some Commerce Layer [application credentials](https://docs.commercelayer.io/core/applications). Kindly follow the steps below to configure the app:
 
 1. Find the app (Commerce Layer Demo Bot) in the "Apps" section of your Slack workspace (most often at the bottom section).
 
@@ -43,7 +43,7 @@ Before you start using the Commerce Layer Slackbot, you need to provide some Com
 
 ## Commands Available
 
-The Commerce Layer Demo Slackbot allows you to request certain resources by ID and other conditions. The returned response would be a summary of the requested resource with a link to view the resource(s) and checkout `pending` orders (for the `order` resource). The section below explains the available command and what they do.
+This Commerce Layer Slackbot allows you to request certain resources by ID and other conditions. The returned response would be a summary of the requested resource with a link to view the resource(s) and checkout `pending` orders (for the `order` resource). The section below explains the available command and what they do.
 
 ### Fetch an order resource
 
@@ -104,7 +104,7 @@ If for any reason you want to set up your own server (most likely because you wa
 | `SLACK_SIGNING_SECRET`    | This is the unique string key Slack generates for an app and is used to [verify requests](https://api.slack.com/authentication/verifying-requests-from-slack#about) from Slack with confidence by verifying signatures using the signing secret.                                                              |
 | `SLACK_CLIENT_ID`         | This is required along with the client secret to make Slack `oauth.v2.access` requests.                     |
 | `SLACK_CLIENT_SECRET`     | This is required along with the client ID to make Slack `oauth.v2.access` requests.                         |
-| `SLACK_STATE_SECRET`      | This is used to avoid forgery attacks by passing in a unique value to encode and decode the state when a Slack `oauth.v2.access` request is made.                                   |
+| `SLACK_STATE_SECRET`      | This is used to avoid forgery attacks by passing in a unique value to encode and decode the state when a Slack `oauth.v2.access` request is made. You should enter a random pre-defined string here.                                 |
 | `SLACK_APP_TOKEN`         | This is a [Slack app-level token](https://api.slack.com/authentication/token-types#app) that represents an app across organizations, including installations by all individual users on all workspaces in a given organization.                     |
 | `CL_ORGANIZATION_ENDPOINT` | Your Commerce Layer organization endpoint.                                                            |
 | `CL_ORGANIZATION_MODE`     | A string value that indicates the mode of your Commerce Layer account (the Developer plan is `test` and the [Growth and Enterprise plan](https://commercelayer.io/pricing) is `live`). This is used for external link routing to the dashboard.    |
@@ -131,13 +131,13 @@ pnpm install
 7. Run the command below to automatically compile all TypeScript files into the `/build` folder with the same file structure:
 
 ```bash
-pnpm run build
+pnpm run dev-build
 ```
 
 8. Run the command below to start the Nodejs server:
 
 ```bash
-pnpm run start
+pnpm run dev-start
 ```
 
 9. Run the command below to start a [Ngrok](https://ngrok.com/download) server on port 3000; this will generate a URL (like `https://f09d-2a09-bac5.eu.ngrok.io`) proxied to `http://localhost:3000`.
@@ -151,3 +151,9 @@ pnpm run dev
 <br />
 
 Now you can proceed to do your thing!
+
+---
+
+> **Note**
+>
+> If you want to deploy this application to fly.io, kindly refer to the deployment section of [this tutorial](https://commercelayer.io/blog/handling-slack-apps-distribution-using-supabase-and-fly-io). For other deployment providers, you can deploy this like any other Nodejs app.
