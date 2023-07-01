@@ -7,8 +7,7 @@
 
 ---
 
-This category includes the following projects:
+This category includes the following project(s):
 
 - [nextjs-contentful-store](./nextjs-contentful-store) — A multi-country ecommerce store built with Commerce Layer, Nextjs, and Contentful.
 - [nextjs-sanity-store](./nextjs-sanity-store) — A multi-country ecommerce store built with Commerce Layer, Nextjs, Sanity studio, and deployed to Netlify.
-- Your project? Learn how to [add a new example](https://github.com/commercelayer/examples/#adding-a-new-example) and become a contributor 😉.
