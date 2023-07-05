@@ -1,0 +1,260 @@
+# Commerce Layer Contentful Template
+
+A multi-country ecommerce template built with Commerce Layer, Next.js, Contentful, and Algolia.
+
+[![A preview image showing the frontend demo with some products.](./public/preview.gif)](https://commercelayer-contentful-template.netlify.app)
+
+## What is Commerce Layer?
+
+[Commerce Layer](https://commercelayer.io) is a multi-market commerce API and order management system that lets you add global shopping capabilities to any website, mobile app, chatbot, wearable, voice, or IoT device, with ease. Compose your stack with the best-of-breed tools you already mastered and love. Make any experience shoppable, anywhere, through a blazing-fast, enterprise-grade, and secure API.
+
+## Table of Contents
+
+- [Template Features](#template-features)
+- [Getting Started](#getting-started)
+  - [Installation Guide](#installation-guide)
+  - [Import Seed Commerce Layer Data](#import-seed-commerce-layer-data)
+  - [Import Seed Contentful Data](#import-seed-contentful-data)
+- [Contributors Guide](#contributors-guide)
+- [Need Help?](#need-help)
+- [License](#license)
+
+---
+
+## Template Features
+
+- A user-friendly and performant ecommerce storefront (with products, categories, i18n, cart, checkout, etc.) built with TypeScript, Nextjs, [Commerce Layer React Components](https://github.com/commercelayer/commercelayer-react-components) library, and Tailwind CSS.
+- International transactional functionalities powered by [Commerce Layer](https://commercelayer.io) APIs (including commerce seed data powered by [Commerce Layer CLI Seeder](https://github.com/commercelayer/commercelayer-cli-plugin-seeder/blob/main/README.md) plugin).
+- CMS integration powered by Contentful (including seed content models and assets data).
+- Search integration powered by Algolia InstantSearch.
+- PSD2-compliant and production-ready checkout functionality powered by [Commerce Layer React Checkout](https://github.com/commercelayer/commercelayer-react-checkout) application.
+- React18 and Next13 support.
+- Type-checking and code linting.
+- Localization support (including Italian and French translations).
+- SEO and progressive web application (PWA) support.
+- Comprehensive installation and usage documentation.
+- One-click deployment configuration to your favorite hosting providers.
+
+| [Storefront UI](https://commercelayer-contentful-template.netlify.app)    | [Contentful Editor](https://app.contenful.com)                                                  |
+| ----------------------- | ------------------------------ |
+| ![A preview image showing the Commerce Layer dashboard.](./public/ui-preview.png)        | ![A preview image showing the contentful studio.](./public/ct-preview.png)  |
+
+## Important Files and Folders
+
+| **Path**                           | **Description**                      |
+| ---------------------------------- | ------------------------------------ |
+| `.env.local.sample`                | Example file with all the required environment variables.                                                      |  
+| `/components`                      | React components for the storefront. |
+| `/locale/index.ts`                 | Config file for the storefront's transalations (`en-US`, `it-IT`, and `fr-FR`).                              |
+| `/hooks/GetToken.ts`               | Hooks file to fetch a salesChannel token from Commerce Layer and save as a cookie.                             |
+| `/pages/[countryCode]/[lang]/index.tsx`     | Index page for the storefront (country selector and product listing).                                    |
+| `/pages/[countryCode]/[lang]/[product].tsx` | Page for all product items (image, product information, and variant selection).                        |
+| `/data`                            | Exported data to seed your contentful space with.                                                                |  
+| `/utils/contentful/api.ts`             | Where all data from Contentful is fetched and parsed using Contentful JavaScript Client.                                                       |
+
+## Getting Started
+
+The quickest way to get up and running is to use any of the deploy buttons below to set up and deploy automatically to your favorite hosting provider. Afterward, you will add some seed data to Commerce Layer and Contentful. The deploy button will clone this repository and ask you to enter all the required environment variables. Alternatively, you can clone this repository, configure the template, import the dataset into your Contentful space, import some seed commerce data into your Commerce Layer organization, and deploy your application. The installation guide below will show you how to achieve this.
+
+[<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" height="35">](https://app.netlify.com/start/deploy?repository=https://github.com/commercelayer/commercelayer-contentful-template#BUILD_LANGUAGES=en-US,it-IT,fr-FR&BUILD_SEARCH_ENGINE=algolia&NEXT_PUBLIC_SITE_NAME&NEXT_PUBLIC_SITE_URL&NEXT_PUBLIC_CL_CLIENT_ID&NEXT_PUBLIC_CL_ENDPOINT&NEXT_PUBLIC_CONTENTFUL_SPACE_ID&NEXT_PUBLIC_CONTENTFUL_DELIVERY_ACCESS_TOKEN&NEXT_PUBLIC_ALGOLIA_APP_ID&NEXT_PUBLIC_ALGOLIA_ADMIN_API_KEY) [<img src="https://vercel.com/button" alt="Deploy to Vercel" height="35">](https://vercel.com/new/clone?repository-url=https://github.com/commercelayer/commercelayer-contentful-template&env=BUILD_LANGUAGES=en-US,it-IT,fr-FR&BUILD_SEARCH_ENGINE=algolia&NEXT_PUBLIC_SITE_NAME&NEXT_PUBLIC_SITE_URL&NEXT_PUBLIC_CL_CLIENT_ID&NEXT_PUBLIC_CL_ENDPOINT&NEXT_PUBLIC_CONTENTFUL_SPACE_ID&NEXT_PUBLIC_CONTENTFUL_DELIVERY_ACCESS_TOKEN&NEXT_PUBLIC_ALGOLIA_APP_ID&NEXT_PUBLIC_ALGOLIA_ADMIN_API_KEY)
+
+### Installation Guide
+
+1. Clone this repository ([learn how to do this](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)).
+
+2. Rename the `/env.local.example` file to `.env.local` and add the following credentials:
+
+| **Variable**                         | **Description**                     |
+| ------------------------------------ | ----------------------------------- |
+| `BUILD_LANGUAGES`                    | The supported locales (the default is `en-US, it-IT, fr-FR`).                                                       |
+| `BUILD_SEARCH_ENGINE`                          | The name of the search provider in use (the default is `algolia`). The presence of this variable activates the Algolia InstantSearch configuration.                                                      |
+| `NEXT_PUBLIC_SITE_NAME`              | Optional name for the `<title>` head tag (you can also edit this directly in the code).                           |
+| `NEXT_PUBLIC_SITE_URL`               | Optional URL of your deployed project for the `og:url` meta property (you can also edit this directly in the code).|
+| `NEXT_PUBLIC_CL_CLIENT_ID`                       | Your Commerce Layer sales channels application client ID (you can create this automatically by following this [onboarding guide](https://docs.commercelayer.io/developers) or manually on the [Commerce Layer dashboard](https://dashboard.commercelayer.io)).          |
+| `NEXT_PUBLIC_CL_ENDPOINT`                        | Your Commerce Layer organization's base endpoint (you can copy this on the [Commerce Layer dashboard](https://dashboard.commercelayer.io)).                                                 |
+| `NEXT_PUBLIC_CONTENTFUL_SPACE_ID`   | Your Contentful space ID (you can get this from [app.contentful.com](https://app.contentful.com)).          |
+| `NEXT_PUBLIC_CONTENTFUL_DELIVERY_ACCESS_TOKEN`      | Your Contentful delivery access token (you can get this from [app.contentful.com](https://app.contentful.com)).           |
+| `NEXT_PUBLIC_ALGOLIA_APP_ID`         | Your Algolia application ID (you can get this from [algolia.com/apps](https://algolia.com/apps)).                                |
+| `NEXT_PUBLIC_ALGOLIA_ADMIN_API_KEY`     | Your Algolia admin API key (you can get this from [algolia.com/apps](https://algolia.com/apps)).                         |
+
+3. Run the command below to install the required dependencies:
+
+```bash
+npm install
+```
+
+4. Run the command below to start the development server:
+
+```bash
+npm run dev
+```
+
+This will run the storefront at `localhost:3000`.
+
+### Import Seed Commerce Layer Data
+
+1. Create a free [Commerce Layer account](https://dashboard.commercelayer.io/sign_up). If you already have an active account, kindly skip to Step 3.
+
+2. Create a new [organization](https://commercelayer.io/docs/data-model/users-and-organizations) or follow the [onboarding tutorial guide](https://docs.commercelayer.io/developers).
+
+3. Create a new **Integrations** application with **Name** set to `CLI` and **Role** set to `admin`.
+
+4. In your newly created application, copy the `Client ID`, `Client secret`, and `Base endpoint` credentials.
+
+5. Install the [Commerce Layer CLI](https://github.com/commercelayer/commercelayer-cli) which is available as an [npm package](https://www.npmjs.com/package/@commercelayer/commercelayer-cli) or [yarn package](https://yarnpkg.com/package/@commercelayer/cli) using the command below:
+
+```bash
+npm install -g @commercelayer/cli
+```
+
+or
+
+```bash
+yarn global add @commercelayer/cli
+```
+
+6. Log into your application via the CLI using the previously created CLI credentials like so:
+
+```bash
+cl applications:login -o <organizationSlug> -i <clientId> -s <clientSecret> -a <applicationAlias>
+```
+
+7. Install the [seeder plugin](https://github.com/commercelayer/commercelayer-cli-plugin-seeder/blob/main/README.md) using the command below:
+
+```bash
+cl plugins:install seeder
+```
+
+8. Run the command below to import three demo [markets](https://data.commercelayer.app/seed/markets.json) (UK, USA, and Europe), a set of [SKUs](https://data.commercelayer.app/seed/skus.json), related [price lists](https://data.commercelayer.app/seed/price_lists.json), related [prices](https://data.commercelayer.app/seed/prices.json), [stock locations](https://data.commercelayer.app/seed/stock_locations.json), and [inventory](https://data.commercelayer.app/seed/stock_items.json) into your organization using the `multi_market` [business model](https://commercelayer.io/docs/data-model/markets-and-business-models).
+
+```bash
+cl seed -b multi_market
+```
+
+9. To see the commands for other seeder options, type the command below:
+
+```bash
+cl --help
+```
+
+### Import Seed Contentful Data
+
+This template was developed with a Contentful content model that looks like the table below:
+
+| **Content model**                         | **Fields**                     |
+| ------------------------------------ | ----------------------------------- |
+| `Catalog` | Name and Taxonomies. |
+| `Country` | Name, Code, Catalog, Market ID, Image, Default Locale, and Domain. |
+| `Product` | Name, Description, Slug, Reference, Images, and Variants. |
+| `Size` | Name. |
+| `Taxon` | Name, Label, Slug, Description, Images, Products, and Taxons. |
+| `Taxonomy` | Name, Label, and Taxons. |
+| `Variant` | Name, Code, Description, Images, Size, and Bundle. |
+
+Kindly follow the steps below to add the exported data (structured text and image files for all the content models). This data will match the commerce data in Commerce Layer (SKUs, prices, etc.).
+
+1. Install the Contentful CLI using the command below:
+
+```bash
+npm install -g contentful-cli
+```
+
+or
+
+```bash
+yarn global add contentful-cli
+```
+
+2. Log into your Contentful account using the command below:
+
+```bash
+contentful login
+```
+
+A browser window will then open where you will log in and authorize the CLI with the generated CMA token.
+
+3. In the `/data` folder, you will find an `example-config.json` file. Edit the file and add your space ID and management token like so:
+
+```json
+{
+  "spaceId": "SPACE_ID",
+  "managementToken": "MANAGEMENT_TOKEN",
+  "contentFile": "data/contentful-seed.json"
+}
+```
+
+3. In the `/data` folder, you will find a `contentful-seed.json` file that includes export data from the Contentful space used to build this template. The exported JSON file has the following structure:
+
+```json
+{
+  "contentTypes": [],
+  "entries": [],
+  "assets": [],
+  "locales": [],
+  "webhooks": [],
+  "roles": [],
+  "editorInterfaces": []
+}
+```
+
+4. Now, run the command below to import the seed file into your Contentful space
+
+```bash
+contentful space import --config data/example-config.json
+```
+
+5. Check your Contentful space in the dashboard to preview the imported content models and data.
+
+<br />
+
+![Insert import GIF]()
+
+<br />
+
+> **Note**
+>
+> The Contentful content data includes a collection of sample countries, products, variants, sizes, taxons, taxonomies, catalogs, and product images created during development. To get an [access token](https://docs.commercelayer.io/developers/authentication) for the Nextjs storefront, we fetch the scope (market ID) from the `Market Id` attribute set in the Contentful `Country` content model.
+>
+> So, when you seed your Commerce Layer organization, some markets will be created with a different market ID from the one imported into Contentful. Hence, you will need to fetch the valid market scope's number (4 digits) from the sales channel tab of your organization in the [Commerce Layer dashboard](https://dashboard.commercelayer.io) and update in Contentful. For example, the Europe Market on Commerce Layer and Italy country model content type on Contentful. Failure to do this will result in an invalid scope authentication error when you try to access the storefront.
+
+| Commerce Layer dashboard (sales channel tab) | Contentful dashboard (Country model) |
+| ---- | ---- |
+| ![A preview image showing the Commerce Layer dashboard.](./public/cl-screen.png) | ![A preview image showing the Contentful dashboard.](./public/ct-screen.png) |
+
+> **Warning**
+>
+> You must access the application using the right locale slug for the country you have configured (e.g., `localhost:3000/it/it-it` or `localhost:3000/us/en-us`). Currently, Italy is the only country with a default language different from `en-us`. Hence the slug is `localhost:3000/it/it-it`. Other countries will have the `en-us` slug (e.g., `localhost:3000/ng/en-us`). If you want to set up other countries, then create a market for it on Commerce Layer alongside the associated resources and update the Market ID on Contentful, as mentioned earlier.
+
+We already have some French translations in the `/locale/index.ts` file, but due to the Contentful space limitation, we can only enable two locales. If you have an upgraded plan, you can create a new locale and simply add the content for all fields you want in the dashboard. The storefront will automatically reflect the changes.
+
+Eventually, you would want to add your content data and set up Commerce Layer manually based on your use case. To ensure the template runs smoothly, kindly create a [market](https://docs.commercelayer.io/core/v/api-reference/markets) associated with a [stock location](https://docs.commercelayer.io/core/v/api-reference/stock_locations), [stock item](https://docs.commercelayer.io/core/v/api-reference/stock_items), [price list](https://docs.commercelayer.io/core/v/api-reference/price_lists), [price](https://docs.commercelayer.io/core/v/api-reference/prices), and [SKU](https://docs.commercelayer.io/core/v/api-reference/skus) in Commerce Layer and update the `market ID` attribute, create a product, and link to variant(s) on Contentful. If you want to learn more about how Commerce Layer works, see our [onboarding guide](https://docs.commercelayer.io/core/welcome/onboarding-tutorial), [manual configuration guide](https://docs.commercelayer.io/core/welcome/manual-configuration), or [data models documentation](https://commercelayer.io/docs/data-model).
+
+## Contributors Guide
+
+1. Fork [this repository](https://github.com/commercelayer/commercelayer-contentful-template) (learn how to do this [here](https://help.github.com/articles/fork-a-repo)).
+
+2. Clone the forked repository like so:
+
+```bash
+git clone https://github.com/<your username>/commercelayer-contentful-template.git && cd commercelayer-contentful-template
+```
+
+3. Make your changes and create a pull request ([learn how to do this](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request)).
+
+4. Someone will attend to your pull request and provide some feedback.
+
+## Need Help?
+
+1. Join [Commerce Layer's Slack community](https://slack.commercelayer.app).
+
+2. Create an [issue](https://github.com/commercelayer/contentful-template-commercelayer/issues) in this repository.
+
+3. Ping us [on Twitter](https://twitter.com/commercelayer).
+
+## License
+
+This repository is published under the [MIT](LICENSE) license.
+
+---
+
+Want to learn more about how we built this template and how you can build your business's ecommerce site with a similar tech stack? Then you should read [this article](#) on our blog.

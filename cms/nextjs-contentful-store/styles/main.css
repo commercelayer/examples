@@ -1,0 +1,35 @@
+@import url("//fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&display=swap");
+@import url("//data.commercelayer.app/assets/fonts/fontawesome.min.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  font-display: swap;
+  height: 100vh;
+  @apply bg-ashy;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 700;
+  font-style: normal;
+}
+
+#__next {
+  height: 100%;
+}
+
+section.content {
+  min-height: calc(100vh - 20vh);
+}
