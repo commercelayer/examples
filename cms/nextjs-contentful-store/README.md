@@ -11,8 +11,7 @@ A multi-country ecommerce store built with Commerce Layer, Next.js, and Contentf
 - A user-friendly and performant ecommerce storefront (with products, taxonomies, i18n, cart, checkout, etc.) built with TypeScript, Nextjs, [Commerce Layer React Components](https://github.com/commercelayer/commercelayer-react-components) library, and Tailwind CSS.
 - International transactional functionalities powered by [Commerce Layer](https://commercelayer.io) API (including commerce seed data powered by [Commerce Layer CLI Seeder](https://github.com/commercelayer/commercelayer-cli-plugin-seeder/blob/main/README.md) plugin).
 - CMS integration powered by Contentful (including seed content models and assets data).
-- Production-ready [hosted-cart]() functionality.
-- PSD2-compliant and production-ready [hosted-checkout]() functionality powered by [Commerce Layer React Checkout](https://github.com/commercelayer/commercelayer-react-checkout) application.
+- PSD2-compliant and production-ready [cart](https://github.com/commercelayer/commercelayer-cart) / [checkout](https://github.com/commercelayer/commercelayer-react-checkout) functionality.
 - React18 and Next13 support.
 - Type-checking and code linting.
 - Localization support (including Italian and French translations).
