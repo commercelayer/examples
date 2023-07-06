@@ -39,7 +39,7 @@
   ],
   "dependencies": {
     "@commercelayer/js-auth": "^4.1.1",
-    "@commercelayer/react-components": "^4.2.2",
+    "@commercelayer/react-components": "4.2.2",
     "@headlessui/react": "^1.5.0",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/forms": "^0.4.0",
