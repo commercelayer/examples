@@ -47,7 +47,7 @@ const locale: Locale = {
   },
   "it-it": {
     languageName: "Italiano",
-    welcome: "Benvenuto",
+    welcome: "Ehilà",
     addToCart: "Aggiungi al carrello",
     available: "disponibile",
     notAvailable: "non disponibile",
@@ -90,7 +90,7 @@ const locale: Locale = {
   },
   "fr-fr": {
     languageName: "Français",
-    welcome: "Bienvenue",
+    welcome: "Salut",
     addToCart: "Ajouter au panier",
     available: "disponible",
     notAvailable: "Pas disponible",
