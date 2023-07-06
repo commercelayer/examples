@@ -14,7 +14,7 @@ const CountrySelector: React.FC<Props> = ({ options }) => {
   const [show, setShow] = useState(false);
   const {
     push,
-    query: { countryCode, lang }
+    query: { lang, countryCode }
   } = useRouter();
   const optionComponents = options.map(({ code, name, image, defaultLocale }) => {
     return {
@@ -115,7 +115,6 @@ const CountrySelector: React.FC<Props> = ({ options }) => {
                         {name}
                       </span>
                     </div>
-                    {/* Highlighted: "text-white", Not Highlighted: "text-indigo-600" */}
                     <span
                       className={`${
                         selected ? "text-gray-900" : "hidden"

@@ -14,6 +14,8 @@ const LanguageSelector: React.FC<Props> = ({ options }) => {
   const [show, setShow] = useState(false);
   const {
     push,
+    reload,
+    pathname,
     query: { lang, countryCode, product }
   } = useRouter();
   const optionComponents = options.map(({ code, name, image, defaultLocale }) => {
@@ -26,7 +28,17 @@ const LanguageSelector: React.FC<Props> = ({ options }) => {
   });
   const selectedOption = _.first(optionComponents.filter(({ value }) => value === lang));
   const handleChange = (defaultLocale: string) => {
-    push(`/${countryCode}/${defaultLocale}/${product}`);
+    const viewPage = pathname.split("/").pop();
+    switch (viewPage) {
+      case "cart":
+        push(`/${countryCode}/${defaultLocale}/cart`).then(() => reload());
+        break;
+      case "[product]":
+        push(`/${countryCode}/${defaultLocale}/${product}`);
+        break;
+      case "[lang]":
+        push(`/${countryCode}/${defaultLocale}`);
+    }
     setShow(!show);
   };
 
