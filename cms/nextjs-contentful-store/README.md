@@ -213,4 +213,4 @@ Eventually, you would want to add your content data and set up Commerce Layer ma
 
 ---
 
-Want to learn more about how we built this project and how you can build your business's ecommerce site with a similar tech stack? Then you should read [this article](#) on our blog.
+Want to learn more about how we built this project and how you can build your ecommerce site with a similar tech stack? Then you should read [this article](#) on our blog.
