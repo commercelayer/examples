@@ -1,8 +1,8 @@
 # Commerce Layer Nextjs Contentful Store
 
-A multi-country ecommerce store built with Commerce Layer, Next.js, and Contentful.
+A multi-country ecommerce store built with Commerce Layer, Next.js, and Contentful. You can explore the live demo [here](https://cl-nextjs-contentful-store.netlify.app).
 
-[![A preview image showing the frontend demo with some products.](./public/preview.gif)](#)
+[![A preview image showing the frontend demo with some products.](./public/preview.gif)](https://cl-nextjs-contentful-store.netlify.app)
 
 ---
 
@@ -19,9 +19,9 @@ A multi-country ecommerce store built with Commerce Layer, Next.js, and Contentf
 - Comprehensive installation and usage documentation.
 - One-click deployment configuration to your favorite hosting providers.
 
-| [Storefront UI](https://commercelayer-contentful-template.netlify.app)    | [Contentful Editor](https://app.contenful.com)                                                  |
+| [Storefront UI](https://cl-nextjs-contentful-store.netlify.app)    | [Contentful Editor](https://app.contenful.com)             |
 | ----------------------- | ------------------------------ |
-| ![A preview image showing the Commerce Layer dashboard.](./public/ui-preview.png)        | ![A preview image showing the contentful studio.](./public/ct-preview.png)  |
+| ![A preview image showing the storefront.](./public/ui-preview.png)        | ![A preview image showing the contentful studio.](./public/ct-preview.png)  |
 
 ## Important Files and Folders
 
@@ -41,7 +41,9 @@ A multi-country ecommerce store built with Commerce Layer, Next.js, and Contentf
 
 The quickest way to get up and running is to use any of the deploy buttons below to set up and deploy automatically to your favorite hosting provider. Afterward, you will add some seed data to Commerce Layer and Contentful. The deploy button will clone this repository and ask you to enter all the required environment variables. Alternatively, you can clone this repository, configure the template, import the dataset into your Contentful space, import some seed commerce data into your Commerce Layer organization, and deploy your application. The installation guide below will show you how to achieve this.
 
-[<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" height="35">](https://app.netlify.com/start/deploy?repository=https://github.com/commercelayer/commercelayer-contentful-template#BUILD_LANGUAGES=en-US,it-IT,fr-FR&BUILD_SEARCH_ENGINE=algolia&NEXT_PUBLIC_SITE_NAME&NEXT_PUBLIC_SITE_URL&NEXT_PUBLIC_CL_CLIENT_ID&NEXT_PUBLIC_CL_ENDPOINT&NEXT_PUBLIC_CONTENTFUL_SPACE_ID&NEXT_PUBLIC_CONTENTFUL_DELIVERY_ACCESS_TOKEN&NEXT_PUBLIC_ALGOLIA_APP_ID&NEXT_PUBLIC_ALGOLIA_ADMIN_API_KEY) [<img src="https://vercel.com/button" alt="Deploy to Vercel" height="35">](https://vercel.com/new/clone?repository-url=https://github.com/commercelayer/commercelayer-contentful-template&env=BUILD_LANGUAGES=en-US,it-IT,fr-FR&BUILD_SEARCH_ENGINE=algolia&NEXT_PUBLIC_SITE_NAME&NEXT_PUBLIC_SITE_URL&NEXT_PUBLIC_CL_CLIENT_ID&NEXT_PUBLIC_CL_ENDPOINT&NEXT_PUBLIC_CONTENTFUL_SPACE_ID&NEXT_PUBLIC_CONTENTFUL_DELIVERY_ACCESS_TOKEN&NEXT_PUBLIC_ALGOLIA_APP_ID&NEXT_PUBLIC_ALGOLIA_ADMIN_API_KEY)
+[<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" height="35">](<https://app.netlify.com/start/deploy?repository=https://github.com/commercelayer/examples/>
+cms/nextjs-contentful-store#BUILD_LANGUAGES=en-US,it-IT,fr-FR&NEXT_PUBLIC_SITE_NAME&NEXT_PUBLIC_SITE_URL&NEXT_PUBLIC_CL_CLIENT_ID&NEXT_PUBLIC_CL_ENDPOINT&NEXT_PUBLIC_CONTENTFUL_SPACE_ID&NEXT_PUBLIC_CONTENTFUL_DELIVERY_ACCESS_TOKEN) [<img src="https://vercel.com/button" alt="Deploy to Vercel" height="35">](<https://vercel.com/new/clone?repository-url=https://github.com/commercelayer/examples/>>
+cms/nextjs-contentful-store&env=BUILD_LANGUAGES=en-US,it-IT,fr-FR&NEXT_PUBLIC_SITE_NAME&NEXT_PUBLIC_SITE_URL&NEXT_PUBLIC_CL_CLIENT_ID&NEXT_PUBLIC_CL_ENDPOINT&NEXT_PUBLIC_CONTENTFUL_SPACE_ID&NEXT_PUBLIC_CONTENTFUL_DELIVERY_ACCESS_TOKEN)
 
 ### Installation Guide
 
@@ -210,18 +212,6 @@ contentful space import --config data/example-config.json
 We already have some French translations in the `/locale/index.ts` file, but due to the Contentful space limitation, we can only enable two locales. If you have an upgraded plan, you can create a new locale and simply add the content for all fields you want in the dashboard. The storefront will automatically reflect the changes.
 
 Eventually, you would want to add your content data and set up Commerce Layer manually based on your use case. To ensure the storefront runs smoothly, kindly create a [market](https://docs.commercelayer.io/core/v/api-reference/markets) associated with a [stock location](https://docs.commercelayer.io/core/v/api-reference/stock_locations), [stock item](https://docs.commercelayer.io/core/v/api-reference/stock_items), [price list](https://docs.commercelayer.io/core/v/api-reference/price_lists), [price](https://docs.commercelayer.io/core/v/api-reference/prices), and [SKU](https://docs.commercelayer.io/core/v/api-reference/skus) in Commerce Layer and update the `market ID` attribute, create a product, and link to variant(s) on Contentful. If you want to learn more about how Commerce Layer works, see our [onboarding guide](https://docs.commercelayer.io/core/welcome/onboarding-tutorial), [manual configuration guide](https://docs.commercelayer.io/core/welcome/manual-configuration), or [data models documentation](https://commercelayer.io/docs/data-model).
-
-1. Fork [this repository](https://github.com/commercelayer/commercelayer-contentful-template) (learn how to do this [here](https://help.github.com/articles/fork-a-repo)).
-
-2. Clone the forked repository like so:
-
-```bash
-git clone https://github.com/<your username>/commercelayer-contentful-template.git && cd commercelayer-contentful-template
-```
-
-3. Make your changes and create a pull request ([learn how to do this](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request)).
-
-4. Someone will attend to your pull request and provide some feedback.
 
 ---
 
