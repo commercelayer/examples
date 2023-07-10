@@ -11,6 +11,28 @@ import { Taxonomy, Taxon } from "../../typings/models";
 
 type GetClient = () => ContentfulClientApi | null;
 
+type ImageEntry = Entry<{
+  title: string;
+  file: {
+    url: string;
+    contentType: string;
+  };
+}>;
+
+export type Country = Entry<{
+  name: string;
+  code: string;
+  catalog: Entry<ContentfulCatalog>;
+  defaultLocale: string;
+  market_id: string;
+  domain: string;
+  image: ImageEntry;
+}>;
+
+type CountryEntries = {
+  items: Country[];
+};
+
 const client: GetClient = () =>
   createClient({
     space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID as string,
@@ -22,30 +44,12 @@ const getLocale = (locale: string) => {
   return lang.length > 1 ? `${lang[0].toLowerCase()}-${lang[1].toUpperCase()}` : _.first(lang);
 };
 
-type ImageEntry = Entry<{
-  title: string;
-  file: {
-    url: string;
-    contentType: string;
-  };
-}>;
-
 function parseImage(entry: ImageEntry) {
   return {
     title: entry.fields.title,
     url: `https:${entry.fields.file.url}`
   };
 }
-
-export type Country = Entry<{
-  name: string;
-  code: string;
-  catalog: Entry<ContentfulCatalog>;
-  defaultLocale: string;
-  market_id: string;
-  domain: string;
-  image: ImageEntry;
-}>;
 
 function parseCountry({ fields, sys }: Country) {
   const catalog = {
@@ -59,10 +63,6 @@ function parseCountry({ fields, sys }: Country) {
     image: parseImage(fields.image)
   };
 }
-
-type CountryEntries = {
-  items: Country[];
-};
 
 export async function getCountry(countryCode: string, locale = "en-US") {
   const res = await client()?.getEntries<ContentfulCountry["fields"]>({

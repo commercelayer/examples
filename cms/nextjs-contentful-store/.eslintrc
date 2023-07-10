@@ -1,5 +1,5 @@
 {
-  "extends": ["eslint:recommended", "next", "prettier"],
+  "extends": ["eslint:recommended", "prettier", "next/babel", "next/core-web-vitals"],
   "rules": {
     "no-console": ["warn", { "allow": ["warn", "error"] }],
     "jsx-quotes": ["error", "prefer-double"],

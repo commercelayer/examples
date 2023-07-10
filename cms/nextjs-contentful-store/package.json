@@ -11,7 +11,8 @@
     "export": "next export",
     "format": "npx prettier --write . --ignore-path .gitignore",
     "lint": "next lint -- --ignore-path .gitignore",
-    "lint:fix": "pnpm run format && pnpm run lint -- --fix"
+    "lint:fix": "pnpm run format && pnpm run lint -- --fix",
+    "import-seed": "node ./data/import.js"
   },
   "repository": {
     "type": "git",
@@ -47,6 +48,8 @@
     "autoprefixer": "10.4.5",
     "axios": "^0.26.0",
     "contentful": "^9.3.3",
+    "contentful-import": "^8.5.61",
+    "dotenv": "^16.3.1",
     "iframe-resizer-react": "^1.1.0",
     "js-cookie": "^3.0.1",
     "latest": "^0.2.0",
