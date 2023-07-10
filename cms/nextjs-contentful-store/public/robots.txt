@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Host: e https://cl-nextjs-contentful-store.netlify.app
-Sitemap: e https://cl-nextjs-contentful-store.netlify.app/sitemap.xml
+Host: https://cl-nextjs-contentful-store.netlify.app
+Sitemap: https://cl-nextjs-contentful-store.netlify.app/sitemap.xml

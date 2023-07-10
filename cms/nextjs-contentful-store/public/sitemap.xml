@@ -1,6 +1,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>e https://cl-nextjs-contentful-store.netlify.app</loc>
+        <loc>https://cl-nextjs-contentful-store.netlify.app</loc>
         <changefreq>weekly</changefreq>
         <priority>1</priority>
     </url>
