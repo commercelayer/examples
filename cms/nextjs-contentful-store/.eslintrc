@@ -1,5 +1,14 @@
 {
-  "extends": ["eslint:recommended", "prettier", "next/babel", "next/core-web-vitals"],
+  "extends": ["next", "next/core-web-vitals", "eslint:recommended", "prettier"],
+  "overrides": [
+    {
+      "files": ["data/import.js"],
+      "parser": "espree",
+      "parserOptions": {
+        "ecmaVersion": 2020
+      }
+    }
+  ],
   "rules": {
     "no-console": ["warn", { "allow": ["warn", "error"] }],
     "jsx-quotes": ["error", "prefer-double"],
