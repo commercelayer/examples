@@ -79,7 +79,7 @@ const CartIframe: React.FC<CartProps> = ({ countryCode, slug, clToken }) => {
   );
 };
 
-const ShoppingBagPage: NextPage<Props> = ({ lang, buildLanguages = [], countries, country }) => {
+const ShoppingBagPage: NextPage<Props> = ({ lang, countries, country, buildLanguages = [] }) => {
   const languageCode = parseLanguageCode(lang, "toLowerCase", true);
   const countryCode = country?.code.toLowerCase() as string;
   const clMarketId = country?.marketId as string;
@@ -116,25 +116,23 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   try {
     const lang = params?.lang as string;
     const countryCode = params?.countryCode as string;
-    const countries = _.has(contentfulApi, "allCountries")
-      ? await contentfulApi["allCountries"](lang)
-      : {};
-    const country = countries.find(
-      (country: Country) => country.code.toLowerCase() === countryCode
-    );
+    const countries = await contentfulApi.getAllCountries(lang);
+    const country = countries.find((countryItem) => countryItem.code.toLowerCase() === countryCode);
     const buildLanguages = _.compact(
-      process.env.BUILD_LANGUAGES?.split(",").map((l) => {
-        const country = countries.find((country: Country) => country.code === parseLanguageCode(l));
+      process.env.BUILD_LANGUAGES?.split(",").map((language) => {
+        const country = countries.find(
+          (countryItem) => countryItem.code === parseLanguageCode(language)
+        );
         return !_.isEmpty(country) ? country : null;
       })
     );
 
     return {
       props: {
-        buildLanguages,
         lang,
         countries,
-        country
+        country,
+        buildLanguages
       }
     };
   } catch (err: any) {

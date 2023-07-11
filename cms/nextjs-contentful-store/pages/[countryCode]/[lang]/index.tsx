@@ -66,21 +66,17 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   try {
     const lang = params?.lang as string;
     const countryCode = params?.countryCode as string;
-    const countries = _.has(contentfulApi, "allCountries")
-      ? await contentfulApi["allCountries"](lang)
-      : {};
-    const country = countries.find(
-      (country: Country) => country.code.toLowerCase() === countryCode
-    );
+    const countries = await contentfulApi.getAllCountries(lang);
+    const country = countries.find((countryItem) => countryItem.code.toLowerCase() === countryCode);
     const buildLanguages = _.compact(
-      process.env.BUILD_LANGUAGES?.split(",").map((l) => {
-        const country = countries.find((country: Country) => country.code === parseLanguageCode(l));
+      process.env.BUILD_LANGUAGES?.split(",").map((language) => {
+        const country = countries.find(
+          (countryItem) => countryItem.code === parseLanguageCode(language)
+        );
         return !_.isEmpty(country) ? country : null;
       })
     );
-    const taxonomies = _.has(contentfulApi, "allTaxonomies")
-      ? await contentfulApi["allTaxonomies"](country.catalog.id, lang)
-      : {};
+    const taxonomies = await contentfulApi.getAllTaxonomies(country!.catalog.id, lang);
 
     return {
       props: {

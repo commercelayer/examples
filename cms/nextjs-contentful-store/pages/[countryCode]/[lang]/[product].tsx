@@ -167,21 +167,19 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }: any) => {
   const lang = params?.lang as string;
-  const slug = params?.product;
+  const slug = params?.product as string;
   const countryCode = params?.countryCode as string;
-  const countries = _.has(contentfulApi, "allCountries")
-    ? await contentfulApi["allCountries"](lang)
-    : {};
-  const country = countries.find((country: Country) => country.code.toLowerCase() === countryCode);
+  const countries = await contentfulApi.getAllCountries(lang);
+  const country = countries.find((countryItem) => countryItem.code.toLowerCase() === countryCode);
   const buildLanguages = _.compact(
-    process.env.BUILD_LANGUAGES?.split(",").map((l) => {
-      const country = countries.find((country: Country) => country.code === parseLanguageCode(l));
+    process.env.BUILD_LANGUAGES?.split(",").map((language) => {
+      const country = countries.find(
+        (countryItem) => countryItem.code === parseLanguageCode(language)
+      );
       return !_.isEmpty(country) ? country : null;
     })
   );
-  const product = _.has(contentfulApi, "getProduct")
-    ? await contentfulApi["getProduct"](slug, lang)
-    : {};
+  const product = await contentfulApi.getProduct(slug, lang);
 
   return {
     props: {

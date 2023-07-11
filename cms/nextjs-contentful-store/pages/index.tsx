@@ -33,9 +33,7 @@ const IndexPage: NextPage<Props> = ({ countries }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const countries = _.has(contentfulApi, "allCountries")
-    ? await contentfulApi["allCountries"]()
-    : [];
+  const countries = await contentfulApi.getAllCountries();
   return {
     props: {
       countries
