@@ -7,25 +7,19 @@ import { Price, PricesContainer, AddToCartButton } from "@commercelayer/react-co
 import { useGetToken } from "@hooks/GetToken";
 import locale from "@locale/index";
 import Page from "@components/Page";
-import { Product, Country } from "@typings/models";
+import { Country, Product } from "@typings/models";
 import { parseImg, parseLanguageCode } from "@utils/parser";
 import contentfulApi from "@utils/contentful/api";
 
 type Props = {
   lang: string;
-  countryCode: string;
-  country: {
-    code: string;
-    defaultLocale: string;
-    marketId: string;
-  };
-  clMarketId: string;
   countries: Country[];
-  buildLanguages?: Country[];
+  country: Country | undefined;
   product: Product;
+  buildLanguages: Country[];
 };
 
-const ProductPage: React.FC<Props> = ({ lang, country, countries, buildLanguages, product }) => {
+const ProductPage: React.FC<Props> = ({ lang, countries, country, product, buildLanguages }) => {
   const countryCode = country?.code.toLowerCase() as string;
   const clMarketId = country?.marketId as string;
   const clEndpoint = process.env.NEXT_PUBLIC_CL_ENDPOINT as string;
@@ -39,7 +33,7 @@ const ProductPage: React.FC<Props> = ({ lang, country, countries, buildLanguages
   const firstVariantCode = _.first(product?.variants)?.code as string;
   const variantOptions = product?.variants?.map((variant) => {
     return {
-      label: variant.size.name,
+      label: variant.size?.name,
       code: variant.code,
       lineItem: {
         name: product.name,
@@ -165,30 +159,31 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps = async ({ params }: any) => {
+export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
   const lang = params?.lang as string;
   const slug = params?.product as string;
   const countryCode = params?.countryCode as string;
   const countries = await contentfulApi.getAllCountries(lang);
-  const country = countries.find((countryItem) => countryItem.code.toLowerCase() === countryCode);
+  const country = countries.find(
+    (currentCountry) => currentCountry.code.toLowerCase() === countryCode
+  );
+  const product = await contentfulApi.getProduct(slug, lang);
   const buildLanguages = _.compact(
     process.env.BUILD_LANGUAGES?.split(",").map((language) => {
       const country = countries.find(
-        (countryItem) => countryItem.code === parseLanguageCode(language)
+        (currentCountry) => currentCountry.code === parseLanguageCode(language)
       );
       return !_.isEmpty(country) ? country : null;
     })
   );
-  const product = await contentfulApi.getProduct(slug, lang);
 
   return {
     props: {
       lang,
-      countryCode,
       country,
       countries,
-      buildLanguages,
-      product
+      product,
+      buildLanguages
     },
     revalidate: 60
   };

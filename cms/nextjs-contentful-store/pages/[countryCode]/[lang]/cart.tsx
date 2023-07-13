@@ -1,6 +1,6 @@
 import _ from "lodash";
 import React, { useState, useEffect } from "react";
-import { GetStaticProps, GetStaticPaths, NextPage } from "next";
+import { GetStaticProps, GetStaticPaths } from "next";
 import IframeResizer from "iframe-resizer-react";
 import { useOrderContainer } from "@commercelayer/react-components/hooks/useOrderContainer";
 import Page from "@components/Page";
@@ -17,15 +17,9 @@ type CartProps = {
 
 type Props = {
   lang: string;
-  slug: string;
-  clToken: string;
-  buildLanguages?: Country[];
-  countries?: any[];
-  country: {
-    code: string;
-    defaultLocale: string;
-    marketId: string;
-  };
+  countries: Country[];
+  country: Country | undefined;
+  buildLanguages: Country[];
 };
 
 const CartIframe: React.FC<CartProps> = ({ countryCode, slug, clToken }) => {
@@ -79,7 +73,7 @@ const CartIframe: React.FC<CartProps> = ({ countryCode, slug, clToken }) => {
   );
 };
 
-const ShoppingBagPage: NextPage<Props> = ({ lang, countries, country, buildLanguages = [] }) => {
+const ShoppingBagPage: React.FC<Props> = ({ lang, countries, country, buildLanguages }) => {
   const languageCode = parseLanguageCode(lang, "toLowerCase", true);
   const countryCode = country?.code.toLowerCase() as string;
   const clMarketId = country?.marketId as string;
@@ -112,38 +106,30 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  try {
-    const lang = params?.lang as string;
-    const countryCode = params?.countryCode as string;
-    const countries = await contentfulApi.getAllCountries(lang);
-    const country = countries.find((countryItem) => countryItem.code.toLowerCase() === countryCode);
-    const buildLanguages = _.compact(
-      process.env.BUILD_LANGUAGES?.split(",").map((language) => {
-        const country = countries.find(
-          (countryItem) => countryItem.code === parseLanguageCode(language)
-        );
-        return !_.isEmpty(country) ? country : null;
-      })
-    );
+export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
+  const lang = params?.lang as string;
+  const countryCode = params?.countryCode as string;
+  const countries = await contentfulApi.getAllCountries(lang);
+  const country = countries.find(
+    (currentCountry) => currentCountry.code.toLowerCase() === countryCode
+  );
+  const buildLanguages = _.compact(
+    process.env.BUILD_LANGUAGES?.split(",").map((language) => {
+      const country = countries.find(
+        (currentCountry) => currentCountry.code === parseLanguageCode(language)
+      );
+      return !_.isEmpty(country) ? country : null;
+    })
+  );
 
-    return {
-      props: {
-        lang,
-        countries,
-        country,
-        buildLanguages
-      }
-    };
-  } catch (err: any) {
-    console.error(err);
-    return {
-      props: {
-        errors: err.message
-      },
-      revalidate: 60
-    };
-  }
+  return {
+    props: {
+      lang,
+      countries,
+      country,
+      buildLanguages
+    }
+  };
 };
 
 export default ShoppingBagPage;

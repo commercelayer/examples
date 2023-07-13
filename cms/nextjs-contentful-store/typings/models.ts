@@ -1,10 +1,39 @@
+export interface Image {
+  title: string;
+  description?: string;
+  file?: {
+    url?: string;
+    details?: {
+      size: number;
+      image: {
+        width: number;
+        height: number;
+      };
+    };
+    fileName?: string;
+    contentType: string;
+  };
+  url: string;
+}
+
+export interface SelectorObject {
+  code: string;
+  imageUrl: string;
+}
+
 export interface Country {
   name: string;
-  defaultLocale: string;
   code: string;
-  domain: string;
-  catalog: Catalog;
-  image: Image;
+  catalog: {
+    id: string;
+  };
+  marketId: string;
+  image: {
+    title: string;
+    url: string;
+  };
+  defaultLocale: string;
+  id: string;
 }
 
 export interface Catalog {
@@ -14,46 +43,34 @@ export interface Catalog {
 
 export interface Taxonomy {
   name: string;
+  label: string;
   taxons: Taxon[];
 }
 
 export interface Taxon {
   name: string;
+  label: string;
   slug: string;
-  description: string;
   products: Product[];
-  taxons: Taxon[];
-}
-
-export interface Image {
-  file?: {
-    url?: string;
-  };
-  url: string;
 }
 
 export interface Product {
   name: string;
-  slug: string;
-  variants: Variant[];
-  reference: string;
   description: string;
+  slug: string;
+  reference: string;
   images: Image[];
+  variants: Variant[];
 }
 
 export interface Variant {
   name: string;
   code: string;
   description: string;
-  size: Size;
-  images: Image[];
+  images?: Image[];
+  size?: Size;
 }
 
 export interface Size {
   name: string;
-}
-
-export interface SelectorObject {
-  code: string;
-  imageUrl: string;
 }

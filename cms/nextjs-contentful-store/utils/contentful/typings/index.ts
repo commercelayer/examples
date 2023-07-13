@@ -1,37 +1,31 @@
 import { Entry } from "contentful";
-import { Size, Variant, Product, Taxon, Taxonomy, Catalog } from "../../../typings/models";
-import { Country } from "../api";
+import { Country, Catalog, Product, Taxon, Taxonomy, Size, Variant } from "@typings/models";
 
-type ContentfulImage = Entry<{
+export type ContentfulImage = Entry<{
   title: string;
   file: {
     url: string;
-    details: {
-      size: number;
-      image: {
-        width: number;
-        height: number;
-      };
-    };
-    filename: string;
     contentType: string;
   };
 }>;
 
-export type ContentfulSize = Entry<Size>;
-
-export type ContentfulVariant = Entry<
+export type ContentfulCountry = Entry<
   {
-    images: ContentfulImage[];
-    size: ContentfulSize;
-  } & Variant
+    catalog: Entry<ContentfulCatalog>;
+    image: ContentfulImage;
+  } & Country
 >;
 
-export type ContentfulProduct = Entry<
+export type ContentfulCatalog = Entry<
   {
-    variants: ContentfulVariant[];
-    images: ContentfulImage[];
-  } & Product
+    taxonomies: ContentfulTaxonomy[];
+  } & Catalog
+>;
+
+export type ContentfulTaxonomy = Entry<
+  {
+    taxons: ContentfulTaxon[];
+  } & Taxonomy
 >;
 
 export type ContentfulTaxon = Entry<
@@ -42,29 +36,18 @@ export type ContentfulTaxon = Entry<
   } & Taxon
 >;
 
-export type ContentfulTaxonomy = Entry<
+export type ContentfulProduct = Entry<
   {
-    name: string;
-    taxons: ContentfulTaxon[];
-  } & Taxonomy
+    variants: ContentfulVariant[];
+    images: ContentfulImage[];
+  } & Product
 >;
 
-export type ContentfulCatalog = Entry<
+export type ContentfulVariant = Entry<
   {
-    taxonomies: ContentfulTaxonomy[];
-  } & Catalog
+    images: ContentfulImage[];
+    size: ContentfulSize;
+  } & Variant
 >;
 
-export interface ProductForPage {
-  locale: string;
-  categoryName: string;
-  name: string;
-}
-
-export type ContentfulCountry = Entry<
-  Country["fields"] & {
-    catalogue: ContentfulCatalog;
-    image: ContentfulImage;
-    marketId: string;
-  }
->;
+export type ContentfulSize = Entry<Size>;

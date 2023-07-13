@@ -3,12 +3,11 @@ import Image from "next/image";
 import { GetStaticProps, NextPage } from "next";
 import SEOHead from "@components/SEO";
 import Countries from "@components/Countries";
+import { Country } from "@typings/models";
 import contentfulApi from "@utils/contentful/api";
 
 type Props = {
-  [key: string]: any;
-  lang: string;
-  countries: any[];
+  countries: Country[];
 };
 
 const IndexPage: NextPage<Props> = ({ countries }) => {
@@ -32,8 +31,8 @@ const IndexPage: NextPage<Props> = ({ countries }) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async () => {
-  const countries = await contentfulApi.getAllCountries();
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const countries = await contentfulApi.getAllCountries("en-US");
   return {
     props: {
       countries

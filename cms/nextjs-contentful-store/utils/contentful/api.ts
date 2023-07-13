@@ -1,73 +1,60 @@
 import _ from "lodash";
-import { createClient, ContentfulClientApi, Entry } from "contentful";
+import { createClient, ContentfulClientApi } from "contentful";
 import {
+  ContentfulImage,
   ContentfulProduct,
-  ContentfulCatalog,
-  ContentfulTaxonomy,
-  ContentfulTaxon
+  ContentfulCountry,
+  ContentfulCatalog
 } from "./typings";
-import { Taxonomy } from "../../typings/models";
+import { Taxonomy } from "@typings/models";
 
 type GetClient = () => ContentfulClientApi | null;
 
-type ImageEntry = Entry<{
-  title: string;
-  file: {
-    url: string;
-    contentType: string;
-  };
-}>;
+const client: GetClient = () =>
+  createClient({
+    space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID as string,
+    accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_DELIVERY_ACCESS_TOKEN as string
+  });
 
-export type Country = Entry<{
-  name: string;
-  code: string;
-  catalog: Entry<ContentfulCatalog>;
-  defaultLocale: string;
-  market_id: string;
-  domain: string;
-  image: ImageEntry;
-}>;
-
-type CountryEntries = {
-  items: Country[];
-};
-
-function parseImage(entry: ImageEntry) {
+function parseImage(entry: ContentfulImage) {
   return {
     title: entry.fields.title,
     url: `https:${entry.fields.file.url}`
   };
 }
 
-function parseCountry({ fields, sys }: Country) {
-  const catalog = {
-    ...fields.catalog.fields,
-    id: fields.catalog.sys.id
-  };
-  return {
-    ...fields,
-    catalog,
-    id: sys.id,
-    image: parseImage(fields.image)
-  };
-}
-
-function parseCountryEntries(entries: CountryEntries, cb = parseCountry) {
-  return entries?.items?.map(cb);
+function parseCountries(entries: ContentfulCountry[]) {
+  const countries = entries?.map(({ fields, sys }: ContentfulCountry) => {
+    return {
+      ...fields,
+      catalog: {
+        id: fields.catalog.sys.id
+      },
+      id: sys.id,
+      image: parseImage(fields.image)
+    };
+  });
+  return countries;
 }
 
 function parseTaxonomies(catalogs: ContentfulCatalog[], items: Taxonomy[] = []) {
   catalogs.map((catalog) => {
-    catalog.fields.taxonomies.map((taxonomy: ContentfulTaxonomy) => {
+    catalog.fields.taxonomies.map((taxonomy) => {
       const { fields } = taxonomy;
-      const taxons = fields.taxons.map((taxon: ContentfulTaxon) => {
+      const taxons = fields.taxons.map((taxon) => {
         const products = !_.isEmpty(taxon.fields.products)
           ? taxon.fields.products.map((product) => {
               const images = product.fields.images.map((image) => {
                 const url = `https:${image.fields.file.url}`;
                 return { ...image.fields, url };
               });
-              const variants = product.fields.variants.map((variant) => variant.fields);
+              const variants = product.fields.variants.map((variant) => {
+                return {
+                  name: variant.fields.name,
+                  code: variant.fields.code,
+                  description: variant.fields.description
+                };
+              });
               return { ...product.fields, images, variants };
             })
           : [];
@@ -80,9 +67,8 @@ function parseTaxonomies(catalogs: ContentfulCatalog[], items: Taxonomy[] = []) 
 }
 
 function parseProduct(product?: ContentfulProduct) {
-  if (!product) return {};
-  const singleProduct = product.fields;
-  const variants = singleProduct.variants.map((variant) => {
+  const { fields } = product!;
+  const variants = fields.variants.map((variant) => {
     const images = variant.fields.images.map((image) => {
       const url = `https:${image.fields.file.url}`;
       return { ...image.fields, url };
@@ -94,48 +80,42 @@ function parseProduct(product?: ContentfulProduct) {
       size
     };
   });
-  const images = singleProduct.images.map((image) => {
+  const images = fields.images.map((image) => {
     const url = `https:${image.fields.file.url}`;
     return { ...image.fields, url };
   });
   return {
-    ...singleProduct,
+    ...fields,
     variants,
     images
   };
 }
-
-const client: GetClient = () =>
-  createClient({
-    space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID as string,
-    accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_DELIVERY_ACCESS_TOKEN as string
-  });
 
 const getLocale = (locale: string) => {
   const lang = locale.split("-");
   return lang.length > 1 ? `${lang[0].toLowerCase()}-${lang[1].toUpperCase()}` : _.first(lang);
 };
 
-export const getAllCountries = async (locale = "en-US") => {
+export const getAllCountries = async (locale: string) => {
   const countries = await client()?.getEntries({
     content_type: "country",
     order: "fields.name",
     locale: getLocale(locale)
   });
-  return parseCountryEntries(countries as CountryEntries);
+  return parseCountries(countries!.items as ContentfulCountry[]);
 };
 
-export const getAllTaxonomies = async (catalogId: string, locale = "en-US") => {
-  const catalog: any = await client()?.getEntries({
+export const getAllTaxonomies = async (catalogId: string, locale: string) => {
+  const catalog = await client()?.getEntries({
     content_type: "catalog",
     "sys.id": catalogId,
     locale: getLocale(locale),
     include: 4
   });
-  return parseTaxonomies(catalog.items as ContentfulCatalog[]);
+  return parseTaxonomies(catalog!.items as ContentfulCatalog[]);
 };
 
-export async function getProduct(slug: string, locale = "en-US") {
+export const getProduct = async (slug: string, locale: string) => {
   const lang = getLocale(locale);
   const products = await client()?.getEntries<ContentfulProduct["fields"]>({
     content_type: "product",
@@ -143,9 +123,9 @@ export async function getProduct(slug: string, locale = "en-US") {
     locale: lang,
     "fields.slug[localeCode]": slug
   });
-  const item = _.first(products?.items.filter((product) => product.fields.slug === slug));
+  const item = _.first(products!.items.filter((product) => product.fields.slug === slug));
   return parseProduct(item);
-}
+};
 
 const contentfulApi = {
   getAllCountries,
