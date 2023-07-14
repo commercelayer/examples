@@ -192,7 +192,19 @@ pnpm run import-seed
 
 4. We already have some French translations in the `/locale/index.ts` file, but due to the Contentful space limitation, we can only enable two locales for this example. If you have an upgraded plan, you can create a new locale and simply add the content for all fields you want in the dashboard. The storefront will automatically reflect the changes.
 
-5. Eventually, you would want to add your content data and set up Commerce Layer manually based on your use case. To ensure the storefront runs smoothly, kindly create a [market](https://docs.commercelayer.io/core/v/api-reference/markets) associated with a [stock location](https://docs.commercelayer.io/core/v/api-reference/stock_locations), [stock item](https://docs.commercelayer.io/core/v/api-reference/stock_items), [price list](https://docs.commercelayer.io/core/v/api-reference/price_lists), [price](https://docs.commercelayer.io/core/v/api-reference/prices), and [SKU](https://docs.commercelayer.io/core/v/api-reference/skus) in Commerce Layer and update the `market ID` attribute, create a product, and link to variant(s) on Contentful. If you want to learn more about how Commerce Layer works, see our [onboarding guide](https://docs.commercelayer.io/core/welcome/onboarding-tutorial), [manual configuration guide](https://docs.commercelayer.io/core/welcome/manual-configuration), or [data models documentation](https://commercelayer.io/docs/data-model).
+### Add Custom Commerce and Content Data
+
+Eventually, you would want to set up commerce data in Commerce Layer manually and add your content data in Contentful based on your use case. To ensure the template runs smoothly, kindly do the following:
+
+1. In the [Commerce Layer dashboard](https://dashboard.commercelayer.io), create a [market](https://docs.commercelayer.io/core/v/api-reference/markets) (if you need a new one) associated with a [stock location](https://docs.commercelayer.io/core/v/api-reference/stock_locations), [stock item](https://docs.commercelayer.io/core/v/api-reference/stock_items), [price list](https://docs.commercelayer.io/core/v/api-reference/price_lists), [price](https://docs.commercelayer.io/core/v/api-reference/prices), and [SKU](https://docs.commercelayer.io/core/v/api-reference/skus)(s) and add a new `Country` content in Contentful with a valid `market ID` attribute.
+
+2. In the [Contentful dashboard](https://app.contenful.com), add the content for the new SKUs as a `Variant` and associate them with a `Product` content model. You can then go ahead to update other content models like `Taxon`, `Taxonomy`, and `Catalog` as you deem fit.
+
+3. Ensure to read our [onboarding guide](https://docs.commercelayer.io/core/welcome/onboarding-tutorial), [manual configuration guide](https://docs.commercelayer.io/core/welcome/manual-configuration), or [data models documentation](https://commercelayer.io/docs/data-model) to learn more about how Commerce Layer works and the relationships between each API resource.
+
+> **Note**
+>
+> If you want to start a fresh project, we recommend you use a fresh Commerce Layer organization and a fresh Contentful space without seed data so you can add your data from scratch. You can then use the seed data as a guide to set up all the required resources in Commerce Layer. If you have existing commerce data, you can also leverage our [Import API](https://docs.commercelayer.io/core/importing-resources) or [CLI Import Plugin](https://github.com/commercelayer/commercelayer-cli-plugin-imports/).
 
 ---
 
