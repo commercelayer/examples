@@ -24,7 +24,6 @@ export const useGetToken: UseGetToken = ({ scope, countryCode }) => {
         });
         setToken(auth?.accessToken as string);
         Cookies.set(`clAccessToken-${countryCode}`, auth?.accessToken as string, {
-          // @ts-ignore
           expires: auth?.expires
         });
       };
