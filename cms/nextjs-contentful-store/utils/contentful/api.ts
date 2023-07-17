@@ -67,7 +67,8 @@ function parseTaxonomies(catalogs: ContentfulCatalog[], items: Taxonomy[] = []) 
 }
 
 function parseProduct(product?: ContentfulProduct) {
-  const { fields } = product!;
+  if (!product) return null;
+  const { fields } = product;
   const variants = fields.variants.map((variant) => {
     const images = variant.fields.images.map((image) => {
       const url = `https:${image.fields.file.url}`;
