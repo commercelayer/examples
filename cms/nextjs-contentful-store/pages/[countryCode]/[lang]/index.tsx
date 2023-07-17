@@ -12,15 +12,15 @@ import contentfulApi from "@utils/contentful/api";
 type Props = {
   lang: string;
   countries: Country[];
-  country: Country | undefined;
+  country: Country;
   taxonomies: Taxonomy[];
   buildLanguages: Country[];
 };
 
 const HomePage: React.FC<Props> = ({ lang, countries, country, taxonomies, buildLanguages }) => {
   const languageCode = parseLanguageCode(lang, "toLowerCase", true);
-  const countryCode = country?.code.toLowerCase() as string;
-  const clMarketId = country?.marketId as string;
+  const countryCode = country.code.toLowerCase();
+  const clMarketId = country.marketId;
   const clEndpoint = process.env.NEXT_PUBLIC_CL_ENDPOINT as string;
   const clToken = useGetToken({
     scope: clMarketId,
@@ -72,6 +72,12 @@ export const getStaticProps: GetStaticProps<Props, Query> = async ({ params }) =
       return !_.isEmpty(country) ? country : null;
     })
   );
+
+  if (!country) {
+    return {
+      notFound: true
+    };
+  }
 
   return {
     props: {

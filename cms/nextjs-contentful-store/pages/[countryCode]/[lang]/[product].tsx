@@ -14,14 +14,14 @@ import contentfulApi from "@utils/contentful/api";
 type Props = {
   lang: string;
   countries: Country[];
-  country: Country | undefined;
-  product: Product | null;
+  country: Country;
+  product: Product;
   buildLanguages: Country[];
 };
 
 const ProductPage: React.FC<Props> = ({ lang, countries, country, product, buildLanguages }) => {
-  const countryCode = country?.code.toLowerCase() as string;
-  const clMarketId = country?.marketId as string;
+  const countryCode = country.code.toLowerCase();
+  const clMarketId = country.marketId;
   const clEndpoint = process.env.NEXT_PUBLIC_CL_ENDPOINT as string;
   const clToken = useGetToken({
     scope: clMarketId,
@@ -29,12 +29,12 @@ const ProductPage: React.FC<Props> = ({ lang, countries, country, product, build
   });
   const languageCode = parseLanguageCode(lang, "toLowerCase", true);
 
-  const imgUrl = parseImg(_.first(product?.images)?.url as string);
-  const firstVariantCode = _.first(product?.variants)?.code as string;
-  const variantOptions = product?.variants?.map((variant) => {
+  const imgUrl = parseImg(_.first(product.images)?.url as string);
+  const firstVariantCode = _.first(product.variants)?.code;
+  const variantOptions = product.variants.map((variant) => {
     return {
-      label: variant.size?.name,
       code: variant.code,
+      label: variant.size?.name,
       lineItem: {
         name: product.name,
         imageUrl: _.first(variant.images)?.url
@@ -51,7 +51,7 @@ const ProductPage: React.FC<Props> = ({ lang, countries, country, product, build
   return (
     <Page
       buildLanguages={buildLanguages}
-      pageTitle={product?.name}
+      pageTitle={product.name}
       lang={lang}
       clToken={clToken}
       clEndpoint={clEndpoint}
@@ -86,7 +86,7 @@ const ProductPage: React.FC<Props> = ({ lang, countries, country, product, build
         <div className="flex flex-wrap sm:flex-nowrap sm:space-x-5 px-5 lg:px-0">
           <div className="w-full pb-5 lg:pb-0">
             <Image
-              alt={product?.name as string}
+              alt={product.name as string}
               className="w-full object-center rounded border border-gray-200"
               src={imgUrl}
               width={500}
@@ -95,9 +95,9 @@ const ProductPage: React.FC<Props> = ({ lang, countries, country, product, build
           </div>
           <div className="w-full">
             <h2 className="text-sm title-font text-gray-500 tracking-widest">BRAND</h2>
-            <p className="text-gray-900 text-3xl title-font font-medium my-3">{product?.name}</p>
+            <p className="text-gray-900 text-3xl title-font font-medium my-3">{product.name}</p>
             <p className="text-gray-600 text-xl title-font font-medium my-3">{selectedVariant}</p>
-            <p className="leading-relaxed">{product?.description}</p>
+            <p className="leading-relaxed">{product.description}</p>
             <div className="flex items-center border-b-2 border-gray-200 py-5">
               <div className="flex items-center">
                 <div className="relative" data-children-count="1">
@@ -107,7 +107,7 @@ const ProductPage: React.FC<Props> = ({ lang, countries, country, product, build
                     value={selectedVariant}
                     onChange={(e) => setSelectedVariant(e.target.value)}
                   >
-                    {variantOptions?.map((option) => (
+                    {variantOptions.map((option) => (
                       <option key={option.code} value={option.code}>
                         {option.label}
                       </option>
@@ -172,12 +172,6 @@ export const getStaticProps: GetStaticProps<Props, Query> = async ({ params }) =
     (currentCountry) => currentCountry.code.toLowerCase() === countryCode
   );
   const product = await contentfulApi.getProduct(slug, lang);
-  if (!product) {
-    return {
-      notFound: true
-    };
-  }
-
   const buildLanguages = _.compact(
     process.env.BUILD_LANGUAGES?.split(",").map((language) => {
       const country = countries.find(
@@ -186,6 +180,12 @@ export const getStaticProps: GetStaticProps<Props, Query> = async ({ params }) =
       return !_.isEmpty(country) ? country : null;
     })
   );
+
+  if (!product || !country) {
+    return {
+      notFound: true
+    };
+  }
 
   return {
     props: {
