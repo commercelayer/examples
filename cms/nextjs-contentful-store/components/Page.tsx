@@ -5,13 +5,13 @@ import { Country } from "@typings/models";
 
 type Props = {
   children: React.ReactNode;
-  buildLanguages?: Country[];
+  buildLanguages: Country[];
   lang: string;
   clToken: string;
   clEndpoint: string;
   languageCode: string;
   countryCode: string;
-  countries?: any[];
+  countries: Country[];
   pageTitle?: string;
 };
 

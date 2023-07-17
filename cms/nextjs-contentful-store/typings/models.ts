@@ -1,21 +1,3 @@
-export interface Image {
-  title: string;
-  description?: string;
-  file?: {
-    url?: string;
-    details?: {
-      size: number;
-      image: {
-        width: number;
-        height: number;
-      };
-    };
-    fileName?: string;
-    contentType: string;
-  };
-  url: string;
-}
-
 export interface SelectorObject {
   code: string;
   imageUrl: string;
@@ -64,13 +46,31 @@ export interface Product {
 }
 
 export interface Variant {
-  name: string;
   code: string;
+  name: string;
   description: string;
-  images?: Image[];
-  size?: Size;
+  images: Image[];
+  size: Size;
 }
 
 export interface Size {
   name: string;
+}
+
+export interface Image {
+  title: string;
+  description: string;
+  file: {
+    url: string;
+    details: {
+      size: number;
+      image: {
+        width: number;
+        height: number;
+      };
+    };
+    fileName: string;
+    contentType: string;
+  };
+  url: string;
 }

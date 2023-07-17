@@ -44,18 +44,15 @@ function parseTaxonomies(catalogs: ContentfulCatalog[], items: Taxonomy[] = []) 
       const taxons = fields.taxons.map((taxon) => {
         const products = !_.isEmpty(taxon.fields.products)
           ? taxon.fields.products.map((product) => {
+              const variants = product.fields.variants.map((variant) => {
+                const code = variant.fields.code;
+                return { ...variant.fields, code };
+              });
               const images = product.fields.images.map((image) => {
                 const url = `https:${image.fields.file.url}`;
                 return { ...image.fields, url };
               });
-              const variants = product.fields.variants.map((variant) => {
-                return {
-                  name: variant.fields.name,
-                  code: variant.fields.code,
-                  description: variant.fields.description
-                };
-              });
-              return { ...product.fields, images, variants };
+              return { ...product.fields, variants, images };
             })
           : [];
         return { ...taxon.fields, products };

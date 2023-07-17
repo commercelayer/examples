@@ -22,7 +22,7 @@ const Header: React.FC<Props> = ({ lang }) => {
               <p className="relative z-10 mt-6 text-lg leading-8 text-gray-700">
                 This ecommerce store is powered by {""}
                 <a
-                  href="//commercelayer.io?utm_source=commercelayer-sanity-template"
+                  href="//commercelayer.io?utm_source=cl-nextjs-contentful-store"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

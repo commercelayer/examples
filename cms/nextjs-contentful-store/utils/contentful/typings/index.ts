@@ -1,13 +1,5 @@
 import { Entry } from "contentful";
-import { Country, Catalog, Product, Taxon, Taxonomy, Size, Variant } from "@typings/models";
-
-export type ContentfulImage = Entry<{
-  title: string;
-  file: {
-    url: string;
-    contentType: string;
-  };
-}>;
+import { Country, Catalog, Product, Taxon, Taxonomy, Variant, Size, Image } from "@typings/models";
 
 export type ContentfulCountry = Entry<
   {
@@ -51,3 +43,5 @@ export type ContentfulVariant = Entry<
 >;
 
 export type ContentfulSize = Entry<Size>;
+
+export type ContentfulImage = Entry<Image>;

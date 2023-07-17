@@ -29,15 +29,15 @@ const ProductPage: React.FC<Props> = ({ lang, countries, country, product, build
   });
   const languageCode = parseLanguageCode(lang, "toLowerCase", true);
 
-  const imgUrl = parseImg(_.first(product.images)?.url as string);
-  const firstVariantCode = _.first(product.variants)?.code;
+  const imageUrl = parseImg(product.images[0].url);
+  const firstVariantCode = product.variants[0].code;
   const variantOptions = product.variants.map((variant) => {
     return {
       code: variant.code,
-      label: variant.size?.name,
+      label: variant.size.name,
       lineItem: {
         name: product.name,
-        imageUrl: _.first(variant.images)?.url
+        imageUrl: variant.images[0].url
       }
     };
   });
@@ -88,7 +88,7 @@ const ProductPage: React.FC<Props> = ({ lang, countries, country, product, build
             <Image
               alt={product.name as string}
               className="w-full object-center rounded border border-gray-200"
-              src={imgUrl}
+              src={imageUrl}
               width={500}
               height={500}
             />

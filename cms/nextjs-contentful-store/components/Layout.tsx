@@ -7,8 +7,8 @@ type Props = {
   children: React.ReactNode;
   lang: string;
   countryCode: string;
-  buildLanguages?: Country[];
-  countries?: Country[];
+  buildLanguages: Country[];
+  countries: Country[];
   pageTitle?: string;
 };
 

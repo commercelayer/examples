@@ -5,10 +5,9 @@ import ProductsList from "@components/ProductsList";
 type Props = {
   taxonomies: {
     name: string;
-    label?: string;
+    label: string;
     taxons: any[];
   }[];
-  lang?: string;
 };
 
 const Taxonomies = ({ taxonomies }: Props) => {
