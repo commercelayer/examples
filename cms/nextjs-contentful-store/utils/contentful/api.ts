@@ -1,4 +1,4 @@
-import _, { size } from "lodash";
+import _ from "lodash";
 import { createClient, ContentfulClientApi } from "contentful";
 import {
   ContentfulImage,
