@@ -27,7 +27,7 @@ const HomePage: React.FC<Props> = ({ lang, countries, country, taxonomies, build
     countryCode: countryCode
   });
 
-  return !lang ? null : (
+  return (
     <Page
       buildLanguages={buildLanguages}
       lang={lang}
@@ -45,16 +45,20 @@ const HomePage: React.FC<Props> = ({ lang, countries, country, taxonomies, build
 
 export default HomePage;
 
+type Query = {
+  lang: string;
+  countryCode: string;
+};
+
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: [],
-    fallback: true
+    fallback: "blocking"
   };
 };
 
-export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
-  const lang = params?.lang as string;
-  const countryCode = params?.countryCode as string;
+export const getStaticProps: GetStaticProps<Props, Query> = async ({ params }) => {
+  const { lang, countryCode } = params!;
   const countries = await contentfulApi.getAllCountries(lang);
   const country = countries.find(
     (currentCountry) => currentCountry.code.toLowerCase() === countryCode

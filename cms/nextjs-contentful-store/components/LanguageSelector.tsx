@@ -127,7 +127,7 @@ const LanguageSelector: React.FC<Props> = ({ options }) => {
                           selected ? "font-semibold" : "font-normal"
                         } ml-3 block font-normal capitalize truncate`}
                       >
-                        {locale[lang as string].languages[value as string]}
+                        {locale[lang as string].languages[value]}
                       </span>
                     </div>
                     <span
