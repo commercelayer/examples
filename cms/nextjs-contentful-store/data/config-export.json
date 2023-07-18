@@ -1,0 +1,12 @@
+{
+  "spaceId": "",
+  "managementToken": "",
+  "deliveryToken": "",
+  "contentFile": "contentful-seed.json",
+  "downloadAssets": true,
+  "includeDrafts": false,
+  "includeArchived": false,
+  "skipRoles": true,
+  "skipWebhooks": true,
+  "skipTags": true
+}
