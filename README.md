@@ -1,6 +1,8 @@
 <div align="center">
-  <a href="https://commercelayer.io/developers">
-    <img src="./examples.svg" height="250" alt="Commerce Layer Examples Illustration">
+  <a href="https://commercelayer.io/developers" target="_blank" rel="noopener noreferrer">
+
+  ![Commerce Layer Examples Illustration](https://raw.githubusercontent.com/commercelayer/examples/main/.assets/examples-light.svg#gh-dark-mode-only)![Commerce Layer Examples Illustration](https://raw.githubusercontent.com/commercelayer/examples/main/.assets/examples-dark.svg#gh-light-mode-only)
+
   </a>
   <h3>Commerce Layer Examples</h3>
   <p>A curated collection of examples, use cases, code demos, and experiments that showcase the power of Commerce Layer API and developer tools.</p>
@@ -8,7 +10,7 @@
 
 ---
 
-This repository contains example code demos that are not production-ready in most cases. We do not encourage you to use the code directly for production development but you can build on them to develop your own ecommerce applications or integrations. Our goal here is to provide you with different reference code (accompanied by tutorials) that will show you different ways you can build with Commerce Layer. We will constantly add new examples with different composable technologies, so check back often :).
+This repository contains example code demos that are not 100% production-ready in most cases. We do not encourage you to use the code directly for production development but you can build on them to develop your ecommerce applications or integrations. Our goal here is to provide you with different reference code (accompanied by tutorials) that will show you different ways you can build with Commerce Layer. We will constantly add new examples with different composable technologies, so check back often :).
 
 Here are the parent categories of the examples in this repository for easy navigation:
 
@@ -72,8 +74,10 @@ This repository is published under the [MIT](LICENSE) license.
 ---
 
 <div align="center">
-  <a href="https://commercelayer.io">
-    <img src="https://data.commercelayer.app/assets/logos/glyph/black/commercelayer_glyph_black.svg" height="50" alt="Commerce Layer Logo">
+  <a href="https://commercelayer.io" target="_blank" rel="noopener noreferrer">
+
+  ![Commerce Layer Logo](https://raw.githubusercontent.com/commercelayer/examples/main/.assets/cl-light.svg#gh-dark-mode-only)![Commerce Layer Logo](https://raw.githubusercontent.com/commercelayer/examples/main/.assets/cl-dark.svg#gh-light-mode-only)
+
   </a>
   <p><a href="https://commercelayer.io/why" target="_blank" rel="noopener noreferrer">Commerce Layer</a> is a multi-market commerce API and order management system that lets you add global shopping capabilities to any website, mobile app, chatbot, wearable, voice, or IoT device, with ease. Compose your stack with the best-of-breed tools you already mastered and love. Make any experience shoppable, anywhere, through a blazing-fast, enterprise-grade, and <a href="https://docs.commercelayer.io" target="_blank" rel="noopener noreferrer">secure API</a>.</p>
 </div>
