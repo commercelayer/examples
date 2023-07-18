@@ -1,11 +1,11 @@
 <div align="center">
-  <a href="https://commercelayer.io/developers" target="_blank" rel="noopener noreferrer">
 
-  ![Commerce Layer Examples Illustration](https://raw.githubusercontent.com/commercelayer/examples/main/.assets/examples-light.svg#gh-dark-mode-only)![Commerce Layer Examples Illustration](https://raw.githubusercontent.com/commercelayer/examples/main/.assets/examples-dark.svg#gh-light-mode-only)
+![Commerce Layer Examples Illustration](/.assets/examples-light.svg#gh-dark-mode-only)
+![Commerce Layer Examples Illustration](/.assets/examples-dark.svg#gh-light-mode-only)
 
-  </a>
-  <h3>Commerce Layer Examples</h3>
-  <p>A curated collection of examples, use cases, code demos, and experiments that showcase the power of Commerce Layer API and developer tools.</p>
+<h3>Commerce Layer Examples</h3>
+<p>A curated collection of examples, use cases, code demos, and experiments that showcase the power of Commerce Layer API and developer tools.</p>
+
 </div>
 
 ---
@@ -74,10 +74,10 @@ This repository is published under the [MIT](LICENSE) license.
 ---
 
 <div align="center">
-  <a href="https://commercelayer.io" target="_blank" rel="noopener noreferrer">
 
-  ![Commerce Layer Logo](https://raw.githubusercontent.com/commercelayer/examples/main/.assets/cl-light.svg#gh-dark-mode-only)![Commerce Layer Logo](https://raw.githubusercontent.com/commercelayer/examples/main/.assets/cl-dark.svg#gh-light-mode-only)
+![Commerce Layer Logo](/.assets/cl-light.svg#gh-dark-mode-only)
+![Commerce Layer Logo](/.assets/cl-dark.svg#gh-light-mode-only)
 
-  </a>
-  <p><a href="https://commercelayer.io/why" target="_blank" rel="noopener noreferrer">Commerce Layer</a> is a multi-market commerce API and order management system that lets you add global shopping capabilities to any website, mobile app, chatbot, wearable, voice, or IoT device, with ease. Compose your stack with the best-of-breed tools you already mastered and love. Make any experience shoppable, anywhere, through a blazing-fast, enterprise-grade, and <a href="https://docs.commercelayer.io" target="_blank" rel="noopener noreferrer">secure API</a>.</p>
+<p><a href="https://commercelayer.io/why" target="_blank" rel="noopener noreferrer">Commerce Layer</a> is a multi-market commerce API and order management system that lets you add global shopping capabilities to any website, mobile app, chatbot, wearable, voice, or IoT device, with ease. Compose your stack with the best-of-breed tools you already mastered and love. Make any experience shoppable, anywhere, through a blazing-fast, enterprise-grade, and <a href="https://docs.commercelayer.io" target="_blank" rel="noopener noreferrer">secure API</a>.</p>
+
 </div>
