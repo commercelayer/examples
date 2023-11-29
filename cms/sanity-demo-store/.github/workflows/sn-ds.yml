@@ -1,0 +1,60 @@
+# Workflow that exports content from Sanity to a github pages folder in the DEMO_NAME folder
+
+name: Sanity workflow
+
+# Controls when the workflow will run
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types: [rebuild_site_with_content_sanity]
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+
+      - name: Node 🧰
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: "npm"
+
+      - name: Install 📦
+        run: npm ci
+      
+      - name: Generate json files from Sanity 🚚
+        run: |
+          npm run sanity:export
+        env:
+          SANITY_PROJECT_ID: ${{ github.event.client_payload.sanity_project_id }}
+          SANITY_DATASET: ${{ github.event.client_payload.sanity_dataset }}
+          SANITY_USE_CDN: ${{ github.event.client_payload.sanity_use_cdn }}
+          SANITY_API_VERSION: ${{ github.event.client_payload.sanity_api_version }}
+          DEMO_NAME: ${{ github.event.client_payload.demo_name }}
+
+      - name: Test 🐛
+        run: |
+          npm run test:data
+        env:
+          DEMO_NAME: ${{ github.event.client_payload.demo_name }}
+
+      - name: Deploy 🚀
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./data/json/
+          keep_files: true
+
