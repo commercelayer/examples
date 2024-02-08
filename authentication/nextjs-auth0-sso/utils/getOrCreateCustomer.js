@@ -4,7 +4,9 @@ import getClient from './getIntegration';
 export default async function getOrCreateCustomer(user) {
   const auth0UserId = user.sub;
   const client = await getClient();
-  const customer = await client.customers.list({ filters: { email_eq: user.email } });
+  const customer = await client.customers.list({
+    filters: { email_eq: user.email }
+  });
   let customerId;
 
   if (customer.length > 0) {
@@ -27,7 +29,10 @@ export default async function getOrCreateCustomer(user) {
   });
 
   try {
-    await currentUserManagementClient.updateUserMetadata({ id: auth0UserId }, { customerId });
+    await currentUserManagementClient.users.update(
+      { id: auth0UserId },
+      { user_metadata: { customerId } }
+    );
   } catch (error) {
     console.error('Error on updating the user metadata:', error);
     throw error;

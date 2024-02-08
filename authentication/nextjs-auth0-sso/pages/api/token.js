@@ -14,7 +14,9 @@ export default withApiAuthRequired(async function token(req, res) {
       scope: 'read:users'
     });
 
-    const user = await managementClient.getUser({ id: session.user.sub });
+    const { data: user } = await managementClient.users.get({
+      id: session.user.sub
+    });
 
     const payload = {
       organization: {
@@ -22,13 +24,19 @@ export default withApiAuthRequired(async function token(req, res) {
         slug: process.env.NEXT_PUBLIC_CL_ENDPOINT,
         enterprise: true
       },
-      application: { id: process.env.NEXT_PUBLIC_CL_SALES_CHANNEL_ID, kind: 'sales_channel', public: true },
+      application: {
+        id: process.env.NEXT_PUBLIC_CL_SALES_CHANNEL_ID,
+        kind: 'sales_channel',
+        public: true
+      },
       owner: { id: user.user_metadata.customerId, type: 'Customer' },
       test: true,
       market: {
         id: [process.env.NEXT_PUBLIC_CL_MARKET_ID],
         price_list_id: process.env.NEXT_PUBLIC_CL_PRICE_LIST_ID,
-        stock_location_ids: JSON.parse(process.env.NEXT_PUBLIC_CL_STOCK_LOCATION_IDS),
+        stock_location_ids: JSON.parse(
+          process.env.NEXT_PUBLIC_CL_STOCK_LOCATION_IDS
+        ),
         geocoder_id: null,
         allows_external_prices: false
       },
@@ -39,7 +47,9 @@ export default withApiAuthRequired(async function token(req, res) {
       expiresIn: 7200
     });
 
-    res.status(200).json({ accessToken: token, expires: Date.now() + 7200 * 1000 });
+    res
+      .status(200)
+      .json({ accessToken: token, expires: Date.now() + 7200 * 1000 });
   } catch (error) {
     res.status(error.status || 500).json({ error: error.message });
   }
