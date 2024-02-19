@@ -18,3 +18,4 @@ This category includes the following project(s):
 - [dropin-basic-store-demo](./dropin-basic-store-demo) — A minimal demo that shows how to transform a plain HTML page into an enterprise-grade static commerce website, with product listing, prices, cart, checkout, customer identity, and customer portal.
 - [js-sdk-sandbox](./js-sdk-sandbox) — A code sandbox with examples of how to make some fundamental API requests using Commerce Layer JavaScript SDK.
 - [pay-with-tweet](./pay-with-tweet) — A demo pay-with-tweet external payment gateway for order purchases paid with just a tweet.
+- [metrics-api-retool-dashboard](./metrics-api-retool-dashboard/) - a sample Retool dashboard connected to Commerce Layer Metrics API
