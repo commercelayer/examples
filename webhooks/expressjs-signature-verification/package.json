@@ -1,0 +1,16 @@
+{
+  "name": "webhooks-expressjs-signature",
+  "version": "0.1.0",
+  "author": {
+    "name": "Matteo Alessani",
+    "email": "matteo@commercelayer.io"
+  },
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "node index.mjs"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
