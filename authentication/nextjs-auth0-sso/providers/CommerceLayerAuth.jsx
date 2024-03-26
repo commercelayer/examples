@@ -1,6 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { authentication } from '@commercelayer/js-auth';
-import jwt from 'jsonwebtoken';
+import { authenticate } from '@commercelayer/js-auth';
 import { useUser } from '@auth0/nextjs-auth0/client';
 
 const CommerceLayerAuthContext = createContext();
@@ -69,32 +68,13 @@ export const CommerceLayerAuthProvider = ({ children }) => {
             setAuth(auth);
           } else {
             console.log('Get sales token with js-auth');
-            const salesChannelToken = await authentication(
-              'client_credentials',
-              {
-                clientId: process.env.NEXT_PUBLIC_CL_SALES_CHANNEL_CLIENT_ID,
-                scope: process.env.NEXT_PUBLIC_CL_MARKET,
-                slug: process.env.NEXT_PUBLIC_CL_ENDPOINT
-              }
-            );
+            const salesChannelToken = await authenticate('client_credentials', {
+              clientId: process.env.NEXT_PUBLIC_CL_SALES_CHANNEL_CLIENT_ID,
+              scope: process.env.NEXT_PUBLIC_CL_MARKET
+            });
 
             const token = salesChannelToken.accessToken;
-            const payload = jwt.decode(token);
-            console.log(
-              'You need to add those values on your .env.local file:'
-            );
-            console.log(
-              `NEXT_PUBLIC_CL_ORGANIZATION_ID=${payload.organization.id}`
-            );
-            console.log(
-              `NEXT_PUBLIC_CL_SALES_CHANNEL_ID=${payload.application.id}`
-            );
-            console.log(
-              `NEXT_PUBLIC_CL_PRICE_LIST_ID=${payload.market.price_list_id}`
-            );
-            console.log(
-              `NEXT_PUBLIC_CL_STOCK_LOCATION_IDS=${JSON.stringify(payload.market.stock_location_ids)}`
-            );
+
             if (token) {
               setAuth(storeAuth('sales', salesChannelToken));
             }
