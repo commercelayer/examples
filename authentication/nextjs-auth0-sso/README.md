@@ -29,7 +29,7 @@ sequenceDiagram
     Nextjs API endpoints->>Browser: Session cookie
     Browser->>Nextjs API endpoints: call to /api/token
     Nextjs API endpoints->>Nextjs API endpoints: Generate customer token
-    Note right of Nextjs API endpoints: The endpoint generates the customer <br>token building a payload and signing it with<br>the organization secret.
+    Note right of Nextjs API endpoints: The endpoint generates the customer <br>token using the jwt bearer flow.
     Nextjs API endpoints->>Browser: receives Commerce Layer customer token
 ```
 
@@ -45,7 +45,7 @@ The diagram above outlines the steps involved in the customer *sign-up/sign-in* 
 8. The user metadata on Auth0 is updated with the customer ID provided by Commerce Layer using an Auth0 M2M application.
 9. An Auth0 session is created on the browser.
 10. The protected endpoint `/api/token` can now be called as the user is logged in with Auth0.
-11. The customer ID is retrieved from the user's metadata on Auth0 using an Auth0 M2M application and is used to build the payload for the access token. Using the organization's shared secret, the JWT is generated.
+11. The customer ID is retrieved from the user's metadata on Auth0 using an Auth0 M2M application and is used to get the customer token with the `jwt bearer` flow.
 12. The customer token is retrieved on the frontend, allowing the user to interact with Commerce Layer APIs as the customer.
 
 ## Project setup
