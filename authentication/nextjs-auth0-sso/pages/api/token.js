@@ -1,7 +1,6 @@
 import { getSession, withApiAuthRequired } from '@auth0/nextjs-auth0';
 import { ManagementClient } from 'auth0';
-
-import jwt from 'jsonwebtoken';
+import { authenticate, createAssertion } from '@commercelayer/js-auth';
 
 export default withApiAuthRequired(async function token(req, res) {
   try {
@@ -18,38 +17,33 @@ export default withApiAuthRequired(async function token(req, res) {
       id: session.user.sub
     });
 
-    const payload = {
-      organization: {
-        id: process.env.NEXT_PUBLIC_CL_ORGANIZATION_ID,
-        slug: process.env.NEXT_PUBLIC_CL_ENDPOINT,
-        enterprise: true
-      },
-      application: {
-        id: process.env.NEXT_PUBLIC_CL_SALES_CHANNEL_ID,
-        kind: 'sales_channel',
-        public: true
-      },
-      owner: { id: user.user_metadata.customerId, type: 'Customer' },
-      test: true,
-      market: {
-        id: [process.env.NEXT_PUBLIC_CL_MARKET_ID],
-        price_list_id: process.env.NEXT_PUBLIC_CL_PRICE_LIST_ID,
-        stock_location_ids: JSON.parse(
-          process.env.NEXT_PUBLIC_CL_STOCK_LOCATION_IDS
-        ),
-        geocoder_id: null,
-        allows_external_prices: false
-      },
-      rand: Math.random()
-    };
-    const token = jwt.sign(payload, process.env.CL_SHARED_SECRET, {
-      algorithm: 'HS512',
-      expiresIn: 7200
-    });
+    const token = await authenticate(
+      'urn:ietf:params:oauth:grant-type:jwt-bearer',
+      {
+        clientId: process.env.CL_SALES_CHANNEL_CLIENT_ID,
+        clientSecret: process.env.CL_SALES_CHANNEL_SECRET,
+        scope: process.env.NEXT_PUBLIC_CL_MARKET,
+        assertion: await createAssertion({
+          payload: {
+            'https://commercelayer.io/claims': {
+              owner: {
+                type: 'Customer',
+                id: user.user_metadata.customerId
+              }
+            }
+          }
+        }),
+        headers: {
+          'x-backend-auth': process.env.CL_BACKEND_AUTH_KEY,
+          'x-true-client-ip': req.socket?.remoteAddress
+        }
+      }
+    );
 
-    res
-      .status(200)
-      .json({ accessToken: token, expires: Date.now() + 7200 * 1000 });
+    res.status(200).json({
+      accessToken: token.accessToken,
+      expires: token.expires
+    });
   } catch (error) {
     res.status(error.status || 500).json({ error: error.message });
   }

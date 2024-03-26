@@ -1,4 +1,4 @@
-import { authentication } from '@commercelayer/js-auth';
+import { authenticate } from '@commercelayer/js-auth';
 import { CommerceLayer } from '@commercelayer/sdk';
 
 export default async function getClient() {
@@ -11,8 +11,7 @@ export default async function getClient() {
 }
 
 async function getIntegration() {
-  const token = await authentication('client_credentials', {
-    slug: process.env.NEXT_PUBLIC_CL_ENDPOINT,
+  const token = await authenticate('client_credentials', {
     clientId: process.env.CL_INTEGRATION_CLIENT_ID,
     clientSecret: process.env.CL_INTEGRATION_SECRET
   });
