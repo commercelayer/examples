@@ -28,8 +28,8 @@ sequenceDiagram
     Nextjs API endpoints->>Auth0: Update user metadata with Commerce Layer customer ID
     Nextjs API endpoints->>Browser: Session cookie
     Browser->>Nextjs API endpoints: call to /api/token
-    Nextjs API endpoints->>Nextjs API endpoints: Generate customer token
-    Note right of Nextjs API endpoints: The endpoint generates the customer <br>token using the jwt bearer flow.
+    Nextjs API endpoints->>Nextjs API endpoints: Get customer token
+    Note right of Nextjs API endpoints: The endpoint gets the customer <br>token using the jwt bearer flow.
     Nextjs API endpoints->>Browser: receives Commerce Layer customer token
 ```
 
