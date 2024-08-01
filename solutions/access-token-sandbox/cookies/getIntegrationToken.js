@@ -1,27 +1,25 @@
-import Cookies from "js-cookie";
-import { authentication } from "@commercelayer/js-auth";
+import Cookies from "js-cookie"
+import { authenticate } from "@commercelayer/js-auth"
 
-const SLUG = "<organization slug>";
-const CLIENT_ID = "<your client id>";
-const CLIENT_SECRET = "<your client secret>";
+const CLIENT_ID = "<your client id>"
+const CLIENT_SECRET = "<your client secret>"
 
 const getToken = async () => {
-  let token = "";
-  const getCookieToken = Cookies.get("clIntegrationToken");
-  if (!getCookieToken && CLIENT_ID && CLIENT_SECRET && SLUG) {
-    const auth = await authentication("client_credentials", {
-      slug: SLUG,
+  let token = ""
+  const getCookieToken = Cookies.get("clIntegrationToken")
+  if (!getCookieToken && CLIENT_ID && CLIENT_SECRET) {
+    const auth = await authenticate("client_credentials", {
       clientId: CLIENT_ID,
-      clientSecret: CLIENT_SECRET,
-    });
-    token = auth.accessToken;
+      clientSecret: CLIENT_SECRET
+    })
+    token = auth.accessToken
     Cookies.set("clIntegrationToken", token, {
-      expires: auth.expires,
-    });
+      expires: auth.expires
+    })
   } else {
-    token = getCookieToken || "";
+    token = getCookieToken || ""
   }
-  return token;
-};
+  return token
+}
 
 // getToken();

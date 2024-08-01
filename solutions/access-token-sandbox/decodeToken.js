@@ -1,10 +1,10 @@
-import jwt_decode from "jwt-decode";
+import { jwtDecode } from "@commercelayer/js-auth"
 
-const accessToken = "exampleJWtT0keNAiO...";
+const accessToken = "exampleJWtT0keNAiO..."
 
 // Decode JWT token
-const decoded = jwt_decode(accessToken);
-console.log(decoded);
+const decoded = jwtDecode(accessToken)
+console.log(decoded)
 
 // Will return:
 // {
@@ -22,16 +22,18 @@ console.log(decoded);
 const getTokenInfo = async () => {
   try {
     const {
-      organization: { slug, enterprise },
-      application: { id, kind },
-      test,
-    } = jwt_decode(accessToken);
+      payload: {
+        organization: { slug, enterprise },
+        application: { id, kind },
+        test
+      }
+    } = jwtDecode(accessToken)
 
-    return { slug, isEnterprise: enterprise, appId: id, kind, isTest: test };
+    return { slug, isEnterprise: enterprise, appId: id, kind, isTest: test }
   } catch (error) {
-    console.log(`Error decoding access token: ${error}`);
-    return {};
+    console.log(`Error decoding access token: ${error}`)
+    return {}
   }
-};
+}
 
-getTokenInfo(accessToken);
+getTokenInfo(accessToken)

@@ -1,27 +1,25 @@
-import Cookies from "js-cookie";
-import { authentication } from "@commercelayer/js-auth";
+import Cookies from "js-cookie"
+import { authenticate } from "@commercelayer/js-auth"
 
-const SLUG = "<organization slug>";
-const CLIENT_ID = "<your client id>";
-const SCOPE = "<your market scope>";
+const CLIENT_ID = "<your client id>"
+const SCOPE = "<your market scope>"
 
 const getToken = async () => {
-  let token = "";
-  const getCookieToken = Cookies.get("clSalesChannelToken");
-  if (!getCookieToken && CLIENT_ID && SLUG && SCOPE) {
-    const auth = await authentication("client_credentials", {
-      slug: SLUG,
+  let token = ""
+  const getCookieToken = Cookies.get("clSalesChannelToken")
+  if (!getCookieToken && CLIENT_ID && SCOPE) {
+    const auth = await authenticate("client_credentials", {
       clientId: CLIENT_ID,
-      scope: SCOPE,
-    });
-    token = auth.accessToken;
+      scope: SCOPE
+    })
+    token = auth.accessToken
     Cookies.set("clSalesChannelToken", token, {
-      expires: auth.expires,
-    });
+      expires: auth.expires
+    })
   } else {
-    token = getCookieToken || "";
+    token = getCookieToken || ""
   }
-  return token;
-};
+  return token
+}
 
 // getToken();
