@@ -10,7 +10,7 @@ This example shows a code implementation of a demo pay-with-tweet external payme
 
 ## Quick start guide
 
-1. Rename the `.env.example` file to `.env.local` and add your valid credentials, like so:
+1. Rename the `.env.example` file to `.env` and add your valid credentials, like so:
 
 ```bash
 CL_SHARED_SECRET=""
@@ -21,7 +21,7 @@ TW_BEARER_TOKEN=""
 2. Start the local server in development mode:
 
 ```bash
-npm run dev
+pnpm dev
 ```
 
 3. Start a ngrok HTTP tunnel listening for HTTP/HTTPS traffic on port 9000:
@@ -33,14 +33,14 @@ ngrok http 9000
 4. Create a new payment gateway using the [CLI](https://github.com/commercelayer/commercelayer-cli):
 
 ```bash
-cl res:create external_gateways -a \
+cl create external_gateways -a \
     name="Pay With Tweet"
 ```
 
 5. Create a payment method:
 
 ```bash
-cl res:create payment_methods -a \
+cl create payment_methods -a \
     payment_source_type="ExternalPayment" \
     currency_code="USD" \
     price_amount_cents=0 -r \
@@ -51,12 +51,12 @@ cl res:create payment_methods -a \
 6. Create an external payment:
 
 ```bash
-cl res:create external_payments -a \
+cl create external_payments -a \
     payment_source_token="testTokeN1234"
 ```
 
 7. Create and place an order:
 
 ```bash
-cl resources:update orders/GHrQkxDVPS -a _place=true
+cl update orders GHrQkxDVPS -a _place=true
 ```

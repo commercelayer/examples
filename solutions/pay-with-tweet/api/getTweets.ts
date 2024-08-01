@@ -17,7 +17,7 @@ async function getTweets(startTime: string, endTime: string) {
 
   const tweets = mentions.data || [];
   const users = mentions.includes?.users || [];
-  return {tweets, users};
+  return { tweets, users };
 }
 
 export default getTweets;
