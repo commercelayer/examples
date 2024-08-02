@@ -8,7 +8,7 @@ This example shows a code implementation for sending an SMS notification to cust
 
 ## Quick start guide
 
-1. Rename the `.env.example` file to `.env.local` and add your valid credentials, like so:
+1. Rename the `.env.example` file to `.env` and add your valid credentials, like so:
 
 ```text
 TWILIO_ACCOUNT_SID=""
@@ -20,7 +20,7 @@ CL_SHARED_SECRET=""
 2. Start the local server:
 
 ```bash
-node server.js
+pnpm start
 ```
 
 3. Start a ngrok HTTP tunnel listening for HTTP/HTTPS traffic on port 9000:
