@@ -39,7 +39,7 @@
     "api"
   ],
   "dependencies": {
-    "@commercelayer/js-auth": "^4.1.1",
+    "@commercelayer/js-auth": "^6.3.1",
     "@commercelayer/react-components": "4.2.2",
     "@headlessui/react": "^1.5.0",
     "@tailwindcss/aspect-ratio": "^0.4.0",
@@ -51,7 +51,7 @@
     "contentful-import": "^8.5.61",
     "dotenv": "^16.3.1",
     "iframe-resizer-react": "^1.1.0",
-    "js-cookie": "^3.0.1",
+    "js-cookie": "^3.0.5",
     "latest": "^0.2.0",
     "next": "^13.1.6",
     "postcss": "^8.4.24",
@@ -79,8 +79,14 @@
     "postcss-preset-env": "^7.4.1",
     "prettier": "^2.5.1",
     "semantic-release": "^19.0.2",
-    "tailwindcss": "^3.0.23",
+    "tailwindcss": "^3.4.7",
     "typescript": "4.5.5"
+  },
+  "resolutions": {
+    "@babel/traverse": ">=7.23.2",
+    "npm": ">=6.13.4",
+    "sharp": ">=0.32.6",
+    "braces": ">=3.0.3"
   },
   "engines": {
     "node": ">=16",
