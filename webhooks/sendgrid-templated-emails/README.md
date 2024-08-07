@@ -8,7 +8,7 @@ This example shows a code implementation and email templates for sending templat
 
 ## Quick start guide
 
-1. Rename the .env.example file to .env.local and add your valid credentials, like so:
+1. Rename the `.env.example` file to `.env` and add your valid credentials, like so:
 
 ```text
 SENDGRID_API_KEY=""
@@ -19,7 +19,7 @@ CL_SHARED_SECRET=""
 2. Start the local server:
 
 ```bash
-node server.js
+pnpm dev
 ```
 
 3. Start a ngrok HTTP tunnel listening for HTTP/HTTPS traffic on port 9000:
@@ -50,4 +50,12 @@ commercelayer checkout -O <order-id>
 or
 
 cl checkout -S <sku-code-1> -S <sku-code-2> -m <market-id> -e <email-address>
+```
+
+7. Test template
+
+If you want to test your template you can add your template id and sendgrid key on `mail-script.mjs` and run the command:
+
+```bash
+pnpm test:template
 ```

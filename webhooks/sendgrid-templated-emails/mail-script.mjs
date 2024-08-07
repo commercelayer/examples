@@ -1,5 +1,5 @@
 // You don't need to import fetch, Zapier supports it by default.
-import fetch from "node-fetch";
+import fetch from "node-fetch"
 
 //test data
 const inputData = {
@@ -20,10 +20,10 @@ const inputData = {
     '<table class="line-items"> <tr class="line-item"> <td class="line-item-image"> <img src="https://data.commercelayer.app/seed/images/skus/TOTEBAGXE7DDC7000000XXXX_FLAT.png" /> </td> <td class="line-item-name">Eco Tote Bag with Black Logo</td> <td class="line-item-qty">x 1</td> <td class="line-item-amount">$28.00</td> </tr> <tr class="line-item"> <td class="line-item-image"> <img src="https://data.commercelayer.app/seed/images/skus/GLCS21PXXXXXXXFFFFFFXXXX_FLAT.png" /> </td> <td class="line-item-name">Samsung Galaxy S21 Plus Case with White Logo</td> <td class="line-item-qty">x 1</td> <td class="line-item-amount">$19.00</td> </tr> <tr class="line-item"> <td class="line-item-image"> <img src="https://data.commercelayer.app/seed/images/skus/EMUG12OZFFFFFF000000XXXX_FLAT.png" /> </td> <td class="line-item-name">Enamel Mug with Black Logo (12oz)</td> <td class="line-item-qty">x 1</td> <td class="line-item-amount">$15.00</td> </tr> <tr class="line-item"> <td class="line-item-image"> <img src="https://data.commercelayer.app/seed/images/skus/SHIRT34S000000FFFFFFLXXX_FLAT.png" /> </td> <td class="line-item-name"> Black Unisex 3/4 Sleeve Shirt with White Logo (L) </td> <td class="line-item-qty">x 1</td> <td class="line-item-amount">$96.00</td> </tr> <tr class="line-item"> <td class="line-item-image"> <img src="https://data.commercelayer.app/seed/images/skus/DRAWSBAG000000FFFFFFXXXX_FLAT.png" /> </td> <td class="line-item-name">Black Drawstring Bag with White Logo</td> <td class="line-item-qty">x 1</td> <td class="line-item-amount">$22.00</td> </tr> <tr class="line-item"> <td class="line-item-image"> <img src="https://data.commercelayer.app/seed/images/skus/APRONXXXFFFFFF000000XXXX_FLAT.png" /> </td> <td class="line-item-name">White Apron with Black Logo</td> <td class="line-item-qty">x 2</td> <td class="line-item-amount">$40.00</td> </tr></table>',
   totalAmount: "$220",
   shippingAmount: "$7",
-  grandTotalAmount: "$227",
-};
+  grandTotalAmount: "$227"
+}
 
-const apiKey = "YOUR_API_KEY";
+const apiKey = "YOUR_API_KEY"
 
 // You don't need to write a function; the “Code by Zapier” action already wraps the code in an async function.
 async function sendEmail() {
@@ -31,23 +31,23 @@ async function sendEmail() {
     method: "POST",
     headers: {
       Authorization: `Bearer ${apiKey}`,
-      "Content-Type": "application/json",
+      "Content-Type": "application/json"
     },
     body: JSON.stringify({
       from: {
         email: "bolaji@lorem.io",
-        name: "Cake Store Team",
+        name: "Cake Store Team"
       },
       reply_to: {
         email: "bolaji@lorem.io",
-        name: "Cake Store Customer Support",
+        name: "Cake Store Customer Support"
       },
       personalizations: [
         {
           to: [
             {
-              email: inputData.customerEmail,
-            },
+              email: inputData.customerEmail
+            }
           ],
           dynamic_template_data: {
             customerName: inputData.customerName,
@@ -66,25 +66,25 @@ async function sendEmail() {
             lineItems: inputData.lineItems,
             totalAmount: inputData.totalAmount,
             shippingAmount: inputData.shippingAmount,
-            grandTotalAmount: inputData.grandTotalAmount,
-          },
-        },
+            grandTotalAmount: inputData.grandTotalAmount
+          }
+        }
       ],
-      template_id: "d-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
-    }),
+      template_id: "d-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+    })
   })
-    .then((response) => {
-      output = {
+    .then(async (response) => {
+      const output = {
         response: response,
-        status: response.status,
-      };
-      if (output.status === 202) {
-        console.log(`Email sent to ${inputData.customerEmail}!`);
+        status: response.status
       }
-      console.log(output);
+      if (output.status === 202) {
+        console.log(`Email sent to ${inputData.customerEmail}!`)
+      }
+      console.log(output)
     })
     .catch((error) => {
-      console.error(error);
-    });
+      console.error(error)
+    })
 }
-sendEmail();
+sendEmail()
