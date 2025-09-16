@@ -1,37 +1,37 @@
-import React from 'react';
-import { withPageAuthRequired } from '@auth0/nextjs-auth0/client';
+import React from 'react'
+import { withPageAuthRequired } from '@auth0/nextjs-auth0/client'
 import {
   CommerceLayer,
   CustomerContainer,
   OrderListEmpty,
   OrderList,
-  OrderListRow
-} from '@commercelayer/react-components';
-import Loading from '../components/Loading';
-import ErrorMessage from '../components/ErrorMessage';
-import { useCommerceLayerAuth } from '../providers/CommerceLayerAuth';
+  OrderListRow,
+} from '@commercelayer/react-components'
+import Loading from '../components/Loading'
+import ErrorMessage from '../components/ErrorMessage'
+import { useCommerceLayerAuth } from '../providers/CommerceLayerAuth'
 
 const columns = [
   {
     header: 'Order',
-    accessorKey: 'number'
+    accessorKey: 'number',
   },
   {
     header: 'Status',
-    accessorKey: 'status'
+    accessorKey: 'status',
   },
   {
     header: 'Date',
-    accessorKey: 'updated_at'
+    accessorKey: 'updated_at',
   },
   {
     header: 'Amount',
-    accessorKey: 'formatted_total_amount_with_taxes'
-  }
-];
+    accessorKey: 'formatted_total_amount_with_taxes',
+  },
+]
 
 function Orders() {
-  const { auth, isLoading } = useCommerceLayerAuth();
+  const { auth, isLoading } = useCommerceLayerAuth()
 
   return (
     <>
@@ -39,10 +39,7 @@ function Orders() {
         <div className="mb-5">
           <h1>Orders</h1>
           <div>
-            <CommerceLayer
-              accessToken={auth.accessToken}
-              endpoint={`https://${process.env.NEXT_PUBLIC_CL_ENDPOINT}.commercelayer.io`}
-            >
+            <CommerceLayer accessToken={auth.accessToken}>
               <CustomerContainer>
                 <OrderList className="table" columns={columns}>
                   <OrderListEmpty />
@@ -51,10 +48,10 @@ function Orders() {
                       return (
                         <>
                           {cell?.map((cell) => {
-                            return <p>Order # {cell.renderValue()}</p>;
+                            return <p>Order # {cell.renderValue()}</p>
                           })}
                         </>
-                      );
+                      )
                     }}
                   </OrderListRow>
                   <OrderListRow field="status" />
@@ -67,10 +64,10 @@ function Orders() {
         </div>
       )}
     </>
-  );
+  )
 }
 
 export default withPageAuthRequired(Orders, {
   onRedirecting: () => <Loading />,
-  onError: (error) => <ErrorMessage>{error.message}</ErrorMessage>
-});
+  onError: (error) => <ErrorMessage>{error.message}</ErrorMessage>,
+})

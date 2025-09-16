@@ -1,7 +1,7 @@
-import React from 'react';
-import { withPageAuthRequired } from '@auth0/nextjs-auth0';
+import React from 'react'
+import { withPageAuthRequired } from '@auth0/nextjs-auth0'
 
-import Highlight from '../components/Highlight';
+import Highlight from '../components/Highlight'
 
 export default function SSRPage({ user }) {
   return (
@@ -10,13 +10,15 @@ export default function SSRPage({ user }) {
         <h1 data-testid="ssr-title">Server-side Rendered Page</h1>
         <div data-testid="ssr-text">
           <p>
-            You can protect a server-side rendered page by wrapping the <code>getServerSideProps</code> function with{' '}
-            <code>withPageAuthRequired</code>. Only logged in users will be able to access it. If the user is logged
-            out, they will be redirected to the login page instead.{' '}
+            You can protect a server-side rendered page by wrapping the{' '}
+            <code>getServerSideProps</code> function with{' '}
+            <code>withPageAuthRequired</code>. Only logged in users will be able
+            to access it. If the user is logged out, they will be redirected to
+            the login page instead.{' '}
           </p>
           <p>
-            Protected server-side rendered pages automatically receive a <code>user</code> prop containing the user
-            profile.
+            Protected server-side rendered pages automatically receive a{' '}
+            <code>user</code> prop containing the user profile.
           </p>
         </div>
       </div>
@@ -27,7 +29,7 @@ export default function SSRPage({ user }) {
         </div>
       </div>
     </>
-  );
+  )
 }
 
-export const getServerSideProps = withPageAuthRequired();
+export const getServerSideProps = withPageAuthRequired()

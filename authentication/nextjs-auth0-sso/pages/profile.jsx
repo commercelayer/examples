@@ -1,20 +1,23 @@
-import React from 'react';
-import { Row, Col } from 'reactstrap';
-import { useUser, withPageAuthRequired } from '@auth0/nextjs-auth0/client';
+import React from 'react'
+import { Row, Col } from 'reactstrap'
+import { useUser, withPageAuthRequired } from '@auth0/nextjs-auth0/client'
 
-import Loading from '../components/Loading';
-import ErrorMessage from '../components/ErrorMessage';
-import Highlight from '../components/Highlight';
+import Loading from '../components/Loading'
+import ErrorMessage from '../components/ErrorMessage'
+import Highlight from '../components/Highlight'
 
 function Profile() {
-  const { user, isLoading } = useUser();
+  const { user, isLoading } = useUser()
 
   return (
     <>
       {isLoading && <Loading />}
       {user && (
         <>
-          <Row className="align-items-center profile-header mb-5 text-center text-md-left" data-testid="profile">
+          <Row
+            className="align-items-center profile-header mb-5 text-center text-md-left"
+            data-testid="profile"
+          >
             <Col md={2}>
               <img
                 src={user.picture}
@@ -37,10 +40,10 @@ function Profile() {
         </>
       )}
     </>
-  );
+  )
 }
 
 export default withPageAuthRequired(Profile, {
   onRedirecting: () => <Loading />,
-  onError: error => <ErrorMessage>{error.message}</ErrorMessage>
-});
+  onError: (error) => <ErrorMessage>{error.message}</ErrorMessage>,
+})

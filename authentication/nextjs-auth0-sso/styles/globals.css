@@ -4,8 +4,8 @@ body {
 }
 
 code {
-  white-space: pre-wrap; 
-  word-break: break-all; 
+  white-space: pre-wrap;
+  word-break: break-all;
 }
 
 p code {
@@ -31,7 +31,7 @@ p code {
 
 .nav-item.dropdown .dropdown-item .navbar-item {
   width: 100%;
-  padding: .55rem 1.5rem;
+  padding: 0.55rem 1.5rem;
 }
 
 .result-block-container .result-block {
