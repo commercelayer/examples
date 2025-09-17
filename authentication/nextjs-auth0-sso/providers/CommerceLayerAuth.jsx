@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from 'react'
-import { makeSalesChannel, jwtDecode } from '@commercelayer/js-auth'
-import { useUser } from '@auth0/nextjs-auth0/client'
+import { makeSalesChannel } from '@commercelayer/js-auth'
+import { useUser } from '@auth0/nextjs-auth0'
 import { createStorage } from 'unstorage'
 import localStorageDriver from 'unstorage/drivers/localstorage'
 
@@ -48,16 +48,17 @@ export const CommerceLayerAuthProvider = ({ children }) => {
             const response = await fetch('api/token').then((response) =>
               response.json(),
             )
+            if (response.token) {
+              await salesChannel.setCustomer({
+                accessToken: response.token.accessToken,
+                scope: tokenData.scope,
+              })
 
-            await salesChannel.setCustomer({
-              accessToken: response.token.accessToken,
-              scope: tokenData.scope,
-            })
-
-            setAuth({
-              accessToken: response.token.accessToken,
-              expires: new Date(response.token.expires),
-            })
+              setAuth({
+                accessToken: response.token.accessToken,
+                expires: new Date(response.token.expires),
+              })
+            }
           }
         } else {
           if (tokenData) {
@@ -78,7 +79,7 @@ export const CommerceLayerAuthProvider = ({ children }) => {
 
   const logout = async () => {
     await salesChannel.logoutCustomer()
-    window.location.href = '/api/auth/logout'
+    window.location.href = '/auth/logout'
   }
 
   return (

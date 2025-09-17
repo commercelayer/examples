@@ -8,8 +8,8 @@ importers:
   .:
     dependencies:
       '@auth0/nextjs-auth0':
-        specifier: ^3.5.0
-        version: 3.5.0(next@15.5.3(@babel/core@7.28.4)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
+        specifier: ^4.10.0
+        version: 4.10.0(next@15.5.3(@babel/core@7.28.4)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@commercelayer/js-auth':
         specifier: https://pkg.pr.new/commercelayer/commercelayer-js-auth/@commercelayer/js-auth@105
         version: https://pkg.pr.new/commercelayer/commercelayer-js-auth/@commercelayer/js-auth@105
@@ -29,8 +29,8 @@ importers:
         specifier: ^3.0.2
         version: 3.0.2(@fortawesome/fontawesome-svg-core@7.0.1)(react@18.3.1)
       auth0:
-        specifier: ^4.30.0
-        version: 4.30.0
+        specifier: ^5.0.0
+        version: 5.0.0
       auth0-js:
         specifier: ^9.28.0
         version: 9.28.0
@@ -50,8 +50,8 @@ importers:
         specifier: ^8.5.1
         version: 8.5.1
       helmet:
-        specifier: ^7.1.0
-        version: 7.1.0
+        specifier: ^8.1.0
+        version: 8.1.0
       highlight.js:
         specifier: ^11.11.1
         version: 11.11.1
@@ -111,8 +111,8 @@ importers:
         specifier: ^3.6.2
         version: 3.6.2
       start-server-and-test:
-        specifier: ^2.1.0
-        version: 2.1.0
+        specifier: ^2.1.1
+        version: 2.1.1
 
 packages:
   '@adobe/css-tools@4.4.0':
@@ -133,14 +133,15 @@ packages:
         integrity: sha512-K1A6z8tS3XsmCMM86xoWdn7Fkdn9m6RSVtocUrJYIwZnFVkng/PvkEoWtOWmP+Scc6saYWHWZYbndEEXxl24jw==,
       }
 
-  '@auth0/nextjs-auth0@3.5.0':
+  '@auth0/nextjs-auth0@4.10.0':
     resolution:
       {
-        integrity: sha512-uFZEE2QQf1zU+jRK2fwqxRQt+WSqDPYF2tnr7d6BEa7b6L6tpPJ3evzoImbWSY1a7gFdvD7RD/Rvrsx7B5CKVg==,
+        integrity: sha512-4CBuMlPJ4boxrB5IYisqMh9VBn74PGsspMfZpLG5JvrgDklw2CZsThW+UeAi1YMhE4/3VHyeht2yzN1Fs95bug==,
       }
-    engines: { node: '>=16' }
     peerDependencies:
-      next: '>=10'
+      next: ^14.2.25 || ^15.2.3
+      react: ^18.0.0 || ^19.0.0 || ^19.0.0-0
+      react-dom: ^18.0.0 || ^19.0.0 || ^19.0.0-0
 
   '@babel/code-frame@7.24.7':
     resolution:
@@ -614,6 +615,13 @@ packages:
       {
         integrity: sha512-skbBzPggOVYCbnGgV+0dmBdW/s77ZkAOXIC1knS8NagwDjBrNC1LuXtQJeiN6l+m7lzmHtaoUw/ctJKdqkG57Q==,
       }
+
+  '@edge-runtime/cookies@5.0.2':
+    resolution:
+      {
+        integrity: sha512-Sd8LcWpZk/SWEeKGE8LT6gMm5MGfX/wm+GPnh1eBEtCpya3vYqn37wYknwAHw92ONoyyREl1hJwxV/Qx2DWNOg==,
+      }
+    engines: { node: '>=16' }
 
   '@emnapi/core@1.5.0':
     resolution:
@@ -1175,10 +1183,10 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@panva/hkdf@1.0.2':
+  '@panva/hkdf@1.2.1':
     resolution:
       {
-        integrity: sha512-MSAs9t3Go7GUkMhpKC44T58DJ5KGk2vBo+h1cqQeqlMfdGkxaVB78ZWpv9gYi/g2fa4sopag9gJsNvS8XGgWJA==,
+        integrity: sha512-6oclG6Y3PiDFcoyk8srjLfVKyMfVCKJ27JwNPViuXziFpmdz+MZnZN/aKY0JGXgYuO/VghU0jcOAZgWXZ1Dmrw==,
       }
 
   '@paypal/accelerated-checkout-loader@1.1.0':
@@ -1381,12 +1389,6 @@ packages:
       }
     cpu: [x64]
     os: [win32]
-
-  '@sideway/address@4.1.4':
-    resolution:
-      {
-        integrity: sha512-7vwq+rOHVWjyXxVlR76Agnvhy8I9rpzjosTESvmhNeXOXdZZB15Fl+TI9x1SiHZH5Jv2wTGduSxFDIaq0m3DUw==,
-      }
 
   '@sideway/address@4.1.5':
     resolution:
@@ -2048,6 +2050,13 @@ packages:
       }
     engines: { node: '>=18' }
 
+  auth0@5.0.0:
+    resolution:
+      {
+        integrity: sha512-UFPHnq41NCB/iYgn/MTkbhOyjZ/16eZleWlox3N2YjGYICliDpQz/vPMUkSLRZfJMxZy+ttjtojItIv4i3KSIA==,
+      }
+    engines: { node: ^20.19.0 || ^22.12.0 || ^24.0.0 }
+
   aws-sign2@0.7.0:
     resolution:
       {
@@ -2553,13 +2562,6 @@ packages:
       }
     engines: { node: '>=6.6.0' }
 
-  cookie@0.6.0:
-    resolution:
-      {
-        integrity: sha512-U71cyTamuh1CRNCfpGY6to28lxvNwPG4Guz/EVjgf3Jmzv0vlDp1atT9eS5dDjMYHucpHbWns6Lwf3BKz6svdw==,
-      }
-    engines: { node: '>= 0.6' }
-
   cookie@0.7.2:
     resolution:
       {
@@ -2691,18 +2693,6 @@ packages:
     resolution:
       {
         integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==,
-      }
-    engines: { node: '>=6.0' }
-    peerDependencies:
-      supports-color: '*'
-    peerDependenciesMeta:
-      supports-color:
-        optional: true
-
-  debug@4.4.1:
-    resolution:
-      {
-        integrity: sha512-KcKCqiftBJcZr++7ykoDIEwSa3XWowTfNPo92BYxjXiyYEVrUQh2aLyhxBCwww+heortUFxEJYcRzosstTEBYQ==,
       }
     engines: { node: '>=6.0' }
     peerDependencies:
@@ -3462,12 +3452,12 @@ packages:
       }
     engines: { node: '>= 0.4' }
 
-  helmet@7.1.0:
+  helmet@8.1.0:
     resolution:
       {
-        integrity: sha512-g+HZqgfbpXdCkme/Cd/mZkV0aV3BZZZSugecH03kl38m/Kmdx8jKjBikpDj2cr+Iynv4KpYEviojNdTJActJAg==,
+        integrity: sha512-jOiHyAZsmnr8LqoPGmCjYAaiuWwjAPLgY8ZX2XrmHawt99/u1y6RgrZMTeoPfpUbV96HOalYgz1qzkRbw54Pmg==,
       }
-    engines: { node: '>=16.0.0' }
+    engines: { node: '>=18.0.0' }
 
   hexoid@1.0.0:
     resolution:
@@ -4033,16 +4023,16 @@ packages:
         integrity: sha512-otDA4ldcIx+ZXsKHWmp0YizCweVRZG96J10b0FevjfuncLO1oX59THoAmHkNubYJ+9gWsYsp5k8v4ib6oDv1fA==,
       }
 
-  joi@17.7.0:
-    resolution:
-      {
-        integrity: sha512-1/ugc8djfn93rTE3WRKdCzGGt/EtiYKxITMO4Wiv6q5JL1gl9ePt4kBsl1S499nbosspfctIQTpYIhSmHA3WAg==,
-      }
-
   jose@4.15.4:
     resolution:
       {
         integrity: sha512-W+oqK4H+r5sITxfxpSU+MMdr/YSWGvgZMQDIsNoBDGGy4i7GBPTtvFKibQzW06n3U3TqHjhvBJsirShsEJ6eeQ==,
+      }
+
+  jose@6.1.0:
+    resolution:
+      {
+        integrity: sha512-TTQJyoEoKcC1lscpVDCSsVgYzUDg/0Bt3WE//WiTPK6uOCQC2KZS4MpugbMWt/zyjkopgZoXhZuCi00gLudfUA==,
       }
 
   js-cookie@2.2.1:
@@ -4613,10 +4603,10 @@ packages:
         integrity: sha512-ujSMe1OWVn55euT1ihwCI1ZcAaAU3nxUiDwfDQldc51ZXaB9m2AyOn6/jh1BLe2t/G8xd6uKG1UBF2aZJeg2SQ==,
       }
 
-  oauth4webapi@2.10.3:
+  oauth4webapi@3.8.1:
     resolution:
       {
-        integrity: sha512-9FkXEXfzVKzH63GUOZz1zMr3wBaICSzk6DLXx+CGdrQ10ItNk2ePWzYYc1fdmKq1ayGFb2aX97sRCoZ2s0mkDw==,
+        integrity: sha512-olkZDELNycOWQf9LrsELFq8n05LwJgV8UkrS0cburk6FOwf8GvLam+YB+Uj5Qvryee+vwWOfQVeI5Vm0MVg7SA==,
       }
 
   object-assign@4.1.1:
@@ -4625,13 +4615,6 @@ packages:
         integrity: sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==,
       }
     engines: { node: '>=0.10.0' }
-
-  object-hash@2.2.0:
-    resolution:
-      {
-        integrity: sha512-gScRMn0bS5fH+IuwyIFgnh9zBdo4DV+6GhygmWM9HyNJSgS0hScp1f5vjtm7oIIOiT9trXrShAkLFSc2IqKNgw==,
-      }
-    engines: { node: '>= 6' }
 
   object-inspect@1.12.3:
     resolution:
@@ -4651,13 +4634,6 @@ packages:
       {
         integrity: sha512-QZj2DfGplQAr2oj9KzceK9Hwz6Whxazmn85yYeVuS3u9XTMOGMRx0kO95MQ+vLsj/S/NwBDMMLU5hpxvI6Tklw==,
       }
-
-  oidc-token-hash@5.0.1:
-    resolution:
-      {
-        integrity: sha512-EvoOtz6FIEBzE+9q253HsLCVRiK/0doEJ2HCvvqMQb3dHZrP3WlJKYtJ55CRTw4jmYomzH4wkPuCj/I3ZvpKxQ==,
-      }
-    engines: { node: ^10.13.0 || >=12.0.0 }
 
   on-finished@2.3.0:
     resolution:
@@ -4693,10 +4669,10 @@ packages:
       }
     engines: { node: '>=6' }
 
-  openid-client@5.3.2:
+  openid-client@6.8.0:
     resolution:
       {
-        integrity: sha512-nXXt+cna0XHOw+WqjMZOmuXw/YZEMwfWD2lD7tCsFtsBjMQGVXA+NZABA3upYBET1suhIsmfd7GnxG4jCAnvYQ==,
+        integrity: sha512-oG1d1nAVhIIE+JSjLS+7E9wY1QOJpZltkzlJdbZ7kEn7Hp3hqur2TEeQ8gLOHoHkhbRAGZJKoOnEQcLOQJuIyg==,
       }
 
   ospath@1.2.2:
@@ -5449,10 +5425,10 @@ packages:
       }
     engines: { node: '>=10' }
 
-  start-server-and-test@2.1.0:
+  start-server-and-test@2.1.1:
     resolution:
       {
-        integrity: sha512-yJg/GR9z7+8qxhZqDPmCEKbU/BO/zpyXUZGLmY1Nv4rmJJDC89NnzIEUWXEG4e1J4MRFoDF50eJK8bGHKrSdlg==,
+        integrity: sha512-5RIIrYAsNnauKHCNVYNR8YMczqWM6s+n4vMHTMBbDtObeZr4q1nbRB4fmrnl0dqTWSAqBeE6sxrr2/7EuDtQQQ==,
       }
     engines: { node: '>=16' }
     hasBin: true
@@ -5584,6 +5560,14 @@ packages:
       }
     engines: { node: '>=10' }
 
+  swr@2.3.6:
+    resolution:
+      {
+        integrity: sha512-wfHRmHWk/isGNMwlLGlZX5Gzz/uTgo0o2IRuTMcf4CPuPFJZlq0rDaKUx+ozB5nBOReNV1kiOyzMfj+MBMikLw==,
+      }
+    peerDependencies:
+      react: ^16.11.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+
   symbol-tree@3.2.4:
     resolution:
       {
@@ -5699,12 +5683,6 @@ packages:
         integrity: sha512-L0Orpi8qGpRG//Nd+H90vFB+3iHnue1zSSGmNOOCh1GLJ7rUKVwV2HvijphGQS2UmhUZewS9VgvxYIdgr+fG1A==,
       }
     hasBin: true
-
-  tslib@2.6.2:
-    resolution:
-      {
-        integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==,
-      }
 
   tslib@2.8.1:
     resolution:
@@ -5903,11 +5881,26 @@ packages:
         integrity: sha512-jk1+QP6ZJqyOiuEI9AEWQfju/nB2Pw466kbA0LEZljHwKeMgd9WrAEgEGxjPDD2+TNbbb37rTyhEfrCXfuKXnA==,
       }
 
+  use-sync-external-store@1.5.0:
+    resolution:
+      {
+        integrity: sha512-Rb46I4cGGVBmjamjphe8L/UnvJD+uPPtTkNvX5mZgqdbavhI4EbgIWJiIHXJ8bc/i9EQGPRh4DwEURJ552Do0A==,
+      }
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+
   util-deprecate@1.0.2:
     resolution:
       {
         integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==,
       }
+
+  uuid@11.1.0:
+    resolution:
+      {
+        integrity: sha512-0/A9rDy9P7cJ+8w1c9WD9V//9Wj15Ce2MPz8Ri6032usz+NfePxx5AcN3bN+r6ZL6jEo066/yNYB3tn4pQEx+A==,
+      }
+    hasBin: true
 
   uuid@8.3.2:
     resolution:
@@ -6145,20 +6138,17 @@ snapshots:
       '@csstools/css-tokenizer': 3.0.4
       lru-cache: 10.4.3
 
-  '@auth0/nextjs-auth0@3.5.0(next@15.5.3(@babel/core@7.28.4)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))':
+  '@auth0/nextjs-auth0@4.10.0(next@15.5.3(@babel/core@7.28.4)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@panva/hkdf': 1.0.2
-      cookie: 0.6.0
-      debug: 4.3.4
-      joi: 17.7.0
-      jose: 4.15.4
+      '@edge-runtime/cookies': 5.0.2
+      '@panva/hkdf': 1.2.1
+      jose: 6.1.0
       next: 15.5.3(@babel/core@7.28.4)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      oauth4webapi: 2.10.3
-      openid-client: 5.3.2
-      tslib: 2.6.2
-      url-join: 4.0.1
-    transitivePeerDependencies:
-      - supports-color
+      oauth4webapi: 3.8.1
+      openid-client: 6.8.0
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      swr: 2.3.6(react@18.3.1)
 
   '@babel/code-frame@7.24.7':
     dependencies:
@@ -6478,6 +6468,8 @@ snapshots:
       lodash.once: 4.1.1
     transitivePeerDependencies:
       - supports-color
+
+  '@edge-runtime/cookies@5.0.2': {}
 
   '@emnapi/core@1.5.0':
     dependencies:
@@ -6878,7 +6870,7 @@ snapshots:
   '@next/swc-win32-x64-msvc@15.5.3':
     optional: true
 
-  '@panva/hkdf@1.0.2': {}
+  '@panva/hkdf@1.2.1': {}
 
   '@paypal/accelerated-checkout-loader@1.1.0':
     dependencies:
@@ -6960,10 +6952,6 @@ snapshots:
 
   '@rollup/rollup-win32-x64-msvc@4.50.2':
     optional: true
-
-  '@sideway/address@4.1.4':
-    dependencies:
-      '@hapi/hoek': 9.3.0
 
   '@sideway/address@4.1.5':
     dependencies:
@@ -7322,13 +7310,19 @@ snapshots:
       undici-types: 6.19.5
       uuid: 9.0.0
 
+  auth0@5.0.0:
+    dependencies:
+      auth0-legacy: auth0@4.30.0
+      jose: 4.15.4
+      uuid: 11.1.0
+
   aws-sign2@0.7.0: {}
 
   aws4@1.12.0: {}
 
-  axios@1.12.2(debug@4.4.1):
+  axios@1.12.2(debug@4.4.3):
     dependencies:
-      follow-redirects: 1.15.11(debug@4.4.1)
+      follow-redirects: 1.15.11(debug@4.4.3)
       form-data: 4.0.4
       proxy-from-env: 1.1.0
     transitivePeerDependencies:
@@ -7643,8 +7637,6 @@ snapshots:
 
   cookie-signature@1.2.2: {}
 
-  cookie@0.6.0: {}
-
   cookie@0.7.2: {}
 
   cookiejar@2.1.4: {}
@@ -7768,10 +7760,6 @@ snapshots:
       ms: 2.1.2
     optionalDependencies:
       supports-color: 8.1.1
-
-  debug@4.4.1:
-    dependencies:
-      ms: 2.1.3
 
   debug@4.4.3:
     dependencies:
@@ -7925,7 +7913,7 @@ snapshots:
 
   execa@5.1.1:
     dependencies:
-      cross-spawn: 7.0.3
+      cross-spawn: 7.0.6
       get-stream: 6.0.1
       human-signals: 2.1.0
       is-stream: 2.0.1
@@ -8050,9 +8038,9 @@ snapshots:
       locate-path: 5.0.0
       path-exists: 4.0.0
 
-  follow-redirects@1.15.11(debug@4.4.1):
+  follow-redirects@1.15.11(debug@4.4.3):
     optionalDependencies:
-      debug: 4.4.1
+      debug: 4.4.3
 
   foreground-child@3.3.1:
     dependencies:
@@ -8232,7 +8220,7 @@ snapshots:
     dependencies:
       function-bind: 1.1.2
 
-  helmet@7.1.0: {}
+  helmet@8.1.0: {}
 
   hexoid@1.0.0: {}
 
@@ -8749,15 +8737,9 @@ snapshots:
       '@sideway/formula': 3.0.1
       '@sideway/pinpoint': 2.0.0
 
-  joi@17.7.0:
-    dependencies:
-      '@hapi/hoek': 9.3.0
-      '@hapi/topo': 5.1.0
-      '@sideway/address': 4.1.4
-      '@sideway/formula': 3.0.1
-      '@sideway/pinpoint': 2.0.0
-
   jose@4.15.4: {}
+
+  jose@6.1.0: {}
 
   js-cookie@2.2.1: {}
 
@@ -9083,11 +9065,9 @@ snapshots:
 
   nwsapi@2.2.22: {}
 
-  oauth4webapi@2.10.3: {}
+  oauth4webapi@3.8.1: {}
 
   object-assign@4.1.1: {}
-
-  object-hash@2.2.0: {}
 
   object-inspect@1.12.3: {}
 
@@ -9098,8 +9078,6 @@ snapshots:
       destr: 2.0.5
       node-fetch-native: 1.6.7
       ufo: 1.6.1
-
-  oidc-token-hash@5.0.1: {}
 
   on-finished@2.3.0:
     dependencies:
@@ -9119,12 +9097,10 @@ snapshots:
     dependencies:
       mimic-fn: 2.1.0
 
-  openid-client@5.3.2:
+  openid-client@6.8.0:
     dependencies:
-      jose: 4.15.4
-      lru-cache: 6.0.0
-      object-hash: 2.2.0
-      oidc-token-hash: 5.0.1
+      jose: 6.1.0
+      oauth4webapi: 3.8.1
 
   ospath@1.2.2: {}
 
@@ -9607,16 +9583,16 @@ snapshots:
     dependencies:
       escape-string-regexp: 2.0.0
 
-  start-server-and-test@2.1.0:
+  start-server-and-test@2.1.1:
     dependencies:
       arg: 5.0.2
       bluebird: 3.7.2
       check-more-types: 2.24.0
-      debug: 4.4.1
+      debug: 4.4.3
       execa: 5.1.1
       lazy-ass: 1.6.0
       ps-tree: 1.2.0
-      wait-on: 8.0.4(debug@4.4.1)
+      wait-on: 8.0.4(debug@4.4.3)
     transitivePeerDependencies:
       - supports-color
 
@@ -9700,6 +9676,12 @@ snapshots:
     dependencies:
       has-flag: 4.0.0
 
+  swr@2.3.6(react@18.3.1):
+    dependencies:
+      dequal: 2.0.3
+      react: 18.3.1
+      use-sync-external-store: 1.5.0(react@18.3.1)
+
   symbol-tree@3.2.4: {}
 
   synckit@0.11.11:
@@ -9749,8 +9731,6 @@ snapshots:
       punycode: 2.3.1
 
   tree-kill@1.2.2: {}
-
-  tslib@2.6.2: {}
 
   tslib@2.8.1: {}
 
@@ -9835,7 +9815,13 @@ snapshots:
 
   url-join@4.0.1: {}
 
+  use-sync-external-store@1.5.0(react@18.3.1):
+    dependencies:
+      react: 18.3.1
+
   util-deprecate@1.0.2: {}
+
+  uuid@11.1.0: {}
 
   uuid@8.3.2: {}
 
@@ -9859,9 +9845,9 @@ snapshots:
     dependencies:
       xml-name-validator: 5.0.0
 
-  wait-on@8.0.4(debug@4.4.1):
+  wait-on@8.0.4(debug@4.4.3):
     dependencies:
-      axios: 1.12.2(debug@4.4.1)
+      axios: 1.12.2(debug@4.4.3)
       joi: 17.13.3
       lodash: 4.17.21
       minimist: 1.2.8

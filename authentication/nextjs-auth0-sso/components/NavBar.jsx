@@ -12,7 +12,7 @@ import {
   DropdownMenu,
   DropdownItem,
 } from 'reactstrap'
-import { useUser } from '@auth0/nextjs-auth0/client'
+import { useUser } from '@auth0/nextjs-auth0'
 
 import PageLink from './PageLink'
 import AnchorLink from './AnchorLink'
@@ -70,7 +70,7 @@ const NavBar = () => {
               {!isLoading && !user && (
                 <NavItem id="qsLoginBtn">
                   <AnchorLink
-                    href="/api/auth/login"
+                    href="/auth/login"
                     className="btn btn-primary btn-margin"
                     tabIndex={0}
                     testId="navbar-login-desktop"
@@ -125,7 +125,7 @@ const NavBar = () => {
             {!isLoading && !user && (
               <Nav className="d-md-none" navbar>
                 <AnchorLink
-                  href="/api/auth/login"
+                  href="/auth/login"
                   className="btn btn-primary btn-block"
                   tabIndex={0}
                   testId="navbar-login-mobile"

@@ -1,5 +1,4 @@
-import React from 'react'
-import { UserProvider } from '@auth0/nextjs-auth0/client'
+import { Auth0Provider } from '@auth0/nextjs-auth0'
 
 import Layout from '../components/Layout'
 
@@ -12,12 +11,12 @@ initFontAwesome()
 
 export default function App({ Component, pageProps }) {
   return (
-    <UserProvider>
+    <Auth0Provider>
       <CommerceLayerAuthProvider>
         <Layout>
           <Component {...pageProps} />
         </Layout>
       </CommerceLayerAuthProvider>
-    </UserProvider>
+    </Auth0Provider>
   )
 }

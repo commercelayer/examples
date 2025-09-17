@@ -1,20 +1,21 @@
-import React from 'react'
-import { withPageAuthRequired } from '@auth0/nextjs-auth0'
-
+import { auth0 } from '../lib/auth0'
 import Highlight from '../components/Highlight'
 
 export default function SSRPage({ user }) {
+  if (!user) {
+    return <div>Loading...</div>
+  }
+
   return (
     <>
       <div className="mb-5" data-testid="ssr">
         <h1 data-testid="ssr-title">Server-side Rendered Page</h1>
         <div data-testid="ssr-text">
           <p>
-            You can protect a server-side rendered page by wrapping the{' '}
-            <code>getServerSideProps</code> function with{' '}
-            <code>withPageAuthRequired</code>. Only logged in users will be able
-            to access it. If the user is logged out, they will be redirected to
-            the login page instead.{' '}
+            You can protect a server-side rendered page by using{' '}
+            <code>getServerSideProps</code> with Auth0's <code>getSession</code>
+            . Only logged in users will be able to access it. If the user is
+            logged out, they will be redirected to the login page instead.{' '}
           </p>
           <p>
             Protected server-side rendered pages automatically receive a{' '}
@@ -32,4 +33,22 @@ export default function SSRPage({ user }) {
   )
 }
 
-export const getServerSideProps = withPageAuthRequired()
+// Server-side rendering with Auth0 v4
+export async function getServerSideProps(context) {
+  const session = await auth0.getSession(context.req, context.res)
+
+  if (!session) {
+    return {
+      redirect: {
+        destination: '/auth/login',
+        permanent: false,
+      },
+    }
+  }
+
+  return {
+    props: {
+      user: session.user,
+    },
+  }
+}

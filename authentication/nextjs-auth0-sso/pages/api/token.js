@@ -1,21 +1,29 @@
-import { getSession, withApiAuthRequired } from '@auth0/nextjs-auth0'
+import { auth0 } from '../../lib/auth0'
 import { ManagementClient } from 'auth0'
 import { authenticate, createAssertion } from '@commercelayer/js-auth'
 
-export default withApiAuthRequired(async function token(req, res) {
+export default async function token(req, res) {
   try {
-    const session = await getSession(req, res)
+    // In v4, getSession() needs the request object in API routes
+    const session = await auth0.getSession(req, res)
+
+    if (!session) {
+      return res.status(401).json({ error: 'Not authenticated' })
+    }
 
     const managementClient = new ManagementClient({
-      domain: process.env.AUTH0_ISSUER_DOMAIN,
+      domain: process.env.AUTH0_DOMAIN,
       clientId: process.env.AUTH0_M2M_CLIENT_ID,
       clientSecret: process.env.AUTH0_M2M_CLIENT_SECRET,
-      scope: 'read:users',
     })
 
-    const { data: user } = await managementClient.users.get({
-      id: session.user.sub,
-    })
+    // Ensure user.sub is a valid string
+    if (!session.user.sub || typeof session.user.sub !== 'string') {
+      console.error('Invalid user.sub:', session.user.sub)
+      return res.status(400).json({ error: 'Invalid user ID' })
+    }
+
+    const user = await managementClient.users.get(session.user.sub)
 
     const token = await authenticate(
       'urn:ietf:params:oauth:grant-type:jwt-bearer',
@@ -44,6 +52,7 @@ export default withApiAuthRequired(async function token(req, res) {
       token: token,
     })
   } catch (error) {
+    console.log(error)
     res.status(error.status || 500).json({ error: error.message })
   }
-})
+}
