@@ -13,7 +13,7 @@ export const CommerceLayerAuthProvider = ({ children }) => {
   const [salesChannel, setSalesChannel] = useState(null)
 
   useEffect(() => {
-    async function fetchToken() {
+    function fetchToken() {
       const storage = createStorage({
         driver: localStorageDriver({ base: 'auth0_sample:' }),
       })
@@ -22,6 +22,7 @@ export const CommerceLayerAuthProvider = ({ children }) => {
         {
           clientId: process.env.NEXT_PUBLIC_CL_SALES_CHANNEL_CLIENT_ID,
           scope: process.env.NEXT_PUBLIC_CL_MARKET,
+          debug: true,
         },
         {
           storage,
@@ -48,16 +49,19 @@ export const CommerceLayerAuthProvider = ({ children }) => {
             const response = await fetch('api/token').then((response) =>
               response.json(),
             )
-            if (response.token) {
-              await salesChannel.setCustomer({
-                accessToken: response.token.accessToken,
-                scope: tokenData.scope,
-              })
-
-              setAuth({
-                accessToken: response.token.accessToken,
-                expires: new Date(response.token.expires),
-              })
+            if (!response.token.errors?.length) {
+              try {
+                salesChannel.setCustomer({
+                  accessToken: response.token.accessToken,
+                  scope: tokenData.scope,
+                })
+                setAuth({
+                  accessToken: response.token.accessToken,
+                  expires: new Date(response.token.expires),
+                })
+              } catch (error) {
+                console.error('Error setting customer:', error)
+              }
             }
           }
         } else {

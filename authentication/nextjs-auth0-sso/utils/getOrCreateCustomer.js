@@ -22,17 +22,19 @@ export default async function getOrCreateCustomer(user) {
   }
 
   const currentUserManagementClient = new ManagementClient({
-    domain: process.env.AUTH0_ISSUER_DOMAIN,
+    domain: process.env.AUTH0_DOMAIN,
     clientId: process.env.AUTH0_M2M_CLIENT_ID,
     clientSecret: process.env.AUTH0_M2M_CLIENT_SECRET,
-    scope: 'update:users',
+    scope: 'read:users update:users',
   })
 
   try {
-    await currentUserManagementClient.users.update(
-      { id: auth0UserId },
-      { user_metadata: { customerId } },
-    )
+    // Auth0 Management API v5 syntax
+    const result = await currentUserManagementClient.users.update(auth0UserId, {
+      user_metadata: { customerId },
+    })
+
+    console.log('User metadata updated successfully:', result?.user_metadata)
   } catch (error) {
     console.error('Error on updating the user metadata:', error)
     throw error
