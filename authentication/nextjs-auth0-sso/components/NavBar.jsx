@@ -1,4 +1,6 @@
-import { useState } from 'react'
+'use  client'
+
+import React, { useState } from 'react'
 import {
   Collapse,
   Container,
@@ -16,13 +18,13 @@ import { useUser } from '@auth0/nextjs-auth0'
 
 import PageLink from './PageLink'
 import AnchorLink from './AnchorLink'
+
 import { useCommerceLayerAuth } from '../providers/CommerceLayerAuth'
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const { logout } = useCommerceLayerAuth()
-
   const { user, isLoading } = useUser()
+  const { logout } = useCommerceLayerAuth()
   const toggle = () => setIsOpen(!isOpen)
 
   return (

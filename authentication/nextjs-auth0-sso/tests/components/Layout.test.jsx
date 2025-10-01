@@ -1,13 +1,13 @@
 import React from 'react'
 import { render, screen, waitFor } from '@testing-library/react'
 
-import { withUserProvider } from '../fixtures'
+import { withAuth0Provider } from '../fixtures'
 import Layout from '../../components/Layout'
 
 describe('Layout', () => {
   it('should render without crashing', async () => {
     render(<Layout>Text</Layout>, {
-      wrapper: withUserProvider({ user: undefined }),
+      wrapper: withAuth0Provider({ user: undefined }),
     })
 
     await waitFor(() =>

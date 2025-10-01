@@ -1,18 +1,17 @@
 import React from 'react'
 import { Row, Col } from 'reactstrap'
+import { useCommerceLayerAuth } from '../providers/CommerceLayerAuth'
 import {
+  CommerceLayer,
   OrderContainer,
   OrderStorage,
-  CommerceLayer,
+  SkusContainer,
+  Skus,
+  SkuField,
   PricesContainer,
   Price,
-  SkusContainer,
-  SkuField,
-  Skus,
   AddToCartButton,
 } from '@commercelayer/react-components'
-
-import { useCommerceLayerAuth } from '../providers/CommerceLayerAuth'
 
 const skuCode = 'BABYONBU000000E63E7412MX'
 const websiteUrl = 'http://localhost:3000'
@@ -23,7 +22,6 @@ const Content = () => {
   if (!auth) {
     return null
   }
-
   return (
     <CommerceLayer accessToken={auth?.accessToken}>
       <div className="next-steps my-5">

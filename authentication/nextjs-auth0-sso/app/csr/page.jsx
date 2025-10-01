@@ -1,26 +1,18 @@
-import { useUser } from '@auth0/nextjs-auth0'
+'use client'
 
-export default function SSRPage() {
-  const { user, isLoading } = useUser()
+import React from 'react'
 
-  if (isLoading) {
-    return <div>Loading...</div>
-  }
-
-  if (!user) {
-    return <div>Access Denied</div>
-  }
-
+export default function CSRPage() {
   return (
     <>
       <div className="mb-5" data-testid="csr">
         <h1 data-testid="csr-title">Client-side Rendered Page</h1>
         <div data-testid="csr-text">
           <p>
-            You can protect a client-side rendered page by using{' '}
-            <code>useUser</code> hook. Only logged in users will be able to
-            access it. If the user is logged out, they will be redirected to the
-            login page instead.
+            You can protect a client-side rendered page by wrapping it with{' '}
+            <code>withPageAuthRequired</code>. Only logged in users will be able
+            to access it. If the user is logged out, they will be redirected to
+            the login page instead.
           </p>
           <p>
             Use the <code>useUser</code> hook to access the user profile from
@@ -34,7 +26,7 @@ export default function SSRPage() {
           </p>
           <p>
             You can also fetch the user profile by calling the{' '}
-            <code>/auth/me</code> API route.
+            <code>/auth/profile</code> API route.
           </p>
         </div>
       </div>

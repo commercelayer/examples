@@ -10,10 +10,11 @@ const jwksRsa = require('jwks-rsa')
 const app = express()
 const port = process.env.API_PORT || 3001
 const baseUrl = process.env.APP_BASE_URL
-const issuerBaseUrl = process.env.AUTH0_DOMAIN
+const domain = process.env.AUTH0_DOMAIN
+const issuerBaseUrl = `https://$dev-1q70shsiyzm7puy6.us.auth0.com`
 const audience = process.env.AUTH0_AUDIENCE
 
-if (!baseUrl || !issuerBaseUrl) {
+if (!baseUrl || !domain) {
   throw new Error(
     'Please make sure that the file .env.local is in place and populated',
   )
@@ -21,7 +22,7 @@ if (!baseUrl || !issuerBaseUrl) {
 
 if (!audience) {
   console.log('AUTH0_AUDIENCE not set in .env.local. Shutting down API server.')
-  // process.exit(1);
+  process.exit(1)
 }
 
 app.use(morgan('dev'))

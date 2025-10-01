@@ -1,13 +1,13 @@
 import React from 'react'
 import { render, screen, fireEvent, waitFor } from '@testing-library/react'
 
-import _External from '../../pages/external'
-import { UserProvider } from '@auth0/nextjs-auth0'
+import _External from '../../app/external/page'
+import { Auth0Provider } from '@auth0/nextjs-auth0'
 
 const External = () => (
-  <UserProvider user={{}}>
+  <Auth0Provider user={{}}>
     <_External />
-  </UserProvider>
+  </Auth0Provider>
 )
 
 describe('index', () => {

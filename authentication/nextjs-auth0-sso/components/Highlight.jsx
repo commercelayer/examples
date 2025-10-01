@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useEffect, useState, useRef } from 'react'
 import hljs from 'highlight.js/lib/core'
 import json from 'highlight.js/lib/languages/json'
@@ -20,7 +22,7 @@ const Highlight = ({ children, testId }) => {
   }, [])
 
   useEffect(() => {
-    codeNode && codeNode.current && hljs.highlightBlock(codeNode.current)
+    codeNode && codeNode.current && hljs.highlightElement(codeNode.current)
   })
 
   if (!isLoaded) return null

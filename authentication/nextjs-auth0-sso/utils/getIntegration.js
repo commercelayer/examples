@@ -7,17 +7,18 @@ const memoryStorage = createStorage({
   driver: memoryDriver(),
 })
 
-export default async function getClient() {
-  const integration = makeIntegration(
-    {
-      clientId: process.env.CL_INTEGRATION_CLIENT_ID,
-      clientSecret: process.env.CL_INTEGRATION_SECRET,
-    },
-    {
-      storage: memoryStorage,
-    },
-  )
+const integration = makeIntegration(
+  {
+    clientId: process.env.CL_INTEGRATION_CLIENT_ID,
+    clientSecret: process.env.CL_INTEGRATION_SECRET,
+    debug: true,
+  },
+  {
+    storage: memoryStorage,
+  },
+)
 
+export default async function getClient() {
   const token = await integration.getAuthorization()
   const { payload } = jwtDecode(token.accessToken)
   const client = CommerceLayer({
