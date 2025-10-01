@@ -89,16 +89,14 @@ To do that, first copy `.env.local.example` into a new file in the same folder c
 # A long secret value used to encrypt the session cookie
 AUTH0_SECRET='LONG_RANDOM_VALUE'
 # The base URL of your application
-AUTH0_BASE_URL='http://localhost:3000'
+APP_BASE_URL='http://localhost:3000'
+# Your Auth0 domain without protocol
+AUTH0_DOMAIN='YOUR_AUTH0_DOMAIN'
 # The URL of your Auth0 tenant domain
-AUTH0_ISSUER_BASE_URL='https://YOUR_AUTH0_DOMAIN.auth0.com'
 # Your Auth0 application's client ID
 AUTH0_CLIENT_ID='YOUR_AUTH0_CLIENT_ID'
 # Your Auth0 application's client secret
 AUTH0_CLIENT_SECRET='YOUR_AUTH0_CLIENT_SECRET'
-# Your Auth0 API's identifier
-# OMIT if you do not want to use the API part of the sample
-AUTH0_AUDIENCE='YOUR_AUTH0_API_IDENTIFIER'
 # The permissions your app is asking for
 # OMIT if you do not want to use the API part of the sample
 AUTH0_SCOPE='openid profile email'
