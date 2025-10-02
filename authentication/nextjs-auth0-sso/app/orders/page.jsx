@@ -66,16 +66,14 @@ export default function Orders() {
                     {({ cell, order, ...p }) => {
                       return (
                         <>
-                          {cell?.map((cell) => (
+                          {cell?.map((cell, index) => (
                             <div {...p} key={cell.id}>
-                              <p className="font-weight-bold">
+                              <p
+                                className="font-weight-bold"
+                                key={`order-${cell.id}-${index}`}
+                              >
                                 Order # {cell.renderValue()}
                               </p>
-                              {order.type === 'order_subscriptions' ? null : (
-                                <p className="small text-muted">
-                                  contains {order.skus_count} items
-                                </p>
-                              )}
                             </div>
                           ))}
                         </>
