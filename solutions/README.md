@@ -11,7 +11,6 @@
 
 This category includes the following project(s):
 
-- [access-token-sandbox](./access-token-sandbox) — A code sandbox with examples of how to generate access tokens and decode JWT access tokens.
 - [commercelayer-shopify-demo](./commercelayer-shopify-demo) — A demo Shopify theme for building a multi-language, multi-country website on a single Shopify store and integrating Commerce Layer to localize prices, inventory, shopping cart, and checkout for each country.
 - [commercelayer-slackbot](./commercelayer-slackbot) — A Slackbot that responds with orders/returns summaries upon request and allows users to checkout pending orders directly from a Slack channel.
 - [conf-swag-demo-store](./conf-swag-demo-store) — A swag ecommerce store built using the Commerce Layer Nextjs demo-store project.
