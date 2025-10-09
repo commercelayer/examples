@@ -17,10 +17,23 @@ This example shows a code implementation for transforming a plain HTML page into
   (function() {
     window.commercelayerConfig = {
       clientId: 'your_client_id',
-      slug: 'your_organization_slug',
       scope: 'your_market_scope',
       debug: 'all', // default is 'none'
-      orderReturnUrl: 'https://example.com' // optional
+      defaultAttributes: {
+        orders: {
+          /**
+           * The preferred language code (ISO 639-1) to be used when communicating with the customer.
+           * If the language is supported, the hosted checkout will be localized accordingly.
+           * @default 'en'
+           */
+          language_code: 'en',
+          /**
+           * The URL the cart's *Continue shopping* button points to. This is also used in the thank you page.
+           * @optional
+           */
+          return_url: 'https://example.com'
+        }
+      }
     }
   }());
 </script>
@@ -28,6 +41,5 @@ This example shows a code implementation for transforming a plain HTML page into
 
 2. Run the `index.html` file with an HTTP server using `npx serve` or [VSCode Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer).
 
-> **Note**
->
+> [!NOTE]
 > Opening the `index.html` file directly in Chrome browser will not work since cookies are disabled when the protocol is `file://` for security reasons. Always ensure to run the file with an HTTP server.
