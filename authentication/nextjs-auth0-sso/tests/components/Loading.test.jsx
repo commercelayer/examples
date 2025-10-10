@@ -1,12 +1,12 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
+import React from 'react'
+import { render, screen } from '@testing-library/react'
 
-import Loading from '../../components/Loading';
+import Loading from '../../components/Loading'
 
 describe('Loading', () => {
   it('should render without crashing', async () => {
-    render(<Loading />);
+    render(<Loading />)
 
-    expect(screen.getByTestId('loading')).toBeInTheDocument();
-  });
-});
+    expect(screen.getByTestId('loading')).toBeInTheDocument()
+  })
+})

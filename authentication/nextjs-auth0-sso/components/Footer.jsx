@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const Footer = () => (
   <footer className="bg-light p-3 text-center" data-testid="footer">
@@ -7,6 +7,6 @@ const Footer = () => (
       Sample project provided by <a href="https://auth0.com">Auth0</a>
     </p>
   </footer>
-);
+)
 
-export default Footer;
+export default Footer

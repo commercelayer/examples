@@ -33,7 +33,7 @@ sequenceDiagram
     Nextjs API endpoints->>Browser: receives Commerce Layer customer token
 ```
 
-The diagram above outlines the steps involved in the customer *sign-up/sign-in* process and the acquisition of a customer token, which grants access to Commerce Layer functionality.
+The diagram above outlines the steps involved in the customer _sign-up/sign-in_ process and the acquisition of a customer token, which grants access to Commerce Layer functionality.
 
 1. The user clicks on the login button.
 2. The Nextjs endpoint (`/api/auth/login`) redirects to the Auth0 Login Dialog.
@@ -74,7 +74,7 @@ To get started, create a free Commerce Layer account like so:
 
 Also, create a free Auth0 account like so:
 
-1. Go to the [Auth0 homepage](https://auth0.com) and click *Sign Up*.
+1. Go to the [Auth0 homepage](https://auth0.com) and click _Sign Up_.
 2. Use Google, GitHub, or Microsoft Account to log in.
 
 ### Credentials
@@ -89,16 +89,14 @@ To do that, first copy `.env.local.example` into a new file in the same folder c
 # A long secret value used to encrypt the session cookie
 AUTH0_SECRET='LONG_RANDOM_VALUE'
 # The base URL of your application
-AUTH0_BASE_URL='http://localhost:3000'
+APP_BASE_URL='http://localhost:3000'
+# Your Auth0 domain without protocol
+AUTH0_DOMAIN='YOUR_AUTH0_DOMAIN'
 # The URL of your Auth0 tenant domain
-AUTH0_ISSUER_BASE_URL='https://YOUR_AUTH0_DOMAIN.auth0.com'
 # Your Auth0 application's client ID
 AUTH0_CLIENT_ID='YOUR_AUTH0_CLIENT_ID'
 # Your Auth0 application's client secret
 AUTH0_CLIENT_SECRET='YOUR_AUTH0_CLIENT_SECRET'
-# Your Auth0 API's identifier
-# OMIT if you do not want to use the API part of the sample
-AUTH0_AUDIENCE='YOUR_AUTH0_API_IDENTIFIER'
 # The permissions your app is asking for
 # OMIT if you do not want to use the API part of the sample
 AUTH0_SCOPE='openid profile email'
@@ -116,7 +114,7 @@ AUTH0_M2M_CLIENT_SECRET='YOUR_AUTH0_M2M_CLIENT_SECRET'
 
 #### Commerce Layer
 
-You also need to use a [sales channel](https://docs.commercelayer.io/core/applications#sales-channel) and an [integration](https://docs.commercelayer.io/core/applications#integration) application on Commerce Layer. Add to `.env.local` the following variables setting your applications' credentials and organization/market information:
+You also need to use a [sales channel](https://docs.commercelayer.io/core/applications#sales-channel) and an [integration](https://docs.commercelayer.io/core/applications#integration) application on Commerce Layer. Add to `.env.local` the following variables setting your applications' credentials and market information. Note that the organization slug and endpoint are automatically inferred from the access token:
 
 ```sh
 CL_INTEGRATION_CLIENT_ID='YOU INTEGRATION CLIENT ID'
@@ -125,14 +123,17 @@ CL_INTEGRATION_SECRET='YOUR INTEGRATION SECRET'
 NEXT_PUBLIC_CL_SALES_CHANNEL_ID='YOUR_SALES_CHANNEL_APPLICATION_ID'
 NEXT_PUBLIC_CL_SALES_CHANNEL_CLIENT_ID='YOUR_SALES_CHANNEL_CLIENT_ID'
 NEXT_PUBLIC_CL_MARKET='YOUR_MARKET_NUMBER'
-NEXT_PUBLIC_CL_ENDPOINT='YOUR_ORGANIZATION_SLUG'
-CL_SALES_CHANNEL_CLIENT_ID='YOUR SALES CHANNEL CLIENT IT'
+CL_PRIVATE_MARKET='YOUR_PRIVATE_MARKET_NUMBER'
+CL_SALES_CHANNEL_CLIENT_ID='YOUR SALES CHANNEL CLIENT ID'
 CL_SALES_CHANNEL_SECRET='YOUR SALES CHANNEL SECRET'
-
-
+CL_BACKEND_AUTH_KEY='YOUR_BACKEND_AUTH_KEY'
 ```
 
 You can find a few of them running the project and taking a look at the browser console.
+
+**Note about `CL_BACKEND_AUTH_KEY`**: This secret key is used to enable IP forwarding for rate limiting purposes. When included as the `x-backend-auth` header along with the `x-true-client-ip` header, Commerce Layer will apply rate limits to the forwarded client IP instead of the backend server IP. This allows proper rate limiting per end-user even when requests go through a backend proxy. The key should be kept confidential and not exposed in client-side code.
+
+**API Credentials Helpers**: This project now uses the new Commerce Layer API credentials helpers (`makeSalesChannel` and `makeIntegration`) which provide automatic token management, caching, and organization information extraction. These helpers simplify authentication and eliminate the need for manual token handling and organization slug management.
 
 ## Running the sample
 

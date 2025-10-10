@@ -1,25 +1,28 @@
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom'
+import { vi } from 'vitest'
 
-import initFontAwesome from '../utils/initFontAwesome';
+import initFontAwesome from '../utils/initFontAwesome'
 
-initFontAwesome();
+initFontAwesome()
 
 afterEach(() => {
-  jest.clearAllMocks();
-  jest.restoreAllMocks();
-  jest.resetModules();
-});
+  vi.clearAllMocks()
+  vi.resetModules()
+})
 
-jest.mock('next/router', () => ({
-  useRouter: () => ({
-    asPath: '/'
-  })
-}));
+vi.mock('next/navigation', () => ({
+  usePathname: () => '',
+}))
 
-jest.mock('@auth0/nextjs-auth0', () => {
+vi.mock('./../lib/auth0', () => {
   return {
-    getAccessToken: () => 'access_token',
-    withApiAuthRequired: handler => handler,
-    withPageAuthRequired: page => () => page()
-  };
-});
+    auth0: {
+      getSession: () => ({
+        user: {
+          sub: 'bob',
+        },
+      }),
+      getAccessToken: () => 'access_token',
+    },
+  }
+})
