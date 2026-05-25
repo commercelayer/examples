@@ -1,0 +1,24 @@
+{
+  "name": "mollie-gateway",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch --env-file=.env src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node --env-file=.env dist/index.js",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "@commercelayer/js-auth": "^7.4.2",
+    "@commercelayer/sdk": "^7.11.0",
+    "@mollie/api-client": "^4.5.0",
+    "hono": "^4.12.22"
+  },
+  "devDependencies": {
+    "@hono/node-server": "^2.0.4",
+    "@types/node": "^25.9.1",
+    "tsx": "^4.15.6",
+    "typescript": "^6.0.3"
+  }
+}
