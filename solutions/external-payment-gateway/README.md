@@ -1,6 +1,6 @@
 # Commerce Layer — External Gateway Demo (Mollie)
 
-A minimal TypeScript monorepo that demonstrates Commerce Layer's **asynchronous external payment gateway** flow using [Mollie](https://mollie.com) in test mode.
+A minimal TypeScript monorepo that demonstrates Commerce Layer's **asynchronous external payment gateway** flow using [Mollie](https://mollie.com) in test mode. To get started, kindly read [this comprehensive article](https://commercelayer.io/blog/connecting-any-payment-gateway-to-commerce-layer-with-external-payments) on our blog.
 
 ```
 User fills checkout → SPA creates Mollie payment → _place order
