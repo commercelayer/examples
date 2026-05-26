@@ -23,7 +23,7 @@ User fills checkout → SPA creates Mollie payment → _place order
 ## Prerequisites
 
 - Node.js 20+
-- pnpm 9+
+- pnpm 10+
 - A Commerce Layer account with:
   - A **Sales Channel** application (for the frontend)
   - An **Integration** application (for the gateway server)
@@ -129,12 +129,12 @@ Open `http://localhost:5173` and choose a checkout flow.
 ## How the async flow works
 
 ```
-┌─────────────────┐        ┌───────────────────┐        ┌──────────────────────┐
-│   SPA (5173)    │        │  Mollie GW (3001) │        │  Commerce Layer API  │
-└────────┬────────┘        └────────┬──────────┘        └──────────┬───────────┘
+┌─────────────────┐        ┌───────────────────┐        ┌─────────────────────-─┐
+│   SPA (5173)    │        │  Mollie GW (3001) │        │  Commerce Layer API   │
+└────────┬────────┘        └────────┬──────────┘        └────-──────┬───────────┘
          │                          │                               │
          │ Build order via CL SDK   │                               │
-         │──────────────────────────────────────────────────────────▶│
+         │─────────────────────────────────────────────────────────▶│
          │                          │                               │
          │ POST /initiate-payment   │                               │
          │─────────────────────────▶│                               │
@@ -143,7 +143,7 @@ Open `http://localhost:5173` and choose a checkout flow.
          │◀── { paymentId, url } ───│                               │
          │                          │                               │
          │ _place (or _authorize)   │                               │
-         │──────────────────────────────────────────────────────────▶│
+         │─────────────────────────────────────────────────────────▶│
          │                          │                               │
          │                          │◀──── POST /authorize ─────────│
          │                          │  (payment_source_token        │
@@ -159,8 +159,8 @@ Open `http://localhost:5173` and choose a checkout flow.
          │                          │   { action_id, success: true }│
          │                          │              payment_status = authorized
          │ Poll detects authorized  │                               │
-         │──────────────────────────────────────────────────────────▶│
-         │ ✅ Show "authorized"      │                               │
+         │─────────────────────────────────────────────────────────▶│
+         │ ✅ Show "authorized"     │                               │
 ```
 
 ---
@@ -168,7 +168,7 @@ Open `http://localhost:5173` and choose a checkout flow.
 ## Project structure
 
 ```
-external-gw/
+external-payment-gateway/
 ├── packages/
 │   ├── app/                              # Vite + React SPA
 │   │   └── src/
