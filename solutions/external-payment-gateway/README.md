@@ -176,7 +176,7 @@ external-payment-gateway/
 │   │       │   ├── CheckoutPage.tsx      # Builds order, initiates Mollie payment, places order
 │   │       │   └── ReturnPage.tsx        # Polls CL, shows async status transition
 │   │       └── lib/cl.ts                 # CL SDK client (sales channel token)
-│   └── mock-gateway/                     # Hono HTTP server — Mollie gateway bridge
+│   └── mollie-gateway/                     # Hono HTTP server — Mollie gateway bridge
 │       └── src/
 │           ├── index.ts                  # Server entry point
 │           ├── routes/
