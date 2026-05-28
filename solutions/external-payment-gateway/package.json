@@ -1,0 +1,17 @@
+{
+  "name": "external-gw",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm --parallel --filter './packages/*' dev",
+    "build": "pnpm --filter './packages/*' build",
+    "typecheck": "pnpm --filter './packages/*' typecheck"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.3"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  }
+}
