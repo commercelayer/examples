@@ -1,6 +1,6 @@
 # SSO with Nextjs, Auth0, and Commerce Layer
 
-This example shows you how to integrate [Auth0 Nextjs SDK](https://github.com/auth0/nextjs-auth0) into a Nextjs application created using [create-next-app](https://nextjs.org/docs/api-reference/create-next-app). You can use it as a reference to build an SSO flow with Commerce Layer. The sample is a companion to the [Auth0 Nextjs SDK Quickstart](https://auth0.com/docs/quickstart/webapp/nextjs). To get started, kindly read [this comprehensive tutorial](https://commercelayer.io/blog/how-to-single-sign-on-with-nextjs-auth0-and-commerce-layer) on our blog.
+This example shows you how to integrate [Auth0 Nextjs SDK](https://github.com/auth0/nextjs-auth0) into a Nextjs application created using [create-next-app](https://nextjs.org/docs/api-reference/create-next-app). You can use it as a reference to build an SSO flow with Commerce Layer. The sample is a companion to the [Auth0 Nextjs SDK Quickstart](https://auth0.com/docs/quickstart/webapp/nextjs). To get started, kindly read [this comprehensive tutorial](https://commercelayer.io/blog/single-sign-on-with-commerce-layer-using-next-js-and-auth0) on our blog.
 
 ---
 
