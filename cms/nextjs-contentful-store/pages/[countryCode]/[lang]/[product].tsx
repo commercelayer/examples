@@ -1,9 +1,9 @@
 import _ from "lodash";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Price, PricesContainer, AddToCartButton } from "@commercelayer/react-components";
+import { Price, AddToCartButton } from "@commercelayer/react-components";
 import { useGetToken } from "@hooks/GetToken";
 import locale from "@locale/index";
 import Page from "@components/Page";
@@ -22,7 +22,6 @@ type Props = {
 const ProductPage: React.FC<Props> = ({ lang, countries, country, product, buildLanguages }) => {
   const countryCode = country.code.toLowerCase();
   const clMarketCode = country.marketCode;
-  const clEndpoint = process.env.NEXT_PUBLIC_CL_ENDPOINT as string;
   const clToken = useGetToken({
     scope: clMarketCode,
     countryCode: countryCode
@@ -42,11 +41,12 @@ const ProductPage: React.FC<Props> = ({ lang, countries, country, product, build
     };
   });
 
-  const [selectedVariant, setSelectedVariant] = useState<string>();
-
-  useEffect(() => {
-    setSelectedVariant(firstVariantCode);
-  }, [firstVariantCode]);
+  // Keyed by product slug so navigating to another product falls back to that
+  // product's first variant instead of keeping the previous product's SKU.
+  const [selectionBySlug, setSelectionBySlug] = useState<Record<string, string>>({});
+  const selectedVariant = selectionBySlug[product.slug] ?? firstVariantCode;
+  const setSelectedVariant = (code: string) =>
+    setSelectionBySlug((previous) => ({ ...previous, [product.slug]: code }));
 
   return (
     <Page
@@ -54,7 +54,6 @@ const ProductPage: React.FC<Props> = ({ lang, countries, country, product, build
       pageTitle={product.name}
       lang={lang}
       clToken={clToken}
-      clEndpoint={clEndpoint}
       languageCode={languageCode}
       countryCode={countryCode}
       countries={countries}
@@ -102,8 +101,8 @@ const ProductPage: React.FC<Props> = ({ lang, countries, country, product, build
               <div className="flex items-center">
                 <div className="relative" data-children-count="1">
                   <select
-                    placeholder={locale[lang].selectSize as string}
-                    className="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-blue-500 text-base pl-3 pr-10"
+                    aria-label={locale[lang].selectSize}
+                    className="rounded border appearance-none border-gray-400 py-2 focus:outline-hidden focus:border-blue-500 text-base pl-3 pr-10"
                     value={selectedVariant}
                     onChange={(e) => setSelectedVariant(e.target.value)}
                   >
@@ -131,18 +130,16 @@ const ProductPage: React.FC<Props> = ({ lang, countries, country, product, build
             </div>
             <div className="flex justify-between items-center pt-5">
               <span className="title-font font-medium text-2xl text-gray-900">
-                <PricesContainer>
-                  <Price
-                    skuCode={selectedVariant}
-                    className="text-indigo-600 mr-1"
-                    compareClassName="text-gray-500 line-through text-lg"
-                  />
-                </PricesContainer>
+                <Price
+                  skuCode={selectedVariant}
+                  className="text-black mr-1"
+                  compareClassName="text-gray-500 line-through text-lg"
+                />
               </span>
               <AddToCartButton
                 skuCode={selectedVariant}
                 label={locale[lang].addToCart as string}
-                className="inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm md:text-base font-medium rounded-md text-white bg-gray-900 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="inline-flex items-center px-4 py-2 border border-gray-300 shadow-xs text-sm md:text-base font-medium rounded-md text-white bg-gray-900 hover:bg-gray-800 focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
               />
             </div>
           </div>

@@ -1,7 +1,23 @@
 allowBuilds:
   contentful: true
-  core-js-pure: true
   sharp: true
-  styled-components: true
+minimumReleaseAgeExclude:
+  - contentful-import@10.2.3
+  - contentful@11.12.10
 overrides:
   contentful-import>date-fns: ^2.30.0
+  # Advisory fixes for transitive dev-only dependencies (lint + seed-import tooling).
+  # `pnpm audit --prod` is clean, so none of these reach the deployed storefront.
+  # Each override stays on the same major as the version already resolved, so it is
+  # a patch-level bump rather than an API change.
+  "@babel/runtime@7": ^7.29.7
+  brace-expansion@1: ^1.1.18
+  cross-spawn@7: ^7.0.6
+  micromatch@4: ^4.0.8
+  minimatch@3: ^3.1.5
+  picomatch@2: ^2.3.2
+
+# Deliberately NOT overridden: contentful-import > contentful-batch-libs > uuid@9.
+# GHSA-w5hq-g745-h8pq only affects uuid v3/v5/v6 when a `buf` argument is passed;
+# contentful-batch-libs calls `v4()` with no arguments, so it is not reachable.
+# Bumping it would mean a two-major jump (9 -> 11) in the seed-import tooling.

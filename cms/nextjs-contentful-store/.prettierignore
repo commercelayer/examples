@@ -1,3 +1,9 @@
-node_modules/*
+node_modules
+.next
 .cache
+out
 public
+pnpm-lock.yaml
+tsconfig.tsbuildinfo
+data/contentful-seed.json
+data/config-export.json

@@ -1,4 +1,3 @@
-import _ from "lodash";
 import Image from "next/image";
 import { GetStaticProps, NextPage } from "next";
 import SEOHead from "@components/SEO";

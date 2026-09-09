@@ -51,10 +51,10 @@ const LanguageSelector: React.FC<Props> = ({ options }) => {
           aria-expanded="true"
           aria-labelledby="listbox-label"
           onClick={() => setShow(!show)}
-          className="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-black focus:border-black sm:text-sm"
+          className="relative w-full bg-white border border-gray-300 rounded-md shadow-xs pl-3 pr-10 py-2 text-left cursor-default focus:outline-hidden focus:ring-1 focus:ring-black focus:border-black sm:text-sm"
         >
           <span className="flex items-center">
-            <span className="flex-shrink-0 text-gray-700 truncate capitalize">
+            <span className="shrink-0 text-gray-700 truncate capitalize">
               {locale[lang as string].language}:{" "}
             </span>
             <Image
@@ -100,7 +100,7 @@ const LanguageSelector: React.FC<Props> = ({ options }) => {
               role="listbox"
               aria-labelledby="listbox-label"
               aria-activedescendant="listbox-item-3"
-              className="max-h-56 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm"
+              className="max-h-56 rounded-md py-1 text-base ring-1 ring-black/5 overflow-auto focus:outline-hidden sm:text-sm"
             >
               {optionComponents.map(({ value, name, image }, key) => {
                 const selected = value === selectedOption?.value;
@@ -109,7 +109,7 @@ const LanguageSelector: React.FC<Props> = ({ options }) => {
                     key={key}
                     role="option"
                     aria-selected={selected}
-                    className={`cursor-default select-none relative py-2 pl-3 pr-9 hover:text-gray-50 hover:bg-indigo-500 ${
+                    className={`cursor-default select-none relative py-2 pl-3 pr-9 hover:text-gray-50 hover:bg-black ${
                       selected ? "" : "text-gray-900"
                     }`}
                     onClick={() => handleChange(value)}
@@ -118,7 +118,7 @@ const LanguageSelector: React.FC<Props> = ({ options }) => {
                       <Image
                         src={image?.url}
                         alt={name}
-                        className="flex-shrink-0 w-6"
+                        className="shrink-0 w-6"
                         width={200}
                         height={50}
                       />
@@ -133,7 +133,7 @@ const LanguageSelector: React.FC<Props> = ({ options }) => {
                     <span
                       className={`${
                         selected ? "text-gray-900" : "hidden"
-                      } absolute inset-y-0 right-0 flex items-center pr-4 hover:bg-indigo-600`}
+                      } absolute inset-y-0 right-0 flex items-center pr-4 hover:bg-black`}
                     >
                       <svg
                         className="h-5 w-5"

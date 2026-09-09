@@ -21,7 +21,6 @@ const HomePage: React.FC<Props> = ({ lang, countries, country, taxonomies, build
   const languageCode = parseLanguageCode(lang, "toLowerCase", true);
   const countryCode = country.code.toLowerCase();
   const clMarketCode = country.marketCode;
-  const clEndpoint = process.env.NEXT_PUBLIC_CL_ENDPOINT as string;
   const clToken = useGetToken({
     scope: clMarketCode,
     countryCode: countryCode
@@ -32,7 +31,6 @@ const HomePage: React.FC<Props> = ({ lang, countries, country, taxonomies, build
       buildLanguages={buildLanguages}
       lang={lang}
       clToken={clToken}
-      clEndpoint={clEndpoint}
       languageCode={languageCode}
       countryCode={countryCode}
       countries={countries}
@@ -63,7 +61,14 @@ export const getStaticProps: GetStaticProps<Props, Query> = async ({ params }) =
   const country = countries.find(
     (currentCountry) => currentCountry.code.toLowerCase() === countryCode
   );
-  const taxonomies = await contentfulApi.getAllTaxonomies(country!.catalog.id, lang);
+  // Must come before the taxonomies lookup below, which needs the country's catalog.
+  if (!country) {
+    return {
+      notFound: true
+    };
+  }
+
+  const taxonomies = await contentfulApi.getAllTaxonomies(country.catalog.id, lang);
   const buildLanguages = _.compact(
     process.env.BUILD_LANGUAGES?.split(",").map((language) => {
       const country = countries.find(
@@ -72,12 +77,6 @@ export const getStaticProps: GetStaticProps<Props, Query> = async ({ params }) =
       return !_.isEmpty(country) ? country : null;
     })
   );
-
-  if (!country) {
-    return {
-      notFound: true
-    };
-  }
 
   return {
     props: {

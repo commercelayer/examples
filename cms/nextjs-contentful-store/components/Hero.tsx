@@ -35,12 +35,12 @@ const Header: React.FC<Props> = ({ lang }) => {
               <div className="mt-16 flex items-center gap-x-6">
                 <a
                   href="#start"
-                  className="z-10 rounded-md border-2 border-gray-900 hover:bg-gray-900 hover:text-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  className="z-10 rounded-md border-2 border-gray-900 hover:bg-gray-900 hover:text-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-xs focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
                 >
                   {locale[lang].startShopping}
                 </a>
                 <a
-                  href="//commercelayer.io/why?utm_source=nextjs-contentful-store"
+                  href="//commercelayer.io/?utm_source=nextjs-contentful-store"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="z-10 text-sm font-semibold leading-6 text-gray-900"

@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { LineItemsContainer, LineItemsCount } from "@commercelayer/react-components";
+import { LineItems, LineItemsCount } from "@commercelayer/react-components";
 import locale from "@locale/index";
 import SEOHead from "@components/SEO";
 
@@ -71,9 +71,9 @@ const Header: React.FC<Props> = ({ lang, countryCode, pageTitle }) => {
                   </svg>
                 </span>
 
-                <LineItemsContainer>
-                  <LineItemsCount className="animate-bounce -ml-4 md:ml-2 inline-flex items-center px-2 py-1 rounded-full text-sm font-medium leading-5 bg-indigo-500 text-gray-50" />
-                </LineItemsContainer>
+                <LineItems>
+                  <LineItemsCount className="animate-bounce -ml-4 md:ml-2 inline-flex items-center px-2 py-1 rounded-full text-sm font-medium leading-5 bg-black text-gray-50" />
+                </LineItems>
               </div>
             </Link>
           </div>

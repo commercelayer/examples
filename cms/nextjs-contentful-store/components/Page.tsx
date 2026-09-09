@@ -1,5 +1,5 @@
 import React from "react";
-import { CommerceLayer, OrderContainer, OrderStorage } from "@commercelayer/react-components";
+import { CommerceLayer, Order, OrderStorage } from "@commercelayer/react-components";
 import Layout from "@components/Layout";
 import { Country } from "@typings/models";
 
@@ -8,7 +8,6 @@ type Props = {
   buildLanguages: Country[];
   lang: string;
   clToken: string;
-  clEndpoint: string;
   languageCode: string;
   countryCode: string;
   countries: Country[];
@@ -20,7 +19,6 @@ const Page: React.FC<Props> = ({
   buildLanguages,
   lang,
   clToken,
-  clEndpoint,
   languageCode,
   countryCode,
   countries,
@@ -32,10 +30,12 @@ const Page: React.FC<Props> = ({
   const return_url = isEnvEmpty ? undefined : `${siteUrl}/${countryCode}/${lang}`;
   const cart_url = isEnvEmpty ? undefined : `${siteUrl}/${countryCode}/${lang}/cart`;
 
+  // Since react-components v5 the SDK resolves the organization from the access
+  // token itself, so `<CommerceLayer>` no longer takes an `endpoint` prop.
   return (
-    <CommerceLayer accessToken={clToken} endpoint={clEndpoint}>
+    <CommerceLayer accessToken={clToken}>
       <OrderStorage persistKey={`cl_order-${countryCode}`}>
-        <OrderContainer attributes={{ language_code: languageCode, return_url, cart_url }}>
+        <Order attributes={{ language_code: languageCode, return_url, cart_url }}>
           <Layout
             pageTitle={pageTitle}
             buildLanguages={buildLanguages}
@@ -45,7 +45,7 @@ const Page: React.FC<Props> = ({
           >
             {children}
           </Layout>
-        </OrderContainer>
+        </Order>
       </OrderStorage>
     </CommerceLayer>
   );
