@@ -19,7 +19,7 @@ export const useGetToken: UseGetToken = ({ scope, countryCode }) => {
       const getToken = async () => {
         const auth = await authenticate("client_credentials", {
           clientId,
-          scope: `market:${scope}`
+          scope: `market:code:${scope}`
         });
         setToken(auth?.accessToken as string);
         Cookies.set(`clAccessToken-${countryCode}`, auth?.accessToken as string, {

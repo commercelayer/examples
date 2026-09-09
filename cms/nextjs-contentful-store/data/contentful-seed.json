@@ -660,8 +660,8 @@
           "linkType": "Entry"
         },
         {
-          "id": "marketId",
-          "name": "Market ID",
+          "id": "marketCode",
+          "name": "Market Code",
           "type": "Symbol",
           "localized": false,
           "required": false,
@@ -1264,7 +1264,7 @@
           "widgetNamespace": "builtin"
         },
         {
-          "fieldId": "marketId",
+          "fieldId": "marketCode",
           "widgetId": "singleLine",
           "widgetNamespace": "builtin"
         },
@@ -2064,8 +2064,8 @@
             }
           }
         },
-        "marketId": {
-          "en-US": "9480"
+        "marketCode": {
+          "en-US": "JPY"
         },
         "image": {
           "en-US": {
@@ -2112,8 +2112,7 @@
             "linkType": "ContentType",
             "id": "country"
           }
-        },
-        "publishedVersion": 1
+        }
       },
       "fields": {
         "name": {
@@ -2132,8 +2131,8 @@
             }
           }
         },
-        "marketId": {
-          "en-US": "9480"
+        "marketCode": {
+          "en-US": ""
         },
         "image": {
           "en-US": {
@@ -2200,8 +2199,8 @@
             }
           }
         },
-        "marketId": {
-          "en-US": "9480"
+        "marketCode": {
+          "en-US": "USA"
         },
         "image": {
           "en-US": {
@@ -2248,8 +2247,7 @@
             "linkType": "ContentType",
             "id": "country"
           }
-        },
-        "publishedVersion": 1
+        }
       },
       "fields": {
         "name": {
@@ -2268,8 +2266,8 @@
             }
           }
         },
-        "marketId": {
-          "en-US": "9479"
+        "marketCode": {
+          "en-US": ""
         },
         "image": {
           "en-US": {
@@ -2316,8 +2314,7 @@
             "linkType": "ContentType",
             "id": "country"
           }
-        },
-        "publishedVersion": 1
+        }
       },
       "fields": {
         "name": {
@@ -2336,8 +2333,8 @@
             }
           }
         },
-        "marketId": {
-          "en-US": "9479"
+        "marketCode": {
+          "en-US": ""
         },
         "image": {
           "en-US": {
@@ -2404,8 +2401,8 @@
             }
           }
         },
-        "marketId": {
-          "en-US": "9481"
+        "marketCode": {
+          "en-US": "UK"
         },
         "image": {
           "en-US": {
@@ -2452,8 +2449,7 @@
             "linkType": "ContentType",
             "id": "country"
           }
-        },
-        "publishedVersion": 1
+        }
       },
       "fields": {
         "name": {
@@ -2472,8 +2468,8 @@
             }
           }
         },
-        "marketId": {
-          "en-US": "9480"
+        "marketCode": {
+          "en-US": ""
         },
         "image": {
           "en-US": {
@@ -2540,8 +2536,8 @@
             }
           }
         },
-        "marketId": {
-          "en-US": "9479"
+        "marketCode": {
+          "en-US": "DEU"
         },
         "image": {
           "en-US": {
@@ -2588,8 +2584,7 @@
             "linkType": "ContentType",
             "id": "country"
           }
-        },
-        "publishedVersion": 1
+        }
       },
       "fields": {
         "name": {
@@ -2608,8 +2603,8 @@
             }
           }
         },
-        "marketId": {
-          "en-US": "9480"
+        "marketCode": {
+          "en-US": ""
         },
         "image": {
           "en-US": {
@@ -2676,8 +2671,8 @@
             }
           }
         },
-        "marketId": {
-          "en-US": "9479"
+        "marketCode": {
+          "en-US": "FRA"
         },
         "image": {
           "en-US": {
@@ -2724,8 +2719,7 @@
             "linkType": "ContentType",
             "id": "country"
           }
-        },
-        "publishedVersion": 1
+        }
       },
       "fields": {
         "name": {
@@ -2744,8 +2738,8 @@
             }
           }
         },
-        "marketId": {
-          "en-US": "9480"
+        "marketCode": {
+          "en-US": ""
         },
         "image": {
           "en-US": {
@@ -2812,8 +2806,8 @@
             }
           }
         },
-        "marketId": {
-          "en-US": "9479"
+        "marketCode": {
+          "en-US": "ITA"
         },
         "image": {
           "en-US": {
@@ -2880,8 +2874,8 @@
             }
           }
         },
-        "marketId": {
-          "en-US": "9480"
+        "marketCode": {
+          "en-US": "CAD"
         },
         "image": {
           "en-US": {
@@ -2928,8 +2922,7 @@
             "linkType": "ContentType",
             "id": "country"
           }
-        },
-        "publishedVersion": 1
+        }
       },
       "fields": {
         "name": {
@@ -2948,8 +2941,8 @@
             }
           }
         },
-        "marketId": {
-          "en-US": "9480"
+        "marketCode": {
+          "en-US": ""
         },
         "image": {
           "en-US": {

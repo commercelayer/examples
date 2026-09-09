@@ -9,7 +9,7 @@ export interface Country {
   catalog: {
     id: string;
   };
-  marketId: string;
+  marketCode: string;
   image: {
     title: string;
     url: string;

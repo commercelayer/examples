@@ -19,8 +19,8 @@
     "url": "git+https://github.com/commercelayer/examples.git"
   },
   "author": {
-    "name": "Bolaji Ayodeji",
-    "email": "bolaji@commercelayer.io"
+    "name": "Commerce Layer",
+    "email": "development@commercelayer.io"
   },
   "license": "MIT",
   "bugs": {
@@ -39,7 +39,7 @@
     "api"
   ],
   "dependencies": {
-    "@commercelayer/js-auth": "^6.7.2",
+    "@commercelayer/js-auth": "^8.0.1",
     "@commercelayer/react-components": "4.2.2",
     "@headlessui/react": "^1.7.19",
     "@tailwindcss/aspect-ratio": "^0.4.2",

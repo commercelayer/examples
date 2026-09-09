@@ -20,10 +20,10 @@ type Props = {
 const HomePage: React.FC<Props> = ({ lang, countries, country, taxonomies, buildLanguages }) => {
   const languageCode = parseLanguageCode(lang, "toLowerCase", true);
   const countryCode = country.code.toLowerCase();
-  const clMarketId = country.marketId;
+  const clMarketCode = country.marketCode;
   const clEndpoint = process.env.NEXT_PUBLIC_CL_ENDPOINT as string;
   const clToken = useGetToken({
-    scope: clMarketId,
+    scope: clMarketCode,
     countryCode: countryCode
   });
 
