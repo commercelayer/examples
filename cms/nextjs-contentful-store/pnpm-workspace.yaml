@@ -1,0 +1,7 @@
+allowBuilds:
+  contentful: true
+  core-js-pure: true
+  sharp: true
+  styled-components: true
+overrides:
+  contentful-import>date-fns: ^2.30.0

@@ -1397,7 +1397,8 @@
             "linkType": "ContentType",
             "id": "taxon"
           }
-        }
+        },
+        "publishedVersion": 4
       },
       "fields": {
         "name": {
@@ -1491,7 +1492,8 @@
             "linkType": "ContentType",
             "id": "catalog"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -1548,7 +1550,8 @@
             "linkType": "ContentType",
             "id": "catalog"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -1605,7 +1608,8 @@
             "linkType": "ContentType",
             "id": "catalog"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -1662,7 +1666,8 @@
             "linkType": "ContentType",
             "id": "taxonomy"
           }
-        }
+        },
+        "publishedVersion": 2
       },
       "fields": {
         "name": {
@@ -1745,7 +1750,8 @@
             "linkType": "ContentType",
             "id": "taxonomy"
           }
-        }
+        },
+        "publishedVersion": 2
       },
       "fields": {
         "name": {
@@ -1821,7 +1827,8 @@
             "linkType": "ContentType",
             "id": "taxonomy"
           }
-        }
+        },
+        "publishedVersion": 2
       },
       "fields": {
         "name": {
@@ -1890,7 +1897,8 @@
             "linkType": "ContentType",
             "id": "taxonomy"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -1959,7 +1967,8 @@
             "linkType": "ContentType",
             "id": "taxonomy"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -2035,7 +2044,8 @@
             "linkType": "ContentType",
             "id": "country"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -2102,7 +2112,8 @@
             "linkType": "ContentType",
             "id": "country"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -2169,7 +2180,8 @@
             "linkType": "ContentType",
             "id": "country"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -2236,7 +2248,8 @@
             "linkType": "ContentType",
             "id": "country"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -2303,7 +2316,8 @@
             "linkType": "ContentType",
             "id": "country"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -2370,7 +2384,8 @@
             "linkType": "ContentType",
             "id": "country"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -2437,7 +2452,8 @@
             "linkType": "ContentType",
             "id": "country"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -2504,7 +2520,8 @@
             "linkType": "ContentType",
             "id": "country"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -2571,7 +2588,8 @@
             "linkType": "ContentType",
             "id": "country"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -2638,7 +2656,8 @@
             "linkType": "ContentType",
             "id": "country"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -2705,7 +2724,8 @@
             "linkType": "ContentType",
             "id": "country"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -2772,7 +2792,8 @@
             "linkType": "ContentType",
             "id": "country"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -2839,7 +2860,8 @@
             "linkType": "ContentType",
             "id": "country"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -2906,7 +2928,8 @@
             "linkType": "ContentType",
             "id": "country"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -2973,7 +2996,8 @@
             "linkType": "ContentType",
             "id": "size"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -3013,7 +3037,8 @@
             "linkType": "ContentType",
             "id": "size"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -3053,7 +3078,8 @@
             "linkType": "ContentType",
             "id": "size"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -3093,7 +3119,8 @@
             "linkType": "ContentType",
             "id": "size"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -3133,7 +3160,8 @@
             "linkType": "ContentType",
             "id": "size"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -3173,7 +3201,8 @@
             "linkType": "ContentType",
             "id": "size"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -3213,7 +3242,8 @@
             "linkType": "ContentType",
             "id": "size"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -3253,7 +3283,8 @@
             "linkType": "ContentType",
             "id": "size"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -3293,7 +3324,8 @@
             "linkType": "ContentType",
             "id": "taxon"
           }
-        }
+        },
+        "publishedVersion": 3
       },
       "fields": {
         "name": {
@@ -3394,7 +3426,8 @@
             "linkType": "ContentType",
             "id": "taxon"
           }
-        }
+        },
+        "publishedVersion": 4
       },
       "fields": {
         "name": {
@@ -3509,7 +3542,8 @@
             "linkType": "ContentType",
             "id": "taxon"
           }
-        }
+        },
+        "publishedVersion": 3
       },
       "fields": {
         "name": {
@@ -3603,7 +3637,8 @@
             "linkType": "ContentType",
             "id": "taxon"
           }
-        }
+        },
+        "publishedVersion": 2
       },
       "fields": {
         "name": {
@@ -3697,7 +3732,8 @@
             "linkType": "ContentType",
             "id": "taxon"
           }
-        }
+        },
+        "publishedVersion": 4
       },
       "fields": {
         "name": {
@@ -3791,7 +3827,8 @@
             "linkType": "ContentType",
             "id": "taxon"
           }
-        }
+        },
+        "publishedVersion": 4
       },
       "fields": {
         "name": {
@@ -3885,7 +3922,8 @@
             "linkType": "ContentType",
             "id": "taxon"
           }
-        }
+        },
+        "publishedVersion": 2
       },
       "fields": {
         "name": {
@@ -4000,7 +4038,8 @@
             "linkType": "ContentType",
             "id": "taxon"
           }
-        }
+        },
+        "publishedVersion": 3
       },
       "fields": {
         "name": {
@@ -4073,7 +4112,8 @@
             "linkType": "ContentType",
             "id": "product"
           }
-        }
+        },
+        "publishedVersion": 2
       },
       "fields": {
         "name": {
@@ -4155,78 +4195,6 @@
             "id": "5u4unghxyppg"
           }
         },
-        "id": "3m6drSpzM6HMoewzY2MGbY",
-        "type": "Entry",
-        "createdAt": "2023-07-09T17:04:03.986Z",
-        "updatedAt": "2023-07-09T17:04:03.986Z",
-        "environment": {
-          "sys": {
-            "id": "master",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "revision": 1,
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "product"
-          }
-        }
-      },
-      "fields": {
-        "name": {
-          "en-US": "White Pillow with Black Logo (18x18)",
-          "it-IT": "Cuscino Bianco con Logo Nero (18x18)"
-        },
-        "description": {
-          "en-US": "These throw pillows are precision-cut and hand-sewn to serve as the perfect canvas for our logo. A good reason to rest your head can freshen up any interior.",
-          "it-IT": "Questi cuscini sono tagliati con precisione e cuciti a mano per fungere da tela perfetta per il nostro logo. Un buon motivo per riposare la testa può rinfrescare qualsiasi interno."
-        },
-        "slug": {
-          "en-US": "white-pillow-with-black-logo-18x18"
-        },
-        "reference": {
-          "en-US": "PILL1818FFFFFF000000"
-        },
-        "images": {
-          "en-US": [
-            {
-              "sys": {
-                "type": "Link",
-                "linkType": "Asset",
-                "id": "1UYmsmeCo2FLWkmtf5q9Ts"
-              }
-            }
-          ]
-        },
-        "variants": {
-          "en-US": [
-            {
-              "sys": {
-                "type": "Link",
-                "linkType": "Entry",
-                "id": "6YvbzXIGxGzFJTQSUDmQ03"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "metadata": {
-        "tags": [
-        ]
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "5u4unghxyppg"
-          }
-        },
         "id": "3Du2lOoZo5qSzogvq6G6BC",
         "type": "Entry",
         "createdAt": "2023-07-09T17:05:46.404Z",
@@ -4245,7 +4213,8 @@
             "linkType": "ContentType",
             "id": "product"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -4317,7 +4286,8 @@
             "linkType": "ContentType",
             "id": "product"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -4389,7 +4359,8 @@
             "linkType": "ContentType",
             "id": "product"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -4459,7 +4430,8 @@
             "linkType": "ContentType",
             "id": "product"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -4529,7 +4501,8 @@
             "linkType": "ContentType",
             "id": "product"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -4599,7 +4572,8 @@
             "linkType": "ContentType",
             "id": "product"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -4669,7 +4643,8 @@
             "linkType": "ContentType",
             "id": "product"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -4739,7 +4714,8 @@
             "linkType": "ContentType",
             "id": "product"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -4809,7 +4785,8 @@
             "linkType": "ContentType",
             "id": "product"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -4879,7 +4856,8 @@
             "linkType": "ContentType",
             "id": "product"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -4949,7 +4927,8 @@
             "linkType": "ContentType",
             "id": "product"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -5021,7 +5000,8 @@
             "linkType": "ContentType",
             "id": "product"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -5093,7 +5073,8 @@
             "linkType": "ContentType",
             "id": "product"
           }
-        }
+        },
+        "publishedVersion": 2
       },
       "fields": {
         "name": {
@@ -5165,7 +5146,8 @@
             "linkType": "ContentType",
             "id": "product"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -5237,7 +5219,8 @@
             "linkType": "ContentType",
             "id": "product"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -5307,7 +5290,8 @@
             "linkType": "ContentType",
             "id": "product"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -5377,7 +5361,8 @@
             "linkType": "ContentType",
             "id": "product"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -5447,7 +5432,8 @@
             "linkType": "ContentType",
             "id": "product"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -5517,7 +5503,8 @@
             "linkType": "ContentType",
             "id": "product"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -5587,7 +5574,8 @@
             "linkType": "ContentType",
             "id": "product"
           }
-        }
+        },
+        "publishedVersion": 2
       },
       "fields": {
         "name": {
@@ -5678,7 +5666,8 @@
             "linkType": "ContentType",
             "id": "product"
           }
-        }
+        },
+        "publishedVersion": 2
       },
       "fields": {
         "name": {
@@ -5769,7 +5758,8 @@
             "linkType": "ContentType",
             "id": "product"
           }
-        }
+        },
+        "publishedVersion": 2
       },
       "fields": {
         "name": {
@@ -5860,7 +5850,8 @@
             "linkType": "ContentType",
             "id": "product"
           }
-        }
+        },
+        "publishedVersion": 2
       },
       "fields": {
         "name": {
@@ -5944,7 +5935,8 @@
             "linkType": "ContentType",
             "id": "product"
           }
-        }
+        },
+        "publishedVersion": 2
       },
       "fields": {
         "name": {
@@ -6010,90 +6002,6 @@
             "id": "5u4unghxyppg"
           }
         },
-        "id": "4RDAADe97N4eHzflGSU5Ru",
-        "type": "Entry",
-        "createdAt": "2023-07-09T17:34:33.291Z",
-        "updatedAt": "2023-07-09T17:34:33.291Z",
-        "environment": {
-          "sys": {
-            "id": "master",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "revision": 1,
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "product"
-          }
-        }
-      },
-      "fields": {
-        "name": {
-          "en-US": "Black Men Polo with White Logo"
-        },
-        "description": {
-          "en-US": "Thanks to the quarter-turned cotton fabric, this polo shirt has a comfortable, relaxed fit. It's pre-shrunk and maintains its shape after washing, so it can be a favorite in your wardrobe for a long time."
-        },
-        "slug": {
-          "en-US": "black-men-polo-with-white-logo"
-        },
-        "reference": {
-          "en-US": "POLOMXXX000000FFFFFF"
-        },
-        "images": {
-          "en-US": [
-            {
-              "sys": {
-                "type": "Link",
-                "linkType": "Asset",
-                "id": "2KU90pYAH2lthh503IlTBb"
-              }
-            }
-          ]
-        },
-        "variants": {
-          "en-US": [
-            {
-              "sys": {
-                "type": "Link",
-                "linkType": "Entry",
-                "id": "KBAONg4xJzi4Q9nR6EwOc"
-              }
-            },
-            {
-              "sys": {
-                "type": "Link",
-                "linkType": "Entry",
-                "id": "1YmbNeeEd7yWVGwgFRkwpk"
-              }
-            },
-            {
-              "sys": {
-                "type": "Link",
-                "linkType": "Entry",
-                "id": "6O4QwlwjoNtxEwTz9Mav7S"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "metadata": {
-        "tags": [
-        ]
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "5u4unghxyppg"
-          }
-        },
         "id": "zTD4HrnZWwEq0wTO1GPBT",
         "type": "Entry",
         "createdAt": "2023-07-09T17:34:42.499Z",
@@ -6112,7 +6020,8 @@
             "linkType": "ContentType",
             "id": "product"
           }
-        }
+        },
+        "publishedVersion": 2
       },
       "fields": {
         "name": {
@@ -6196,7 +6105,8 @@
             "linkType": "ContentType",
             "id": "product"
           }
-        }
+        },
+        "publishedVersion": 2
       },
       "fields": {
         "name": {
@@ -6280,7 +6190,8 @@
             "linkType": "ContentType",
             "id": "product"
           }
-        }
+        },
+        "publishedVersion": 2
       },
       "fields": {
         "name": {
@@ -6378,7 +6289,8 @@
             "linkType": "ContentType",
             "id": "product"
           }
-        }
+        },
+        "publishedVersion": 2
       },
       "fields": {
         "name": {
@@ -6469,7 +6381,8 @@
             "linkType": "ContentType",
             "id": "product"
           }
-        }
+        },
+        "publishedVersion": 2
       },
       "fields": {
         "name": {
@@ -6560,7 +6473,8 @@
             "linkType": "ContentType",
             "id": "product"
           }
-        }
+        },
+        "publishedVersion": 2
       },
       "fields": {
         "name": {
@@ -6651,7 +6565,8 @@
             "linkType": "ContentType",
             "id": "product"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -6723,7 +6638,8 @@
             "linkType": "ContentType",
             "id": "product"
           }
-        }
+        },
+        "publishedVersion": 2
       },
       "fields": {
         "name": {
@@ -6800,7 +6716,8 @@
             "linkType": "ContentType",
             "id": "product"
           }
-        }
+        },
+        "publishedVersion": 2
       },
       "fields": {
         "name": {
@@ -6877,7 +6794,8 @@
             "linkType": "ContentType",
             "id": "product"
           }
-        }
+        },
+        "publishedVersion": 3
       },
       "fields": {
         "name": {
@@ -6963,7 +6881,8 @@
             "linkType": "ContentType",
             "id": "product"
           }
-        }
+        },
+        "publishedVersion": 2
       },
       "fields": {
         "name": {
@@ -7054,7 +6973,8 @@
             "linkType": "ContentType",
             "id": "product"
           }
-        }
+        },
+        "publishedVersion": 2
       },
       "fields": {
         "name": {
@@ -7145,7 +7065,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -7210,7 +7131,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -7275,7 +7197,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -7340,7 +7263,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -7405,7 +7329,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -7470,7 +7395,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -7535,7 +7461,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -7600,7 +7527,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -7665,7 +7593,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -7730,7 +7659,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -7795,7 +7725,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -7860,7 +7791,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -7925,7 +7857,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -7990,7 +7923,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -8055,7 +7989,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -8120,7 +8055,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -8185,7 +8121,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -8250,7 +8187,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -8315,7 +8253,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -8380,7 +8319,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -8445,7 +8385,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -8510,7 +8451,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -8575,7 +8517,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -8640,7 +8583,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -8705,7 +8649,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -8770,7 +8715,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -8835,7 +8781,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -8900,7 +8847,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -8965,7 +8913,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -9030,7 +8979,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -9095,7 +9045,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -9160,7 +9111,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -9225,7 +9177,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -9290,7 +9243,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -9355,7 +9309,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -9420,7 +9375,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -9485,7 +9441,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -9550,7 +9507,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -9617,7 +9575,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -9682,7 +9641,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -9749,7 +9709,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -9814,7 +9775,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -9879,7 +9841,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -9944,7 +9907,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -10009,7 +9973,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -10074,7 +10039,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -10139,7 +10105,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -10204,7 +10171,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -10269,7 +10237,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -10334,7 +10303,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -10399,7 +10369,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -10464,7 +10435,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -10529,7 +10501,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -10594,7 +10567,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -10659,7 +10633,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -10724,7 +10699,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -10789,7 +10765,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -10854,7 +10831,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -10919,7 +10897,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -10984,7 +10963,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -11049,7 +11029,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -11114,7 +11095,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -11179,7 +11161,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -11244,7 +11227,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -11309,7 +11293,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -11374,7 +11359,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -11439,7 +11425,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -11504,7 +11491,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -11569,7 +11557,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -11634,7 +11623,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -11699,7 +11689,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -11764,7 +11755,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -11829,7 +11821,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -11894,7 +11887,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -11959,7 +11953,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -12024,7 +12019,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -12089,7 +12085,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -12154,7 +12151,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -12219,7 +12217,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -12284,7 +12283,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -12349,7 +12349,8 @@
             "linkType": "ContentType",
             "id": "variant"
           }
-        }
+        },
+        "publishedVersion": 1
       },
       "fields": {
         "name": {
@@ -12409,7 +12410,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 2
+        "revision": 2,
+        "publishedVersion": 2
       },
       "fields": {
         "title": {
@@ -12458,7 +12460,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 2
+        "revision": 2,
+        "publishedVersion": 2
       },
       "fields": {
         "title": {
@@ -12504,7 +12507,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 2
+        "revision": 2,
+        "publishedVersion": 2
       },
       "fields": {
         "title": {
@@ -12550,7 +12554,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 2
+        "revision": 2,
+        "publishedVersion": 2
       },
       "fields": {
         "title": {
@@ -12596,7 +12601,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 2
+        "revision": 2,
+        "publishedVersion": 2
       },
       "fields": {
         "title": {
@@ -12642,7 +12648,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 2
+        "revision": 2,
+        "publishedVersion": 2
       },
       "fields": {
         "title": {
@@ -12688,7 +12695,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 2
+        "revision": 2,
+        "publishedVersion": 2
       },
       "fields": {
         "title": {
@@ -12734,7 +12742,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 2
+        "revision": 2,
+        "publishedVersion": 2
       },
       "fields": {
         "title": {
@@ -12780,7 +12789,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 2
+        "revision": 2,
+        "publishedVersion": 2
       },
       "fields": {
         "title": {
@@ -12826,7 +12836,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 2
+        "revision": 2,
+        "publishedVersion": 2
       },
       "fields": {
         "title": {
@@ -12872,7 +12883,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -12918,7 +12930,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -12964,7 +12977,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 2
+        "revision": 2,
+        "publishedVersion": 2
       },
       "fields": {
         "title": {
@@ -13010,7 +13024,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 2
+        "revision": 2,
+        "publishedVersion": 2
       },
       "fields": {
         "title": {
@@ -13056,7 +13071,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -13105,7 +13121,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -13154,7 +13171,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -13203,7 +13221,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -13252,7 +13271,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -13301,7 +13321,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -13350,7 +13371,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -13399,7 +13421,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -13448,7 +13471,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -13497,7 +13521,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -13546,7 +13571,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -13595,7 +13621,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -13644,7 +13671,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -13693,7 +13721,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -13742,7 +13771,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -13791,7 +13821,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -13840,7 +13871,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -13889,7 +13921,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -13938,7 +13971,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -13987,7 +14021,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -14036,7 +14071,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -14085,7 +14121,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -14134,7 +14171,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -14183,7 +14221,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -14232,7 +14271,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -14281,7 +14321,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -14330,7 +14371,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -14379,7 +14421,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -14428,7 +14471,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -14477,7 +14521,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -14526,7 +14571,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -14575,7 +14621,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -14624,7 +14671,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -14673,7 +14721,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -14722,7 +14771,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -14771,7 +14821,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -14820,7 +14871,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -14869,7 +14921,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -14918,7 +14971,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -14967,7 +15021,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -15016,7 +15071,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -15065,7 +15121,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -15114,7 +15171,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -15163,7 +15221,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -15212,7 +15271,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -15261,7 +15321,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -15310,7 +15371,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -15359,7 +15421,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -15408,7 +15471,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -15457,7 +15521,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -15506,7 +15571,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -15555,7 +15621,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -15604,7 +15671,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -15653,7 +15721,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -15702,7 +15771,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -15751,7 +15821,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -15800,7 +15871,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -15849,7 +15921,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -15898,7 +15971,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -15947,7 +16021,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -15996,7 +16071,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -16045,7 +16121,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -16094,7 +16171,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -16143,7 +16221,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -16192,7 +16271,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -16241,7 +16321,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -16290,7 +16371,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -16339,7 +16421,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -16388,7 +16471,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -16437,7 +16521,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -16486,7 +16571,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -16535,7 +16621,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -16584,7 +16671,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -16633,7 +16721,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -16682,7 +16771,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -16731,7 +16821,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -16780,7 +16871,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -16829,7 +16921,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -16878,7 +16971,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -16927,7 +17021,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
@@ -16976,7 +17071,8 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1
+        "revision": 1,
+        "publishedVersion": 1
       },
       "fields": {
         "title": {
