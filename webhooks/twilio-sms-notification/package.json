@@ -22,9 +22,9 @@
   },
   "homepage": "https://github.com/BolajiAyodeji/cl-twilio-webhooks-demo#readme",
   "dependencies": {
-    "twilio": "^5.2.2",
+    "twilio": "^5.13.1",
     "crypto-js": "^4.2.0",
-    "dotenv": "^16.4.5",
-    "express": "^4.19.2"
+    "dotenv": "^16.6.1",
+    "express": "^4.22.2"
   }
 }

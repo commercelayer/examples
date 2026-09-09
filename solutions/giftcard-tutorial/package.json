@@ -10,11 +10,11 @@
   },
   "dependencies": {
     "@commercelayer/js-auth": "^6.7.2",
-    "@commercelayer/react-components": "^4.25.1",
-    "@commercelayer/sdk": "^6.44.0",
+    "@commercelayer/react-components": "^4.29.7",
+    "@commercelayer/sdk": "^6.58.0",
     "next": "15.3.4",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
