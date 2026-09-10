@@ -1,8 +1,45 @@
-type Locale = {
-  [lang: string]: {
-    [key: string]: string | { [key: string]: string } | any;
-  };
+type LocaleMessages = {
+  addToCart: string;
+  available: string;
+  backToAllProducts: string;
+  categories: string;
+  continueShopping: string;
+  days: string;
+  discount: string;
+  emptyProducts: string;
+  freeOver: string;
+  giftCard: string;
+  items: string;
+  language: string;
+  languageName: string;
+  /** Maps a language tag (e.g. `en-us`) to its name in the current language. */
+  languages: Record<string, string>;
+  learnMore: string;
+  method: string;
+  notAvailable: string;
+  outOfStock: string;
+  price: string;
+  reviews: string;
+  selectSize: string;
+  shipping: string;
+  shippingTo: string;
+  shoppingBag: string;
+  startShopping: string;
+  subTotal: string;
+  subscribe: string;
+  subscribePlaceholder: string;
+  subscribeText: string;
+  subscribeTitle: string;
+  taxes: string;
+  total: string;
+  viewMore: string;
+  welcome: string;
+  // Not translated for every language yet, and currently unused by the UI.
+  proceedToCheckout?: string;
+  yourShoppingCart?: string;
 };
+
+type Locale = Record<string, LocaleMessages>;
 
 const locale: Locale = {
   "en-us": {

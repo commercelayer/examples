@@ -1,128 +1,148 @@
-import _ from "lodash";
-import { createClient, ContentfulClientApi } from "contentful";
-import {
-  ContentfulImage,
-  ContentfulProduct,
-  ContentfulCountry,
-  ContentfulCatalog
+import { createClient, type Asset, type Entry } from "contentful";
+import type {
+  CatalogSkeleton,
+  CountrySkeleton,
+  ProductSkeleton,
+  TaxonSkeleton,
+  TaxonomySkeleton,
+  VariantSkeleton
 } from "./typings";
-import { Taxonomy } from "@typings/models";
+import type { Country, Image, Product, Taxon, Taxonomy, Variant } from "@typings/models";
 
-type GetClient = () => ContentfulClientApi | null;
+/**
+ * `withoutUnresolvableLinks` makes the SDK type (and return) every link that
+ * cannot be resolved as `undefined` rather than a raw `UnresolvedLink` object,
+ * so the parsers below can simply skip incomplete content.
+ */
+type Modifiers = "WITHOUT_UNRESOLVABLE_LINKS";
 
-const client: GetClient = () =>
-  createClient({
-    space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID as string,
-    accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_DELIVERY_ACCESS_TOKEN as string
-  });
+const client = createClient({
+  space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID as string,
+  accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_DELIVERY_ACCESS_TOKEN as string
+}).withoutUnresolvableLinks;
 
-function parseImage(entry: ContentfulImage) {
+/** Contentful stores asset URLs protocol-relative (`//images.ctfassets.net/...`). */
+function parseAsset(asset?: Asset<Modifiers>): Image | null {
+  const url = asset?.fields.file?.url;
+  if (!url) return null;
   return {
-    title: entry.fields.title,
-    url: `https:${entry.fields.file.url}`
+    title: asset?.fields.title ?? "",
+    url: `https:${url}`
   };
 }
 
-function parseCountries(entries: ContentfulCountry[]) {
-  const countries = entries?.map(({ fields, sys }: ContentfulCountry) => {
-    return {
-      ...fields,
-      catalog: {
-        id: fields.catalog.sys.id
-      },
-      id: sys.id,
-      image: parseImage(fields.image)
-    };
-  });
-  return countries;
+function parseAssets(assets?: (Asset<Modifiers> | undefined)[]): Image[] {
+  return (assets ?? []).map(parseAsset).filter((image): image is Image => image !== null);
 }
 
-function parseTaxonomies(catalogs: ContentfulCatalog[], items: Taxonomy[] = []) {
-  catalogs.map((catalog) => {
-    catalog.fields.taxonomies.map((taxonomy) => {
-      const { fields } = taxonomy;
-      const taxons = fields.taxons.map((taxon) => {
-        const products = !_.isEmpty(taxon.fields.products)
-          ? taxon.fields.products.map((product) => {
-              const variants = product.fields.variants.map((variant) => {
-                const code = variant.fields.code;
-                return { ...variant.fields, code };
-              });
-              const images = product.fields.images.map((image) => {
-                const url = `https:${image.fields.file.url}`;
-                return { ...image.fields, url };
-              });
-              return { ...product.fields, variants, images };
-            })
-          : [];
-        return { ...taxon.fields, products };
-      });
-      items.push({ ...fields, taxons });
-    });
-  });
-  return items;
+function parseVariant(variant?: Entry<VariantSkeleton, Modifiers>): Variant | null {
+  if (!variant) return null;
+  const { name, code, description, images, size } = variant.fields;
+  const sizeName = size?.fields.name;
+  if (!code || !sizeName) return null;
+  return {
+    name,
+    code,
+    description: description ?? "",
+    images: parseAssets(images),
+    size: { name: sizeName }
+  };
 }
 
-function parseProduct(product?: ContentfulProduct) {
+function parseProduct(product?: Entry<ProductSkeleton, Modifiers>): Product | null {
   if (!product) return null;
-  const { fields } = product;
-  const variants = fields.variants.map((variant) => {
-    const images = variant.fields.images.map((image) => {
-      const url = `https:${image.fields.file.url}`;
-      return { ...image.fields, url };
-    });
-    const size = variant.fields.size.fields;
-    return {
-      ...variant.fields,
-      images,
-      size
-    };
-  });
-  const images = fields.images.map((image) => {
-    const url = `https:${image.fields.file.url}`;
-    return { ...image.fields, url };
-  });
+  const { name, description, slug, reference, images, variants } = product.fields;
+  if (!slug) return null;
   return {
-    ...fields,
-    variants,
-    images
+    name,
+    description: description ?? "",
+    slug,
+    reference: reference ?? "",
+    images: parseAssets(images),
+    variants: (variants ?? [])
+      .map(parseVariant)
+      .filter((variant): variant is Variant => variant !== null)
   };
 }
 
+function parseTaxon(taxon?: Entry<TaxonSkeleton, Modifiers>): Taxon | null {
+  if (!taxon) return null;
+  const { name, label, slug, products } = taxon.fields;
+  return {
+    name,
+    label: label ?? "",
+    slug: slug ?? "",
+    products: (products ?? [])
+      .map(parseProduct)
+      .filter((product): product is Product => product !== null)
+  };
+}
+
+function parseTaxonomy(taxonomy?: Entry<TaxonomySkeleton, Modifiers>): Taxonomy | null {
+  if (!taxonomy) return null;
+  const { name, label, taxons } = taxonomy.fields;
+  return {
+    name,
+    label: label ?? "",
+    taxons: (taxons ?? []).map(parseTaxon).filter((taxon): taxon is Taxon => taxon !== null)
+  };
+}
+
+function parseCountry(country: Entry<CountrySkeleton, Modifiers>): Country | null {
+  const { name, code, catalog, marketCode, image, defaultLocale } = country.fields;
+  const parsedImage = parseAsset(image);
+  if (!code || !catalog || !parsedImage) return null;
+  return {
+    name,
+    code,
+    catalog: { id: catalog.sys.id },
+    marketCode: marketCode ?? "",
+    image: parsedImage,
+    defaultLocale: defaultLocale ?? "",
+    id: country.sys.id
+  };
+}
+
+/** Normalises `en-us` / `en` style values to the `en-US` casing Contentful expects. */
 const getLocale = (locale: string) => {
-  const lang = locale.split("-");
-  return lang.length > 1 ? `${lang[0].toLowerCase()}-${lang[1].toUpperCase()}` : _.first(lang);
+  const [language, region] = locale.split("-");
+  return region ? `${language.toLowerCase()}-${region.toUpperCase()}` : language;
 };
 
-export const getAllCountries = async (locale: string) => {
-  const countries = await client()?.getEntries({
+export const getAllCountries = async (locale: string): Promise<Country[]> => {
+  const countries = await client.getEntries<CountrySkeleton>({
     content_type: "country",
-    order: "fields.name",
+    order: ["fields.name"],
     locale: getLocale(locale)
   });
-  return parseCountries(countries!.items as ContentfulCountry[]);
+  return countries.items
+    .map(parseCountry)
+    .filter((country): country is Country => country !== null);
 };
 
-export const getAllTaxonomies = async (catalogId: string, locale: string) => {
-  const catalog = await client()?.getEntries({
+export const getAllTaxonomies = async (catalogId: string, locale: string): Promise<Taxonomy[]> => {
+  const catalogs = await client.getEntries<CatalogSkeleton>({
     content_type: "catalog",
     "sys.id": catalogId,
     locale: getLocale(locale),
-    include: 4
+    include: 5
   });
-  return parseTaxonomies(catalog!.items as ContentfulCatalog[]);
+  return catalogs.items.flatMap((catalog) =>
+    (catalog.fields.taxonomies ?? [])
+      .map(parseTaxonomy)
+      .filter((taxonomy): taxonomy is Taxonomy => taxonomy !== null)
+  );
 };
 
-export const getProduct = async (slug: string, locale: string) => {
-  const lang = getLocale(locale);
-  const products = await client()?.getEntries<ContentfulProduct["fields"]>({
+export const getProduct = async (slug: string, locale: string): Promise<Product | null> => {
+  const products = await client.getEntries<ProductSkeleton>({
     content_type: "product",
+    "fields.slug": slug,
+    locale: getLocale(locale),
     include: 2,
-    locale: lang,
-    "fields.slug[localeCode]": slug
+    limit: 1
   });
-  const item = _.first(products!.items.filter((product) => product.fields.slug === slug));
-  return parseProduct(item);
+  return parseProduct(products.items[0]);
 };
 
 const contentfulApi = {

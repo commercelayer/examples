@@ -9,7 +9,7 @@ export interface Country {
   catalog: {
     id: string;
   };
-  marketId: string;
+  marketCode: string;
   image: {
     title: string;
     url: string;
@@ -59,18 +59,5 @@ export interface Size {
 
 export interface Image {
   title: string;
-  description: string;
-  file: {
-    url: string;
-    details: {
-      size: number;
-      image: {
-        width: number;
-        height: number;
-      };
-    };
-    fileName: string;
-    contentType: string;
-  };
   url: string;
 }

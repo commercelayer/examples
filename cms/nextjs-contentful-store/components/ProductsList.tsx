@@ -1,9 +1,8 @@
 import _ from "lodash";
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { Price, PricesContainer } from "@commercelayer/react-components";
+import { Price } from "@commercelayer/react-components";
 import { Product } from "@typings/models";
 
 type Props = {
@@ -27,8 +26,8 @@ const ProductsList = ({ products }: Props) => {
                 as={`/${countryCode}/${lang}/${slug}`}
                 passHref
               >
-                <div className="flex flex-col h-full border-2 rounded-lg p-5 md:p-3 hover:shadow-2xl">
-                  <div className="aspect-w-3 aspect-h-2 mb-5">
+                <div className="flex flex-col h-full border-2 border-gray-200 rounded-lg p-5 md:p-3 hover:shadow-2xl">
+                  <div className="aspect-[3/2] mb-5">
                     <Image
                       className="object-contain"
                       src={`${imageUrl}`}
@@ -41,12 +40,11 @@ const ProductsList = ({ products }: Props) => {
                   <div className="justify-self-end mt-5">
                     <ul className="flex justify-between space-x-1 items-center">
                       <li>
-                        <PricesContainer skuCode={skuCode}>
-                          <Price
-                            className="text-indigo-600 mr-1 text-base font-bold md:text-sm"
-                            compareClassName="text-gray-500 line-through text-sm md:text-xs"
-                          />
-                        </PricesContainer>
+                        <Price
+                          skuCode={skuCode}
+                          className="text-black mr-1 text-base font-bold md:text-sm"
+                          compareClassName="text-gray-500 line-through text-sm md:text-xs"
+                        />
                       </li>
                     </ul>
                   </div>

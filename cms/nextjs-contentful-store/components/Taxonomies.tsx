@@ -1,24 +1,20 @@
-import React, { useEffect, useState } from "react";
-import _ from "lodash";
+import { useMemo, useState } from "react";
 import ProductsList from "@components/ProductsList";
+import { Taxonomy } from "@typings/models";
 
 type Props = {
-  taxonomies: {
-    name: string;
-    label: string;
-    taxons: any[];
-  }[];
+  taxonomies: Taxonomy[];
 };
 
 const Taxonomies = ({ taxonomies }: Props) => {
+  // A single `{ [taxonomyIndex]: taxonIndex }` entry tracking the selected taxon.
   const [on, setOn] = useState<Record<string, number>>({ "0": 0 });
-  const [currentProducts, setCurrentProducts] = useState([]);
-  useEffect(() => {
-    if (!_.isEmpty(taxonomies)) {
-      _.map(on, (v, k: number) => {
-        setCurrentProducts(taxonomies[k].taxons[v].products || []);
-      });
-    }
+
+  // Fully derived from the selection, so it needs no state of its own.
+  const currentProducts = useMemo(() => {
+    const [taxonomyIndex, taxonIndex] = Object.entries(on)[0] ?? [];
+    if (taxonomyIndex === undefined) return [];
+    return taxonomies?.[Number(taxonomyIndex)]?.taxons?.[taxonIndex]?.products ?? [];
   }, [on, taxonomies]);
   const taxonomy = taxonomies?.map((t, k) => {
     const taxonCard = t.taxons.map((taxon, i) => {
@@ -42,9 +38,7 @@ const Taxonomies = ({ taxonomies }: Props) => {
                 disabled ? "cursor-not-allowed" : "cursor-pointer"
               } flex items-center text-sm justify-between`}
             >
-              <span className="ml-3 font-medium text-sm text-gray-900 flex-grow">
-                {initialName}
-              </span>
+              <span className="ml-3 font-medium text-sm text-gray-900 grow">{initialName}</span>
               <span
                 className={`${
                   checked ? "bg-gray-900 text-gray-50" : "bg-gray-100 text-gray-600"
@@ -71,7 +65,7 @@ const Taxonomies = ({ taxonomies }: Props) => {
   });
   return (
     <div className="px-3 mt-12 lg:px-0 container mx-auto max-w-screen-lg flex flex-wrap sm:flex-nowrap">
-      <div className="flex-shrink md:flex-shrink-0 md:pr-4 w-full sm:w-auto">{taxonomy}</div>
+      <div className="shrink md:shrink-0 md:pr-4 w-full sm:w-auto">{taxonomy}</div>
       <div className="w-full mt-10">
         <ProductsList products={currentProducts} />
       </div>

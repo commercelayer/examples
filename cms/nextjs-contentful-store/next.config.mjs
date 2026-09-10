@@ -8,9 +8,6 @@ const nextConfig = {
       { hostname: "images.unsplash.com" },
       { hostname: "data.commercelayer.app" }
     ]
-  },
-  env: {
-    JSCOV: 0
   }
 };
 

@@ -33,7 +33,3 @@ export const parseLocale = (
 export const parseImg = (url: string) => {
   return `${url}?fm=jpg&q=75`;
 };
-
-export const parseEndpoint = (url: string) => {
-  return url.replace(/^(?:https?:\/\/)?/i, "").split(".")[0];
-};

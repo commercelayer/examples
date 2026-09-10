@@ -1,19 +1,12 @@
 import _ from "lodash";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { GetStaticProps, GetStaticPaths } from "next";
-import IframeResizer from "iframe-resizer-react";
-import { useOrderContainer } from "@commercelayer/react-components/hooks/useOrderContainer";
+import { HostedCart } from "@commercelayer/react-components";
 import Page from "@components/Page";
 import { useGetToken } from "@hooks/GetToken";
 import { Country } from "@typings/models";
-import { parseLanguageCode, parseEndpoint } from "@utils/parser";
+import { parseLanguageCode } from "@utils/parser";
 import contentfulApi from "@utils/contentful/api";
-
-type CartProps = {
-  countryCode: string;
-  slug: string;
-  clToken: string;
-};
 
 type Props = {
   lang: string;
@@ -22,65 +15,12 @@ type Props = {
   buildLanguages: Country[];
 };
 
-const CartIframe: React.FC<CartProps> = ({ countryCode, slug, clToken }) => {
-  const [cartUrl, setCartUrl] = useState<string | null>(null);
-  const { reloadOrder, order } = useOrderContainer();
-
-  useEffect(() => {
-    let isMounted = true;
-
-    (async () => {
-      if (isMounted) {
-        if (clToken && slug) {
-          const persistKey = `cl_order-${countryCode}`;
-          const orderFromStorage = localStorage.getItem(persistKey);
-
-          if (orderFromStorage === null) {
-            setCartUrl(
-              `https://${slug}.commercelayer.app/cart/null?embed=true&accessToken=${clToken}`
-            );
-          } else {
-            if (order !== undefined) {
-              setCartUrl(
-                `https://${slug}.commercelayer.app/cart/${order.id}?embed=true&accessToken=${clToken}`
-              );
-            }
-          }
-        }
-      }
-    })();
-
-    return () => {
-      isMounted = false;
-    };
-  }, [slug, order, clToken, countryCode]);
-
-  return (
-    <div className="container mx-auto max-w-screen-lg px-5 lg:px-0">
-      {cartUrl && (
-        <IframeResizer
-          checkOrigin={false}
-          onMessage={(event) => {
-            if (event.message.type === "update") {
-              reloadOrder();
-            }
-          }}
-          style={{ width: "1px", minWidth: "100%" }}
-          src={cartUrl}
-        />
-      )}
-    </div>
-  );
-};
-
 const ShoppingBagPage: React.FC<Props> = ({ lang, countries, country, buildLanguages }) => {
   const languageCode = parseLanguageCode(lang, "toLowerCase", true);
   const countryCode = country.code.toLowerCase();
-  const clMarketId = country.marketId;
-  const clEndpoint = process.env.NEXT_PUBLIC_CL_ENDPOINT as string;
-  const clSlug = parseEndpoint(clEndpoint);
+  const clMarketCode = country.marketCode;
   const clToken = useGetToken({
-    scope: clMarketId,
+    scope: clMarketCode,
     countryCode: countryCode
   });
 
@@ -89,12 +29,29 @@ const ShoppingBagPage: React.FC<Props> = ({ lang, countries, country, buildLangu
       buildLanguages={buildLanguages}
       lang={lang}
       clToken={clToken}
-      clEndpoint={clEndpoint}
       languageCode={languageCode}
       countryCode={countryCode}
       countries={countries}
     >
-      <CartIframe countryCode={countryCode} slug={clSlug} clToken={clToken} />
+      {/*
+        `min-h-*` is required, not cosmetic: <HostedCart> styles its iframe with
+        `height: 100%` / `min-height: 100%`, which resolve against this container. With
+        an auto-height parent they collapse to 0 and the cart looks empty until
+        iframe-resizer reports the content height. Giving the container a floor keeps
+        the iframe visible in the meantime.
+      */}
+      <div className="container mx-auto max-w-screen-lg px-5 lg:px-0 min-h-[550px]">
+        {/*
+          Embeds the Commerce Layer hosted cart as a self-resizing iframe. It reads the
+          order and access token from the surrounding `<Order>` and drives the height via
+          iframe-resizer internally, so it replaces the hand-rolled iframe (and the
+          direct iframe-resizer dependency) this page used before.
+
+          It decodes the access token to resolve the organization, so it must not render
+          until `useGetToken` has resolved one — during SSR the token is still empty.
+        */}
+        {clToken && <HostedCart />}
+      </div>
     </Page>
   );
 };
