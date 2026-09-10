@@ -6,24 +6,26 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint .",
+    "clean": "pnpx rimraf --glob **/node_modules **/pnpm-lock.yaml",
+    "dep:major": "pnpm dlx npm-check-updates --packageFile '**/package.json' -u",
+    "dep:semver": "pnpm dlx npm-check-updates -t semver --packageFile '**/package.json' -u"
   },
   "dependencies": {
     "@commercelayer/js-auth": "^6.7.2",
     "@commercelayer/react-components": "^4.29.7",
     "@commercelayer/sdk": "^6.58.0",
-    "next": "15.3.4",
-    "react": "^19.2.8",
-    "react-dom": "^19.2.8"
+    "next": "^16.3.4",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "15.3.4",
+    "eslint-config-next": "^16.3.4",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
