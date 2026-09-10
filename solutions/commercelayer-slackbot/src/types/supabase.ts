@@ -1,8 +1,6 @@
 import { Installation } from "@slack/bolt";
 
 export type credentialsJson = {
-  mode: string;
-  endpoint: string;
   clientIdApp: string;
   clientIdCheckout: string;
   accessToken: {

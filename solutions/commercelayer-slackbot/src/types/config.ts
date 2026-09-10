@@ -4,7 +4,7 @@ export interface ConfigOptions {
   cl: CommerceLayerClient;
   organizationMode: string;
   organizationSlug: string;
-  baseEndpoint: string;
   clientIdApp: string;
   clientIdCheckout: string;
+  isTokenExpired: boolean;
 }
