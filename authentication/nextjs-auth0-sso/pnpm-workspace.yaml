@@ -1,0 +1,12 @@
+allowBuilds:
+  esbuild: true
+  iframe-resizer: true
+  sharp: true
+  unrs-resolver: true
+
+# Transitive dependencies pinned by `next` and `express` that are still
+# flagged by `pnpm audit`. Each override stays within the same major.
+overrides:
+  postcss@<8.5.23: ^8.5.28
+  qs@<6.16.0: ^6.16.0
+  sharp@<0.35.4: ^0.35.4

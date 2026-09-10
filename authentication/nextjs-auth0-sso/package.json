@@ -16,7 +16,10 @@
     "test": "vitest run",
     "test:watch": "vitest watch",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "clean": "pnpx rimraf --glob **/node_modules **/pnpm-lock.yaml",
+    "dep:major": "pnpm dlx npm-check-updates --packageFile '**/package.json' -u",
+    "dep:semver": "pnpm dlx npm-check-updates -t semver --packageFile '**/package.json' -u"
   },
   "dependencies": {
     "@auth0/nextjs-auth0": "^4.29.0",
@@ -36,10 +39,10 @@
     "highlight.js": "^11.12.0",
     "jwks-rsa": "^3.2.2",
     "morgan": "^1.12.0",
-    "next": "15.5.4",
+    "next": "^15.5.25",
     "nodemon": "^3.1.14",
-    "react": "18.3.0",
-    "react-dom": "18.3.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "reactstrap": "^9.2.3",
     "unstorage": "^1.17.5"
   },
