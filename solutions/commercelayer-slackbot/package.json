@@ -42,8 +42,8 @@
   },
   "devDependencies": {
     "@flydotio/dockerfile": "^0.2.16",
-    "nodemon": "^2.0.22",
-    "supabase": "^1.226.4",
+    "nodemon": "^3.1.14",
+    "supabase": "^2.117.0",
     "typescript": "^4.9.5"
   }
 }
