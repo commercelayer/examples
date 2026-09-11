@@ -3,13 +3,27 @@ dotenv.config();
 
 import CommerceLayer from "@commercelayer/sdk";
 import { database } from "../database/supabaseClient";
-import { getToken } from "./getToken";
-import { getSlug } from "./parseText";
+import { getToken, getTokenInfo } from "./getToken";
 
 const appMode = process.env.APP_MODE;
 const isProd = appMode === "production";
 
-export const initConfig = async (slackId: string) => {
+// Treat a token that is about to expire as already expired, so that it cannot
+// lapse midway through a request.
+const EXPIRATION_MARGIN_MS = 60 * 1000;
+
+// In production each Slack workspace is bound to its own organization, so the
+// credentials are read from the database. In development they come from .env,
+// and the database is never queried.
+const getCredentials = async (slackId: string) => {
+  if (!isProd) {
+    return {
+      clientIdApp: process.env.CL_CLIENT_ID,
+      clientIdCheckout: process.env.CL_CLIENT_ID_CHECKOUT,
+      clAccessToken: await getToken()
+    };
+  }
+
   const { data, error } = await database
     .from("users")
     .select("cl_app_credentials")
@@ -19,15 +33,27 @@ export const initConfig = async (slackId: string) => {
   }
   const clUserCredentials = data[0].cl_app_credentials;
 
-  // Variables for all required credentials.
-  const baseEndpoint = isProd ? clUserCredentials.endpoint : process.env.CL_ENDPOINT;
-  const organizationMode = isProd ? clUserCredentials.mode : process.env.CL_ORGANIZATION_MODE;
-  const organizationSlug = getSlug(baseEndpoint);
-  const clientIdApp = isProd ? clUserCredentials.clientIdApp : process.env.CL_CLIENT_ID;
-  const clientIdCheckout = isProd
-    ? clUserCredentials.clientIdCheckout
-    : process.env.CL_CLIENT_ID_CHECKOUT;
-  const clAccessToken = isProd ? clUserCredentials.accessToken.token : await getToken();
+  return {
+    clientIdApp: clUserCredentials.clientIdApp,
+    clientIdCheckout: clUserCredentials.clientIdCheckout,
+    clAccessToken: clUserCredentials.accessToken.token
+  };
+};
+
+export const initConfig = async (slackId: string) => {
+  const { clientIdApp, clientIdCheckout, clAccessToken } = await getCredentials(slackId);
+
+  // The organization, its environment and the token expiration are all claims of
+  // the access token, so none of them needs to be stored or configured separately.
+  const { isTest, organizationSlug, expiresAt } = await getTokenInfo(clAccessToken);
+  const organizationMode = isTest ? "test" : "live";
+
+  // In production the token is minted once, when the app credentials are submitted,
+  // and cannot be renewed automatically because the client secret is deliberately
+  // not stored. Detect the expiration up front so the failure can be reported as
+  // such, instead of surfacing as a 401 on every subsequent API call.
+  const isTokenExpired =
+    expiresAt === undefined || expiresAt.getTime() - EXPIRATION_MARGIN_MS <= Date.now();
 
   const cl = CommerceLayer({
     organization: organizationSlug,
@@ -38,8 +64,8 @@ export const initConfig = async (slackId: string) => {
     cl,
     organizationMode,
     organizationSlug,
-    baseEndpoint,
     clientIdApp,
-    clientIdCheckout
+    clientIdCheckout,
+    isTokenExpired
   };
 };
