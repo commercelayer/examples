@@ -2,14 +2,12 @@ import * as dotenv from "dotenv";
 dotenv.config();
 
 import { App, LogLevel } from "@slack/bolt";
-import { authentication } from "@commercelayer/js-auth";
+import { authenticate } from "@commercelayer/js-auth";
 import { database } from "./src/database/supabaseClient";
 import { getOrderById, getLastOrder, getTodaysOrder } from "./src/orders/getOrders";
 import { getReturnById, getLastReturn, getTodaysReturn } from "./src/returns/getReturns";
 import { serveHtml } from "./src/utils/serveHtml";
-import { getTokenInfo } from "./src/utils/getToken";
 import { renderError, notFoundError, expiredTokenError } from "./src/utils/customError";
-import { getSlug } from "./src/utils/parseText";
 import { formatTimestamp } from "./src/utils/parseDate";
 import { initConfig } from "./src/utils/config";
 
@@ -339,19 +337,6 @@ app.action(
                 type: "plain_text",
                 text: "This is needed for the hosted-checkout."
               }
-            },
-            {
-              type: "input",
-              block_id: "block_cl_endpoint",
-              element: {
-                type: "plain_text_input",
-                action_id: "action_cl_endpoint",
-                initial_value: isClAuth ? config.baseEndpoint : ""
-              },
-              label: {
-                type: "plain_text",
-                text: "Base Endpoint"
-              }
             }
           ]
         }
@@ -372,26 +357,19 @@ app.view("callback_cl_modal_view", async ({ ack, body, view, client, logger }) =
   const clientIdApp = view["state"]["values"]["block_cl_client_id"]["action_cl_client_id"].value;
   const clientSecret =
     view["state"]["values"]["block_cl_client_secret"]["action_cl_client_secret"].value;
-  const endpoint = view["state"]["values"]["block_cl_endpoint"]["action_cl_endpoint"].value;
-  const slug = getSlug(endpoint);
   const clientIdCheckout =
     view["state"]["values"]["block_cl_int_client_id"]["action_cl_checkout_client_id"].value;
 
-  await authentication("client_credentials", {
+  await authenticate("client_credentials", {
     clientId: clientIdApp,
-    clientSecret,
-    slug
+    clientSecret
   })
     .then(async (res) => {
-      const tokenInfo = await getTokenInfo(res.accessToken);
-      const organizationMode = tokenInfo.isTest ? "test" : "live";
-      if (res.error !== "invalid_client") {
+      if (res.errors === undefined) {
         await database
           .from("users")
           .update({
             cl_app_credentials: {
-              mode: organizationMode,
-              endpoint,
               clientIdApp,
               clientIdCheckout,
               accessToken: {
@@ -480,6 +458,13 @@ app.command("/cl", async ({ command, client, ack, say }) => {
 
   const slackId = command.team_id || command.enterprise_id;
   const config = await initConfig(slackId);
+
+  // Fail fast with an actionable message rather than letting every command
+  // below hit the API and come back with a 401.
+  if (config.isTokenExpired) {
+    await renderError(say, command, expiredTokenError());
+    return;
+  }
 
   if (command.text.startsWith("order ")) {
     const resourceType = getOrderById(command.text.replace("order ", ""), config);

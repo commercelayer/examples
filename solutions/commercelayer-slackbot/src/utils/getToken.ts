@@ -1,39 +1,37 @@
 import * as dotenv from "dotenv";
 dotenv.config();
 
-import jwt_decode from "jwt-decode";
-import { authentication } from "@commercelayer/js-auth";
-import { getSlug } from "./parseText";
+import { authenticate, jwtDecode } from "@commercelayer/js-auth";
 import { ConfigOptions } from "../types/config";
 
-interface JWTProps {
-  test: boolean;
-}
-
 export const getToken = async () => {
-  const auth = await authentication("client_credentials", {
+  const auth = await authenticate("client_credentials", {
     clientId: process.env.CL_CLIENT_ID,
-    clientSecret: process.env.CL_CLIENT_SECRET,
-    slug: getSlug(process.env.CL_ENDPOINT)
+    clientSecret: process.env.CL_CLIENT_SECRET
   });
   return auth.accessToken;
 };
 
+// The organization the token was issued for, its environment and its expiration
+// are all claims of the token itself, so none of them needs to be stored alongside it.
 export const getTokenInfo = async (accessToken) => {
   try {
-    const { test } = jwt_decode(accessToken) as JWTProps;
+    const { payload } = jwtDecode(accessToken);
 
-    return { isTest: test };
+    return {
+      isTest: payload.test,
+      organizationSlug: "organization" in payload ? payload.organization.slug : undefined,
+      expiresAt: new Date(payload.exp * 1000)
+    };
   } catch (error) {
     console.log(`Error decoding access token: ${error}`);
-    return {};
+    return { isTest: undefined, organizationSlug: undefined, expiresAt: undefined };
   }
 };
 
 export const getCheckoutToken = async (config: ConfigOptions, marketNumber: number) => {
-  const { organizationSlug, clientIdCheckout } = config;
-  const auth = await authentication("client_credentials", {
-    slug: organizationSlug,
+  const { clientIdCheckout } = config;
+  const auth = await authenticate("client_credentials", {
     clientId: clientIdCheckout,
     scope: `market:${marketNumber}`
   });

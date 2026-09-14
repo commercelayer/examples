@@ -41,6 +41,9 @@ Before you start using the Slackbot, you need to provide some Commerce Layer [ap
 
 ![A preview of the Commerce Layer Slackbot configuration page.](./static/configure.png)
 
+> [!IMPORTANT]
+> The access token is generated once, when you submit the form above, and the home tab shows the date it expires on. Because the client secret is intentionally never stored, the bot cannot renew the token on its own: **once it expires you have to repeat the steps above to generate a new one**. Until you do, every command replies with an "Invalid token" error.
+
 ## Commands Available
 
 This Commerce Layer Slackbot allows you to request certain resources by ID and other conditions. The returned response would be a summary of the requested resource with a link to view the resource(s) and checkout `pending` orders (for the `order` resource). The section below explains the available command and what they do.
@@ -106,8 +109,6 @@ If for any reason you want to set up your own server (most likely because you wa
 | `SLACK_CLIENT_SECRET`     | This is required along with the client ID to make Slack `oauth.v2.access` requests.                         |
 | `SLACK_STATE_SECRET`      | This is used to avoid forgery attacks by passing in a unique value to encode and decode the state when a Slack `oauth.v2.access` request is made. You should enter a random pre-defined string here.                                 |
 | `SLACK_APP_TOKEN`         | This is a [Slack app-level token](https://api.slack.com/authentication/token-types#app) that represents an app across organizations, including installations by all individual users on all workspaces in a given organization.                     |
-| `CL_ORGANIZATION_ENDPOINT` | Your Commerce Layer organization endpoint.                                                            |
-| `CL_ORGANIZATION_MODE`     | A string value that indicates the mode of your Commerce Layer account (the Developer plan is `test` and the [Growth and Enterprise plan](https://commercelayer.io/pricing) is `live`). This is used for external link routing to the dashboard.    |
 | `CL_CLIENT_ID`             | Your Commerce Layer integration application client ID.                                               |
 | `CL_CLIENT_SECRET`         | Your Commerce Layer integration application client secret.                                           |
 | `CL_CLIENT_ID_CHECKOUT`    | Your Commerce Layer sales channel application client ID.                                               |

@@ -1,8 +1,6 @@
 import { Installation } from "@slack/bolt";
 
 export type credentialsJson = {
-  mode: string;
-  endpoint: string;
   clientIdApp: string;
   clientIdCheckout: string;
   accessToken: {
@@ -46,6 +44,9 @@ export interface Database {
           slack_installation_store?: Object | null;
           cl_app_credentials?: credentialsJson | null;
         };
+        // Required by GenericTable since @supabase/supabase-js v2.116, which
+        // otherwise resolves the whole schema to `never`.
+        Relationships: [];
       };
     };
     Views: {
