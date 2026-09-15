@@ -14,7 +14,7 @@
     "@sendgrid/mail": "^8.1.6",
     "crypto-js": "^4.2.0",
     "dotenv": "^16.6.1",
-    "express": "^4.22.2",
+    "express": "^4.22.3",
     "node-fetch": "^3.3.2"
   }
 }
