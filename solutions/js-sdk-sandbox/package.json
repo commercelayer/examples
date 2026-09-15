@@ -4,16 +4,19 @@
   "description": "",
   "scripts": {
     "start": "parcel index.html --open",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html",
+    "clean": "pnpx rimraf --glob **/node_modules **/pnpm-lock.yaml",
+    "dep:major": "pnpm dlx npm-check-updates --packageFile '**/package.json' -u",
+    "dep:semver": "pnpm dlx npm-check-updates -t semver --packageFile '**/package.json' -u"
   },
   "dependencies": {
-    "@commercelayer/sdk": "6.11.0",
-    "js-cookie": "3.0.5"
+    "@commercelayer/sdk": "^6.58.0",
+    "js-cookie": "^3.0.8"
   },
   "devDependencies": {
-    "@babel/core": "7.25.2",
+    "@babel/core": "^7.29.7",
     "parcel": "^2.16.4",
-    "typescript": "5.5.4"
+    "typescript": "^5.9.3"
   },
   "resolutions": {
     "@babel/preset-env": "7.13.8"
