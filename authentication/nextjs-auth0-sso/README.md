@@ -1,6 +1,6 @@
 # SSO with Nextjs, Auth0, and Commerce Layer
 
-This example shows you how to integrate [Auth0 Nextjs SDK](https://github.com/auth0/nextjs-auth0) into a Nextjs application created using [create-next-app](https://nextjs.org/docs/api-reference/create-next-app). You can use it as a reference to build an SSO flow with Commerce Layer. The sample is a companion to the [Auth0 Nextjs SDK Quickstart](https://auth0.com/docs/quickstart/webapp/nextjs). To get started, kindly read [this comprehensive tutorial](https://commercelayer.io/blog/single-sign-on-with-commerce-layer-using-next-js-and-auth0) on our blog.
+This example shows you how to integrate [Auth0 Nextjs SDK](https://github.com/auth0/nextjs-auth0) into a Nextjs application created using [create-next-app](https://nextjs.org/docs/app/api-reference/cli/create-next-app). You can use it as a reference to build an SSO flow with Commerce Layer. The sample is a companion to the [Auth0 Nextjs SDK Quickstart](https://auth0.com/docs/quickstart/webapp/nextjs). To get started, kindly read [this comprehensive tutorial](https://commercelayer.io/blog/single-sign-on-with-commerce-layer-using-next-js-and-auth0) on our blog.
 
 ---
 
@@ -8,12 +8,12 @@ This example shows you how to integrate [Auth0 Nextjs SDK](https://github.com/au
 
 This sample covers the following use cases:
 
-- [Login](https://github.com/commercelayer/sample-nextjs-auth0-sso/blob/main/components/NavBar.jsx#L61-L67)
-- [Logout](https://github.com/commercelayer/sample-nextjs-auth0-sso/blob/main/components/NavBar.jsx#L93-L95)
-- [Showing the user profile](https://github.com/commercelayer/sample-nextjs-auth0-sso/blob/main/pages/profile.jsx)
-- [Protecting client-side rendered pages](https://github.com/commercelayer/sample-nextjs-auth0-sso/blob/main/pages/profile.jsx#L43-L46)
-- [Showing Commerce Layer product and price on the homepage](https://github.com/commercelayer/sample-nextjs-auth0-sso/blob/main/components/Content.jsx)
-- [Showing Commerce Layer user's order history](https://github.com/commercelayer/sample-nextjs-auth0-sso/blob/main/pages/orders.jsx)
+- [Login](./components/NavBar.jsx)
+- [Logout](./components/NavBar.jsx)
+- [Showing the user profile](./app/profile/page.jsx)
+- [Protecting client-side rendered pages](./app/csr/page.jsx)
+- [Showing Commerce Layer product and price on the homepage](./components/Content.jsx)
+- [Showing Commerce Layer user's order history](./app/orders/page.jsx)
 
 ```mermaid
 sequenceDiagram
@@ -60,12 +60,12 @@ pnpm install
 
 This example uses Auth0, an easy-to-implement, adaptable authentication and authorization platform. Auth0 helps you to:
 
-- Add authentication with [multiple sources](https://auth0.com/docs/identityproviders), either social identity providers such as Google, Facebook, Microsoft Account, LinkedIn, GitHub, Twitter, Box, Salesforce (amongst others), or enterprise identity systems like Windows Azure AD, Google Apps, Active Directory, ADFS, or any SAML Identity Provider.
-- Add authentication through more traditional [username/password databases](https://auth0.com/docs/connections/database/custom-db).
-- Add support for [linking different user accounts](https://auth0.com/docs/users/user-account-linking) with the same user.
-- Support for generating signed [JSON Web Tokens](https://auth0.com/docs/tokens/json-web-tokens) to call your APIs and flow the user identity securely.
+- Add authentication with [multiple sources](https://auth0.com/docs/authenticate/identity-providers), either social identity providers such as Google, Facebook, Microsoft Account, LinkedIn, GitHub, Twitter, Box, Salesforce (amongst others), or enterprise identity systems like Windows Azure AD, Google Apps, Active Directory, ADFS, or any SAML Identity Provider.
+- Add authentication through more traditional [username/password databases](https://auth0.com/docs/authenticate/database-connections/custom-db).
+- Add support for [linking different user accounts](https://auth0.com/docs/manage-users/user-accounts/user-account-linking) with the same user.
+- Support for generating signed [JSON Web Tokens](https://auth0.com/docs/secure/tokens/json-web-tokens) to call your APIs and flow the user identity securely.
 - Analytics of how, when, and where users are logging in.
-- Pull data from other sources and add it to the user profile through [JavaScript rules](https://auth0.com/docs/rules).
+- Pull data from other sources and add it to the user profile through [JavaScript rules](https://auth0.com/docs/customize/rules).
 
 To get started, create a free Commerce Layer account like so:
 
@@ -83,7 +83,7 @@ Also, create a free Auth0 account like so:
 
 The project needs to be configured with your Auth0 domain, client ID, and client secret for the authentication flow to work.
 
-To do that, first copy `.env.local.example` into a new file in the same folder called `.env.local`, and replace the values with your own Auth0 application credentials (more info about loading environmental variables in Nextjs [here](https://nextjs.org/docs/basic-features/environment-variables)):
+To do that, first copy `.env.local.example` into a new file in the same folder called `.env.local`, and replace the values with your own Auth0 application credentials (more info about loading environmental variables in Nextjs [here](https://nextjs.org/docs/pages/guides/environment-variables)):
 
 ```sh
 # A long secret value used to encrypt the session cookie
@@ -114,7 +114,7 @@ AUTH0_M2M_CLIENT_SECRET='YOUR_AUTH0_M2M_CLIENT_SECRET'
 
 #### Commerce Layer
 
-You also need to use a [sales channel](https://docs.commercelayer.io/core/applications#sales-channel) and an [integration](https://docs.commercelayer.io/core/applications#integration) application on Commerce Layer. Add to `.env.local` the following variables setting your applications' credentials and market information. Note that the organization slug and endpoint are automatically inferred from the access token:
+You also need to use a [sales channel](https://docs.commercelayer.io/core/api-credentials#sales-channel) and an [integration](https://docs.commercelayer.io/core/api-credentials#integration) application on Commerce Layer. Add to `.env.local` the following variables setting your applications' credentials and market information. Note that the organization slug and endpoint are automatically inferred from the access token:
 
 ```sh
 CL_INTEGRATION_CLIENT_ID='YOU INTEGRATION CLIENT ID'

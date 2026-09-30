@@ -48,7 +48,7 @@ cl webhooks:create \
    -i "customer,line_items,shipping_address,billing_address,shipments.shipping_method,payment_method,payment_source,market"
 ```
 
-6. Place a new order using Commerce Layer [Demo Stores](https://github.com/commercelayer/demo-store), [Hosted Microstore](https://github.com/commercelayer/commercelayer-microstore), or the [CLI Checkout Plugin](https://github.com/commercelayer/commercelayer-cli-plugin-checkout).
+6. Place a new order using Commerce Layer [Demo Stores](https://github.com/commercelayer/demo-store), [Hosted Microstore](https://github.com/commercelayer/mfe-microstore), or the [CLI Checkout Plugin](https://github.com/commercelayer/commercelayer-cli-plugin-checkout).
 
 ```bash
 cl plugins:install checkout

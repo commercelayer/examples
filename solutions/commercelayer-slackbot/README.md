@@ -1,6 +1,6 @@
 # Commerce Layer Slackbot
 
-This example shows a code implementation of a Slackbot that responds with orders/returns summaries upon request and allows users to checkout pending orders directly from a Slack channel. This application was built with Commerce Layer, Slack Boltjs library, and Supabase. To get started, kindly read [this comprehensive tutorial](https://commercelayer.io/blog/how-we-built-the-commerce-layer-slackbot-with-node-js-and-slack-api), followed by [this one](https://commercelayer.io/blog/handling-slack-apps-distribution-using-supabase-and-fly-io) on our blog.
+This example shows a code implementation of a Slackbot that responds with orders/returns summaries upon request and allows users to checkout pending orders directly from a Slack channel. This application was built with Commerce Layer, Slack Boltjs library, and Supabase. To get started, kindly read [this comprehensive tutorial](https://commercelayer.io/blog/how-we-built-the-commerce-layer-slackbot-with-node-js-and-slack-api) on our blog.
 
 ![A preview of the Commerce Layer Slackbot about page.](./static/app-details.png)
 
@@ -21,7 +21,7 @@ This example shows a code implementation of a Slackbot that responds with orders
 
 ## Getting Started
 
-The quickest way to get up and running is to use the "Add to Slack" button below to install the demo Slack bot into your Slack workspace (for demo testing). Alternatively, you can [install from Slack](https://slack.com/apps/A04NTNAPX2B-commerce-layer-demo-bot). After a successful installation, you will configure the bot by providing some required Commerce Layer application credentials.
+The quickest way to get up and running is to use the "Add to Slack" button below to install the demo Slack bot into your Slack workspace (for demo testing). After a successful installation, you will configure the bot by providing some required Commerce Layer application credentials.
 
 <div align="center">
     <a href="https://commercelayer-slackbot.fly.dev/slack/install" target="_blank" rel="noopener noreferrer">
@@ -31,7 +31,7 @@ The quickest way to get up and running is to use the "Add to Slack" button below
 
 ## Configuration Guide
 
-Before you start using the Slackbot, you need to provide some Commerce Layer [application credentials](https://docs.commercelayer.io/core/applications). Kindly follow the steps below to configure the app:
+Before you start using the Slackbot, you need to provide some Commerce Layer [application credentials](https://docs.commercelayer.io/core/api-credentials). Kindly follow the steps below to configure the app:
 
 1. Find the app (Commerce Layer Demo Bot) in the "Apps" section of your Slack workspace (most often at the bottom section).
 
@@ -56,7 +56,7 @@ Here are the available commands:
 - `/cl orders:last` and `/cl orders:p last` (fetch the last `placed` order)
 - `/cl orders:a last` (fetch the last `approved` order)
 
-These commands will return the following [Order](https://docs.commercelayer.io/core/v/api-reference/orders) and [Customer](https://docs.commercelayer.io/core/v/api-reference/customers) attributes: `id`, `placed_at`, `formatted_subtotal_amount`, `number`, `status`, `payment_status`, `fulfillment_status`, `shipping_address`, `billing_address`, `payment_method`, `shipment_number`, and `customer_email`.
+These commands will return the following [Order](https://docs.commercelayer.io/core-api-reference/orders) and [Customer](https://docs.commercelayer.io/core-api-reference/customers) attributes: `id`, `placed_at`, `formatted_subtotal_amount`, `number`, `status`, `payment_status`, `fulfillment_status`, `shipping_address`, `billing_address`, `payment_method`, `shipment_number`, and `customer_email`.
 
 ### Fetch a return resource
 
@@ -66,7 +66,7 @@ Here are the available commands:
 - `/cl returns:last` and `/cl returns:r last` (fetch the last `requested` return)
 - `/cl returns:a last` (fetch the last `approved` return)
 
-These commands will return the following [Return](https://docs.commercelayer.io/core/v/api-reference/returns) and [Customer](https://docs.commercelayer.io/core/v/api-reference/customers) attributes: `id`, `created_at`, `number`, `status`, `origin_address`, `destination_address`, `stock_location`, and `skus_count`.
+These commands will return the following [Return](https://docs.commercelayer.io/core-api-reference/returns) and [Customer](https://docs.commercelayer.io/core-api-reference/customers) attributes: `id`, `created_at`, `number`, `status`, `origin_address`, `destination_address`, `stock_location`, and `skus_count`.
 
 ### Fetch the current total orders per day
 
@@ -90,25 +90,25 @@ The `/cl returns:today` command will return the total number of `requested` retu
 
 If for any reason you want to set up your own server (most likely because you want to contribute to this project), kindly follow the steps below.
 
-1. Create a [Commerce Layer account](https://dashboard.commercelayer.io/sign_up), set up your organization, and create the required commerce data resources for your market. You can follow the [onboarding tutorial](https://docs.commercelayer.io/developers/welcome/onboarding-tutorial) or [manual configuration guide](https://docs.commercelayer.io/developers/welcome/manual-configuration) to achieve this.
+1. Create a [Commerce Layer account](https://dashboard.commercelayer.io/sign_up), set up your organization, and create the required commerce data resources for your market. You can follow the [onboarding tutorial](https://docs.commercelayer.io/core/onboarding/guided-setup) or [manual configuration guide](https://docs.commercelayer.io/core/onboarding/manual-configuration) to achieve this.
 
-2. Create a demo Slack workspace and create a [new Slack app](https://api.slack.com/apps/new) (you can [read this Slack guide](https://slack.dev/bolt-js/tutorial/getting-started) to learn the basics of Slack applications).
+2. Create a demo Slack workspace and create a [new Slack app](https://api.slack.com/apps?new_app=1) (you can [read this Slack guide](https://docs.slack.dev/tools/bolt-js/tutorial/getting-started) to learn the basics of Slack applications).
 
-3. Create a [Supabase account](https://app.supabase.com) and setup a new database project.
+3. Create a [Supabase account](https://supabase.com/dashboard) and setup a new database project.
 
-4. Clone this repository ([learn how to do this](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)).
+4. Clone this repository ([learn how to do this](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)).
 
 5. Rename the `/.env.example` file to `.env` and add the following credentials:
 
 | **Variable**              | **Description**                        |
 | ------------------------- | -------------------------------------  |
 | `APP_MODE`                | This indicates if the instance of the project is in `development` or `production`. In production the credentials used are unique for all users sourced from a database while development using the local `.env` file.                       |
-| `SLACK_BOT_TOKEN`         | This is a [Slack bot token](https://api.slack.com/authentication/token-types#bot) that represents a bot associated with the app installed in a workspace.                    |
-| `SLACK_SIGNING_SECRET`    | This is the unique string key Slack generates for an app and is used to [verify requests](https://api.slack.com/authentication/verifying-requests-from-slack#about) from Slack with confidence by verifying signatures using the signing secret.                                                              |
+| `SLACK_BOT_TOKEN`         | This is a [Slack bot token](https://docs.slack.dev/authentication/tokens/) that represents a bot associated with the app installed in a workspace.                    |
+| `SLACK_SIGNING_SECRET`    | This is the unique string key Slack generates for an app and is used to [verify requests](https://docs.slack.dev/authentication/verifying-requests-from-slack/) from Slack with confidence by verifying signatures using the signing secret.                                                              |
 | `SLACK_CLIENT_ID`         | This is required along with the client secret to make Slack `oauth.v2.access` requests.                     |
 | `SLACK_CLIENT_SECRET`     | This is required along with the client ID to make Slack `oauth.v2.access` requests.                         |
 | `SLACK_STATE_SECRET`      | This is used to avoid forgery attacks by passing in a unique value to encode and decode the state when a Slack `oauth.v2.access` request is made. You should enter a random pre-defined string here.                                 |
-| `SLACK_APP_TOKEN`         | This is a [Slack app-level token](https://api.slack.com/authentication/token-types#app) that represents an app across organizations, including installations by all individual users on all workspaces in a given organization.                     |
+| `SLACK_APP_TOKEN`         | This is a [Slack app-level token](https://docs.slack.dev/authentication/tokens/) that represents an app across organizations, including installations by all individual users on all workspaces in a given organization.                     |
 | `CL_CLIENT_ID`             | Your Commerce Layer integration application client ID.                                               |
 | `CL_CLIENT_SECRET`         | Your Commerce Layer integration application client secret.                                           |
 | `CL_CLIENT_ID_CHECKOUT`    | Your Commerce Layer sales channel application client ID.                                               |
@@ -117,11 +117,11 @@ If for any reason you want to set up your own server (most likely because you wa
 
 > **Note**
 >
-> For all Commerce Layer credentials, see: <https://docs.commercelayer.io/core/applications>.
+> For all Commerce Layer credentials, see: <https://docs.commercelayer.io/core/api-credentials>.
 >
-> For all Slack credentials, see: <https://api.slack.com/authentication>.
+> For all Slack credentials, see: <https://docs.slack.dev/authentication/>.
 >
-> For all Supabase credentials, see: <https://supabase.com/docs/guides/database>.
+> For all Supabase credentials, see: <https://supabase.com/docs/guides/database/overview>.
 
 6. This project uses `pnpm`; [install pnpm](https://pnpm.io/installation) first, and run the command below to install the required dependencies:
 
@@ -147,7 +147,7 @@ pnpm run dev-start
 pnpm run dev
 ```
 
-10. Update your Slack app accordingly with the generated URL above or use these [manifest (JSON or YAML)](./manifests/) files as a template to easily [configure your Slack app](https://api.slack.com/reference/manifests).
+10. Update your Slack app accordingly with the generated URL above or use these [manifest (JSON or YAML)](./manifests/) files as a template to easily [configure your Slack app](https://docs.slack.dev/app-manifests/configuring-apps-with-app-manifests/).
 
 <br />
 
@@ -157,4 +157,4 @@ Now you can proceed to do your thing!
 
 > **Note**
 >
-> If you want to deploy this application to fly.io, kindly refer to the deployment section of [this tutorial](https://commercelayer.io/blog/handling-slack-apps-distribution-using-supabase-and-fly-io). For other deployment providers, you can deploy this like any other Nodejs app.
+> If you want to deploy this application to fly.io, kindly refer to the [fly.io docs for Node.js apps](https://docs.fly.io/js) and use the `fly-sample.toml` file in this folder as a starting point. For other deployment providers, you can deploy this like any other Nodejs app.

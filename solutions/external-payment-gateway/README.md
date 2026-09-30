@@ -47,7 +47,7 @@ User fills checkout → SPA creates Mollie payment → _place order
    - A **Shared secret** — copy it for `CL_GATEWAY_SHARED_SECRET`
    - A **Webhook endpoint URL** — copy it for `CL_WEBHOOK_ENDPOINT_URL`
 
-> ⚠️ The `authorize_url` must be reachable by Commerce Layer's servers. For local development, use a tunnel like [ngrok](https://ngrok.com) or [cloudflared](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/):
+> ⚠️ The `authorize_url` must be reachable by Commerce Layer's servers. For local development, use a tunnel like [ngrok](https://ngrok.com) or [cloudflared](https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/):
 > ```bash
 > ngrok http 3001
 > # or
