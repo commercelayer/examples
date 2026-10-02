@@ -54,7 +54,7 @@ The quickest way to get up and running is to use any of the deploy buttons below
 | `BUILD_LANGUAGES`                              | The supported locales (the default is `en-US, it-IT, fr-FR`).                                                                                                                                                                                                  |
 | `NEXT_PUBLIC_SITE_NAME`                        | Optional name for the `<title>` head tag (you can also edit this directly in the code).                                                                                                                                                                        |
 | `NEXT_PUBLIC_SITE_URL`                         | Optional URL of your deployed project for the `og:url` meta property and cart `return_url` (you can also edit this directly in the code).                                                                                                                      |
-| `NEXT_PUBLIC_CL_CLIENT_ID`                     | Your Commerce Layer sales channels application client ID (you can create this automatically by following this [onboarding guide](https://docs.commercelayer.io) or manually on the [Commerce Layer dashboard](https://dashboard.commercelayer.io)). |
+| `NEXT_PUBLIC_CL_CLIENT_ID`                     | Your Commerce Layer sales channels application client ID (you can create this automatically by following our [documentation](https://docs.commercelayer.io) or manually on the [Commerce Layer dashboard](https://dashboard.commercelayer.io)). |
 | `NEXT_PUBLIC_CONTENTFUL_SPACE_ID`              | Your Contentful space ID (you can get this from [app.contentful.com](https://app.contentful.com) > Settings > API keys).                                                                                                                                       |
 | `NEXT_PUBLIC_CONTENTFUL_DELIVERY_ACCESS_TOKEN` | Your Contentful delivery access token that allows you to fetch published content (you can get this from [app.contentful.com](https://app.contentful.com) > Settings > API keys).                                                                               |
 | `CONTENTFUL_IMPORT_MANAGEMENT_TOKEN`           | Your Contentful import management token that allows you to import data into your space (you can get this from [app.contentful.com](https://app.contentful.com) > Settings > API keys).                                                                         |
@@ -77,7 +77,7 @@ This will run the storefront at `localhost:3000`.
 
 1. Create a free [Commerce Layer account](https://dashboard.commercelayer.io/sign_up). If you already have an active account, kindly skip to Step 3.
 
-2. Create a new [organization](https://docs.commercelayer.io/data-model/foundation-and-setup/users-and-organizations) or follow the [onboarding tutorial guide](https://docs.commercelayer.io).
+2. Create a new organization or follow the [documentation](https://docs.commercelayer.io).
 
 3. Create a new **Integrations** application with **Name** set to `CLI` and **Role** set to `admin`.
 
@@ -107,7 +107,7 @@ cl applications:login -o <organizationSlug> -i <clientId> -s <clientSecret> -a <
 cl plugins:install seeder
 ```
 
-8. Run the command below to import three demo [markets](https://data.commercelayer.app/seed/markets.json) (UK, USA, and Europe), a set of [SKUs](https://data.commercelayer.app/seed/skus.json), related [price lists](https://data.commercelayer.app/seed/price_lists.json), related [prices](https://data.commercelayer.app/seed/prices.json), [stock locations](https://data.commercelayer.app/seed/stock_locations.json), and [inventory](https://data.commercelayer.app/seed/stock_items.json) into your organization using the `multi_market` [business model](https://docs.commercelayer.io/data-model/pricing-and-markets/markets-and-business-models).
+8. Run the command below to import three demo [markets](https://data.commercelayer.app/seed/markets.json) (UK, USA, and Europe), a set of [SKUs](https://data.commercelayer.app/seed/skus.json), related [price lists](https://data.commercelayer.app/seed/price_lists.json), related [prices](https://data.commercelayer.app/seed/prices.json), [stock locations](https://data.commercelayer.app/seed/stock_locations.json), and [inventory](https://data.commercelayer.app/seed/stock_items.json) into your organization using the `multi_market` business model.
 
 ```bash
 cl seed -b multi_market
@@ -199,7 +199,7 @@ Eventually, you would want to set up commerce data in Commerce Layer manually an
 
 2. In the [Contentful dashboard](https://app.contentful.com), add the content for the new SKUs as a `Variant` and associate them with a `Product` content model. You can then go ahead to update other content models like `Taxon`, `Taxonomy`, and `Catalog` as you deem fit.
 
-3. Ensure to read our [onboarding guide](https://docs.commercelayer.io/core/onboarding/guided-setup), [manual configuration guide](https://docs.commercelayer.io/core/onboarding/manual-configuration), or [data models documentation](https://docs.commercelayer.io/data-model) to learn more about how Commerce Layer works and the relationships between each API resource.
+3. Ensure to read our [documentation](https://docs.commercelayer.io/) to learn more about how Commerce Layer works and the relationships between each API resource.
 
 > **Note**
 >

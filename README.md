@@ -29,7 +29,6 @@ Here are the parent categories of the examples in this repository for easy navig
 - [Commerce Layer Documentation](https://docs.commercelayer.io)
 - [Commerce Layer API Reference](https://docs.commercelayer.io/core-api-reference)
 - [Commerce Layer Core Concepts](https://docs.commercelayer.io/core)
-- [Commerce Layer Data Model](https://docs.commercelayer.io/data-model)
 - [Commerce Layer Blog](https://commercelayer.io/blog)
 - [Commerce Layer Case Studies](https://commercelayer.io/customers)
 

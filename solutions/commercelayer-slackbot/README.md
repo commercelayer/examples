@@ -90,7 +90,7 @@ The `/cl returns:today` command will return the total number of `requested` retu
 
 If for any reason you want to set up your own server (most likely because you want to contribute to this project), kindly follow the steps below.
 
-1. Create a [Commerce Layer account](https://dashboard.commercelayer.io/sign_up), set up your organization, and create the required commerce data resources for your market. You can follow the [onboarding tutorial](https://docs.commercelayer.io/core/onboarding/guided-setup) or [manual configuration guide](https://docs.commercelayer.io/core/onboarding/manual-configuration) to achieve this.
+1. Create a [Commerce Layer account](https://dashboard.commercelayer.io/sign_up), set up your organization, and create the required commerce data resources for your market. You can follow our [documentation](https://docs.commercelayer.io/) to learn more about how Commerce Layer works and the relationships between each API resource.
 
 2. Create a demo Slack workspace and create a [new Slack app](https://api.slack.com/apps?new_app=1) (you can [read this Slack guide](https://docs.slack.dev/tools/bolt-js/tutorial/getting-started) to learn the basics of Slack applications).
 
