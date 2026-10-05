@@ -25,17 +25,16 @@ Here are the parent categories of the examples in this repository for easy navig
 
 ## Get Started with Commerce Layer
 
-- [All Developer Resources](https://commercelayer.io/developers)
+- [All Developer Resources](https://commercelayer.io/resources)
 - [Commerce Layer Documentation](https://docs.commercelayer.io)
-- [Commerce Layer API Reference](https://docs.commercelayer.io/core/v/api-reference/)
-- [Commerce Layer Core Concepts](https://commercelayer.io/docs/core-concepts)
-- [Commerce Layer Data Model](https://commercelayer.io/docs/data-model)
+- [Commerce Layer API Reference](https://docs.commercelayer.io/core-api-reference)
+- [Commerce Layer Core Concepts](https://docs.commercelayer.io/core)
 - [Commerce Layer Blog](https://commercelayer.io/blog)
 - [Commerce Layer Case Studies](https://commercelayer.io/customers)
 
 ## Contributors Guide
 
-1. Fork [this repository](https://github.com/commercelayer/examples) (learn how to do this [here](https://help.github.com/articles/fork-a-repo)).
+1. Fork [this repository](https://github.com/commercelayer/examples) (learn how to do this [here](https://docs.github.com/en/pull-requests/how-tos/work-with-forks/fork-a-repo)).
 
 2. Clone the forked repository like so:
 
@@ -51,13 +50,13 @@ git clone https://github.com/<your username>/examples.git && cd examples
 
 6. Add the new example to the list in the category's `README.md` file following the same format as the other examples (follow the sequential alphabetical order by name as seen in your local computer).
 
-7. Make your changes and create a pull request ([learn how to do this](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request)).
+7. Make your changes and create a pull request ([learn how to do this](https://docs.github.com/en/pull-requests/how-tos/create-pull-requests/creating-a-pull-request)).
 
 8. Someone will attend to your pull request, provide some feedback, and eventually merge the PR!
 
 > **Note**
 >
-> This repository will include examples that follow all the best practices we are following in all our [other public OSS projects](https://commercelayer.io/developers). If you decide to contribute, someone will review and provide some feedback. Thank you!
+> This repository will include examples that follow all the best practices we are following in all our [other public OSS projects](https://github.com/commercelayer). If you decide to contribute, someone will review and provide some feedback. Thank you!
 
 ## Need Help?
 
@@ -76,6 +75,6 @@ This repository is published under the [MIT](LICENSE) license.
 ![Commerce Layer Logo](/.assets/cl-light.svg#gh-dark-mode-only)
 ![Commerce Layer Logo](/.assets/cl-dark.svg#gh-light-mode-only)
 
-<p><a href="https://commercelayer.io/why" target="_blank" rel="noopener noreferrer">Commerce Layer</a> is a multi-market commerce API and order management system that lets you add global shopping capabilities to any website, mobile app, chatbot, wearable, voice, or IoT device, with ease. Compose your stack with the best-of-breed tools you already mastered and love. Make any experience shoppable, anywhere, through a blazing-fast, enterprise-grade, and <a href="https://docs.commercelayer.io" target="_blank" rel="noopener noreferrer">secure API</a>.</p>
+<p><a href="https://commercelayer.io/vision" target="_blank" rel="noopener noreferrer">Commerce Layer</a> is a multi-market commerce API and order management system that lets you add global shopping capabilities to any website, mobile app, chatbot, wearable, voice, or IoT device, with ease. Compose your stack with the best-of-breed tools you already mastered and love. Make any experience shoppable, anywhere, through a blazing-fast, enterprise-grade, and <a href="https://docs.commercelayer.io" target="_blank" rel="noopener noreferrer">secure API</a>.</p>
 
 </div>
