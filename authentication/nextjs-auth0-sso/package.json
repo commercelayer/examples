@@ -22,7 +22,7 @@
     "dep:semver": "pnpm dlx npm-check-updates -t semver --packageFile '**/package.json' -u"
   },
   "dependencies": {
-    "@auth0/nextjs-auth0": "^4.29.0",
+    "@auth0/nextjs-auth0": "^4.33.0",
     "@commercelayer/js-auth": "^7.4.2",
     "@commercelayer/react-components": "^4.29.7",
     "@commercelayer/sdk": "^6.58.0",
@@ -39,12 +39,12 @@
     "highlight.js": "^11.12.0",
     "jwks-rsa": "^3.2.2",
     "morgan": "^1.12.1",
-    "next": "^15.5.25",
+    "next": "^15.5.28",
     "nodemon": "^3.1.14",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "reactstrap": "^9.2.3",
-    "unstorage": "^1.17.5"
+    "unstorage": "^1.17.6"
   },
   "devDependencies": {
     "@babel/core": "^7.29.7",
@@ -57,7 +57,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
-    "prettier": "^3.9.6",
+    "prettier": "^3.9.10",
     "start-server-and-test": "^2.1.5",
     "vitest": "^3.2.7"
   }
