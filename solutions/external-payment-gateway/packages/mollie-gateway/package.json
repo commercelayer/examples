@@ -13,10 +13,10 @@
     "@commercelayer/js-auth": "^7.4.2",
     "@commercelayer/sdk": "^7.12.1",
     "@mollie/api-client": "^4.6.0",
-    "hono": "^4.13.13"
+    "hono": "^4.13.19"
   },
   "devDependencies": {
-    "@hono/node-server": "^2.1.5",
+    "@hono/node-server": "^2.1.11",
     "@types/node": "^25.9.9",
     "tsx": "^4.23.15",
     "typescript": "^6.0.3"
